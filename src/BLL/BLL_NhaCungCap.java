@@ -29,7 +29,7 @@ public class BLL_NhaCungCap {
         jdlAddNhaCungCap.txtDiaChi.setText(ncc.getDC());
         txtEmail.setText(ncc.getEmail());
         txtGhiChu.setText(ncc.getGhiChu());
-        txtIDNCC12.setText(ncc.getID());
+        txtKhoa.setText(ncc.getID());
         txtLoaiHinh.setText(ncc.getLoaiHinh());
         txtMSThue.setText(ncc.getMSThue());
         txtTenNCC.setText(ncc.getTenNCC());
@@ -48,7 +48,7 @@ public class BLL_NhaCungCap {
          */
         ncc.setDC(txtDiaChi.getText());
         ncc.setEmail(txtEmail.getText());
-        ncc.setID(txtIDNCC12.getText());
+        ncc.setID(txtKhoa.getText());
         ncc.setLoaiHinh(txtLoaiHinh.getText());
         ncc.setMSThue(txtMSThue.getText());
         ncc.setNguoiLH(txtNguoiLH.getText());

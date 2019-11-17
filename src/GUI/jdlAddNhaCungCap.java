@@ -41,7 +41,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlIDNCC = new javax.swing.JPanel();
         lblIDNCC = new javax.swing.JLabel();
         lblTBIDNcc = new javax.swing.JLabel();
-        txtIDNCC12 = new javax.swing.JTextField();
+        txtKhoa = new javax.swing.JTextField();
         pnlTenNCC = new javax.swing.JPanel();
         lblTenNCC = new javax.swing.JLabel();
         txtTenNCC = new javax.swing.JTextField();
@@ -98,6 +98,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         btnThem = new javax.swing.JButton();
         btnCapNhat = new javax.swing.JButton();
         btnLamMoi = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("THÔNG TIN NHÀ CUNG CẤP");
@@ -153,7 +154,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlIDNCC.setToolTipText("");
 
         lblIDNCC.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblIDNCC.setForeground(new java.awt.Color(0, 0, 0));
         lblIDNCC.setText("ID NCC (*)                         :");
         lblIDNCC.setMaximumSize(new java.awt.Dimension(115, 16));
         lblIDNCC.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -163,9 +163,9 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBIDNcc.setForeground(new java.awt.Color(153, 0, 0));
         lblTBIDNcc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        txtIDNCC12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtIDNCC12.setText("Nguyễn Xuân Khoa");
-        txtIDNCC12.setBorder(null);
+        txtKhoa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtKhoa.setText("TẠ QUANG HUY 111");
+        txtKhoa.setBorder(null);
 
         javax.swing.GroupLayout pnlIDNCCLayout = new javax.swing.GroupLayout(pnlIDNCC);
         pnlIDNCC.setLayout(pnlIDNCCLayout);
@@ -174,7 +174,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
             .addGroup(pnlIDNCCLayout.createSequentialGroup()
                 .addComponent(lblIDNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(txtIDNCC12, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtKhoa, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblTBIDNcc, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -182,7 +182,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
             pnlIDNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlIDNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lblIDNCC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtIDNCC12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtKhoa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(lblTBIDNcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -192,7 +192,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlTenNCC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblTenNCC.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblTenNCC.setForeground(new java.awt.Color(0, 0, 0));
         lblTenNCC.setText("TÊN NHÀ CUNG CẤP (*):");
         lblTenNCC.setMaximumSize(new java.awt.Dimension(115, 16));
         lblTenNCC.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -229,7 +228,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlLoaiHinh.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblLoaiHinh.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblLoaiHinh.setForeground(new java.awt.Color(0, 0, 0));
         lblLoaiHinh.setText("LOẠI HÌNH  (*)                  :");
         lblLoaiHinh.setMaximumSize(new java.awt.Dimension(115, 16));
         lblLoaiHinh.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -266,7 +264,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlDiaChi.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("ĐỊA CHỈ (*)                        :");
         jLabel5.setMaximumSize(new java.awt.Dimension(115, 16));
         jLabel5.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -303,7 +300,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlNhomNCC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblNhomNCC.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNhomNCC.setForeground(new java.awt.Color(0, 0, 0));
         lblNhomNCC.setText("NHÓM NCC (*)                :");
         lblNhomNCC.setMaximumSize(new java.awt.Dimension(115, 16));
         lblNhomNCC.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -340,7 +336,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlSDT.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblSDT.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblSDT.setForeground(new java.awt.Color(0, 0, 0));
         lblSDT.setText("SỐ ĐIỆN THOẠI  (*)        :");
         lblSDT.setMaximumSize(new java.awt.Dimension(115, 16));
         lblSDT.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -386,7 +381,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlMSThue.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblMSThue.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblMSThue.setForeground(new java.awt.Color(0, 0, 0));
         lblMSThue.setText("MÃ SỐ THUẾ (*)              :");
         lblMSThue.setMaximumSize(new java.awt.Dimension(115, 16));
         lblMSThue.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -424,7 +418,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlNguoiLH.setToolTipText("");
 
         lblNguoiLienHe.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNguoiLienHe.setForeground(new java.awt.Color(0, 0, 0));
         lblNguoiLienHe.setText("NGƯỜI LIÊN HỆ (*)           :");
         lblNguoiLienHe.setMaximumSize(new java.awt.Dimension(115, 16));
         lblNguoiLienHe.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -435,7 +428,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBNguoiLH.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtNguoiLH.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtNguoiLH.setForeground(new java.awt.Color(0, 0, 0));
         txtNguoiLH.setBorder(null);
 
         javax.swing.GroupLayout pnlNguoiLHLayout = new javax.swing.GroupLayout(pnlNguoiLH);
@@ -464,7 +456,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlEmail.setToolTipText("");
 
         lblEmail.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblEmail.setForeground(new java.awt.Color(0, 0, 0));
         lblEmail.setText("EMAIL                                   :");
         lblEmail.setMaximumSize(new java.awt.Dimension(115, 16));
         lblEmail.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -475,7 +466,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBEmail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
         txtEmail.setBorder(null);
 
         javax.swing.GroupLayout pnlEmailLayout = new javax.swing.GroupLayout(pnlEmail);
@@ -504,7 +494,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlTrangWeb.setToolTipText("");
 
         lblTrangWeb.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblTrangWeb.setForeground(new java.awt.Color(0, 0, 0));
         lblTrangWeb.setText("TRANG WEB                       :");
         lblTrangWeb.setMaximumSize(new java.awt.Dimension(115, 16));
         lblTrangWeb.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -515,7 +504,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBTrangWeb.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtTrangWeb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtTrangWeb.setForeground(new java.awt.Color(0, 0, 0));
         txtTrangWeb.setBorder(null);
 
         javax.swing.GroupLayout pnlTrangWebLayout = new javax.swing.GroupLayout(pnlTrangWeb);
@@ -544,7 +532,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlTrangWeb1.setToolTipText("");
 
         lblTrangWeb1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblTrangWeb1.setForeground(new java.awt.Color(0, 0, 0));
         lblTrangWeb1.setText("TÀI KHOÀN NGÂN HÀNG :");
         lblTrangWeb1.setMaximumSize(new java.awt.Dimension(115, 16));
         lblTrangWeb1.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -555,7 +542,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBTKBank.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtTKBank.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtTKBank.setForeground(new java.awt.Color(0, 0, 0));
         txtTKBank.setBorder(null);
 
         javax.swing.GroupLayout pnlTrangWeb1Layout = new javax.swing.GroupLayout(pnlTrangWeb1);
@@ -584,7 +570,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlTrangWeb2.setToolTipText("");
 
         lblTenBank.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblTenBank.setForeground(new java.awt.Color(0, 0, 0));
         lblTenBank.setText("TÊN NGÂN HÀNG             :");
         lblTenBank.setMaximumSize(new java.awt.Dimension(115, 16));
         lblTenBank.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -595,7 +580,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBTenBank.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtTenBank.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtTenBank.setForeground(new java.awt.Color(0, 0, 0));
         txtTenBank.setBorder(null);
 
         javax.swing.GroupLayout pnlTrangWeb2Layout = new javax.swing.GroupLayout(pnlTrangWeb2);
@@ -623,7 +607,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlNgayThem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblNgayThem.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNgayThem.setForeground(new java.awt.Color(0, 0, 0));
         lblNgayThem.setText("NGÀY THÊM                       :");
         lblNgayThem.setMaximumSize(new java.awt.Dimension(115, 16));
         lblNgayThem.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -634,7 +617,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBNgayThem.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtNgayThem.setBorder(null);
-        txtNgayThem.setForeground(new java.awt.Color(0, 0, 0));
         try {
             txtNgayThem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -685,7 +667,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlGhiChu.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblTrangThai.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblTrangThai.setForeground(new java.awt.Color(0, 0, 0));
         lblTrangThai.setText("GHI CHÚ                            :");
         lblTrangThai.setMaximumSize(new java.awt.Dimension(115, 16));
         lblTrangThai.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -696,7 +677,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBGhiChu.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtGhiChu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtGhiChu.setForeground(new java.awt.Color(0, 0, 0));
         txtGhiChu.setBorder(null);
 
         javax.swing.GroupLayout pnlGhiChuLayout = new javax.swing.GroupLayout(pnlGhiChu);
@@ -798,6 +778,9 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
             }
         });
         pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 530, -1, 45));
+
+        jLabel1.setText("tÊSST");
+        pnlChinh.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 180, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -927,6 +910,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
     public static javax.swing.JButton btnThem;
     private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXoa;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblIDNCC;
@@ -975,7 +959,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
     public static javax.swing.JTextField txtDiaChi;
     public static javax.swing.JTextField txtEmail;
     public static javax.swing.JTextField txtGhiChu;
-    public static javax.swing.JTextField txtIDNCC12;
+    public static javax.swing.JTextField txtKhoa;
     public static javax.swing.JTextField txtLoaiHinh;
     public static javax.swing.JTextField txtMSThue;
     public static javax.swing.JFormattedTextField txtNgayThem;
