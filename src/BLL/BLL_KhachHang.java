@@ -27,7 +27,7 @@ public class BLL_KhachHang {
         jdlAddKhachHang.txtDC.setText(kh.getDC());
         txtEmail.setText(kh.getEmail());
         txtGhiChu.setText(kh.getGhiChu());
-        txtHoTen.setText(kh.getHoTen());
+        txtHoTen1.setText(kh.getHoTen());
         txtIDKH.setText(kh.getIDKH());
         txtNgaySinh.setText(kh.getNgaySinh());
         txtNgayThem.setText(kh.getNgayThem());
@@ -41,7 +41,7 @@ public class BLL_KhachHang {
         kh.setEmail(txtEmail.getText());
         kh.setGhiChu(txtGhiChu.getText());
         kh.setGioiTinh(radNam.isSelected());
-        kh.setHoTen(txtHoTen.getText());
+        kh.setHoTen(txtHoTen1.getText());
         kh.setIDKH(txtIDKH.getText());
         DTO.MyComboBox mb = (DTO.MyComboBox)jdlAddKhachHang.cbbLoaiKH.getSelectedItem();
         kh.setIDLoaiKH(mb.MaString());
