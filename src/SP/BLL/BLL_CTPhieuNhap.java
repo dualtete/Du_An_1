@@ -145,6 +145,7 @@ public class BLL_CTPhieuNhap {
         int lanNhap = SP.DAO.selectMax.maxLanNhap(idPN) + 1;
         String nguoiNhap = DTO.DTO_UserLogin.userName;
         String viTri = DTO.DTO_UserLogin.viTri;
+        System.out.println(ngayNhap);
         SP.DAO.update.UpdateCTPN(ngayNhap, lanNhap, nguoiNhap, viTri, idPN);
 
         int maxIdentity = 0 ;

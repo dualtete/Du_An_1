@@ -39,8 +39,13 @@ public class page_ViTri extends javax.swing.JInternalFrame {
     public static JButton btnThem;
     public static ArrayList<DTO.DTO_ViTriHangHoa> kho;
     public static DTO.DTO_ViTriHangHoa vt;
+    
+    public static pnlHangTonKho TonKho;
 
     private void FillBan() {
+        btnThemLo.setVisible(false);
+        btnThemKho.setVisible(true);
+        
         lblTitle.setText("Các kho hiện tại của Vi Tuấn");
         scpViTri.removeAll();
         kho = BLL.BLL_VitriHangHoa.getAllKho();
@@ -202,7 +207,8 @@ public class page_ViTri extends javax.swing.JInternalFrame {
     }
 
     public void fillLo(String lo) {
-
+        btnThemLo.setVisible(true);
+        btnThemKho.setVisible(false);
         scpViTri.removeAll();
         ArrayList<DTO.DTO_ViTriHangHoa> kho = BLL.BLL_VitriHangHoa.getAllLo(lo);
         ArrayList<Boolean> checkclick = new ArrayList<>();
@@ -314,9 +320,12 @@ public class page_ViTri extends javax.swing.JInternalFrame {
                 public void mouseClicked(MouseEvent e) {
                     vt = kho.get(j);
 
-                    jdlNhapHang.main = new page_Main_NhapHang();
-                    jdlNhapHang.dtpMainDatHang.removeAll();
-                    jdlNhapHang.dtpMainDatHang.add(jdlNhapHang.main).setVisible(true);
+                   TonKho = new pnlHangTonKho();
+                   pnlAddpnl.removeAll();
+                   pnlAddpnl.add(TonKho).setVisible(true);
+                   pnlAddpnl.revalidate();
+                   pnlAddpnl.repaint();
+                   
                 }
             }
             );
@@ -335,10 +344,14 @@ public class page_ViTri extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        scpViTri = new javax.swing.JPanel();
-        btnVeKho = new javax.swing.JButton();
+        pnlAddpnl = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        btnThemKho = new javax.swing.JButton();
+        btnThemLo = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
+        btnVeKho = new javax.swing.JButton();
+        scpViTri = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
@@ -353,18 +366,28 @@ public class page_ViTri extends javax.swing.JInternalFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAddpnl.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAddpnl.setLayout(new java.awt.BorderLayout());
 
-        scpViTri.setBackground(new java.awt.Color(255, 255, 255));
-        scpViTri.setAutoscrolls(true);
-        scpViTri.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        scpViTri.setMaximumSize(new java.awt.Dimension(100, 32767));
-        scpViTri.setMinimumSize(new java.awt.Dimension(100, 10));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnThemKho.setText("Thêm kho");
+        jPanel2.add(btnThemKho);
+
+        btnThemLo.setText("Thêm lô");
+        jPanel2.add(btnThemLo);
+
+        lblTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Các kho hiện tại của Vi Tuấn");
 
         btnVeKho.setBackground(new java.awt.Color(255, 255, 255));
         btnVeKho.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnVeKho.setForeground(new java.awt.Color(204, 102, 0));
-        btnVeKho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_circled_left_48px.png"))); // NOI18N
+        btnVeKho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconHuy/icons8_return_16px.png"))); // NOI18N
+        btnVeKho.setText("Quay lại");
         btnVeKho.setContentAreaFilled(false);
         btnVeKho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVeKho.addActionListener(new java.awt.event.ActionListener() {
@@ -373,47 +396,42 @@ public class page_ViTri extends javax.swing.JInternalFrame {
             }
         });
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Các kho hiện tại của Vi Tuấn");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scpViTri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnVeKho, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(293, 293, 293)
-                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 314, Short.MAX_VALUE)))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 876, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(btnVeKho, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnVeKho, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(scpViTri, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(7, 7, 7)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnVeKho, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        pnlAddpnl.add(jPanel3, java.awt.BorderLayout.PAGE_START);
+
+        scpViTri.setBackground(new java.awt.Color(204, 204, 255));
+        scpViTri.setAutoscrolls(true);
+        scpViTri.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        scpViTri.setMaximumSize(new java.awt.Dimension(100, 32767));
+        scpViTri.setMinimumSize(new java.awt.Dimension(100, 10));
+        pnlAddpnl.add(scpViTri, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(pnlAddpnl, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -428,9 +446,13 @@ public class page_ViTri extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnThemKho;
+    private javax.swing.JButton btnThemLo;
     private javax.swing.JButton btnVeKho;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel pnlAddpnl;
     private javax.swing.JPanel scpViTri;
     // End of variables declaration//GEN-END:variables
 }

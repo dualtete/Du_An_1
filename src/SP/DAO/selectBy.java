@@ -49,4 +49,12 @@ public class selectBy {
     public static ResultSet CTPhieuNhap_By_IDPN(String idPN) {
         return DBConnection.getData("select * from CT_PhieuNhap where IDPN = '" + idPN + "' ");
     }
+    public static ResultSet HangTonKhoByPN_TrangThai(String IDPN, boolean TrangThai){
+        String cauLenh = "select * from HangTonKhoByPhieuNhap where idphieunhap = '"+IDPN+"' and (trangthaitk = '"+TrangThai+"')";
+        return DBConnection.getData(cauLenh);
+    }
+    public static ResultSet HangTonKhoByTrangThai(boolean trangThai){
+        String cauLenh = "select * from HangTonKhoByPhieuNhap where trangthaitk = '"+trangThai+"'";
+        return DBConnection.getData(cauLenh);
+    }
 }

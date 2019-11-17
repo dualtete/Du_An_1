@@ -6,6 +6,7 @@
 package SP.GUI;
 
 
+import static SP.GUI.pnlThongTin.tblNCC;
 import java.awt.Component;
 import java.io.File;
 import javax.swing.JFrame;
@@ -244,7 +245,17 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formAncestorAdded
 
     private void mniTaoPhieuNhap_NCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniTaoPhieuNhap_NCCActionPerformed
-        
+        if (tblNCC.getSelectedRowCount() != 1) {
+            System.out.println("Cần chọn nhà cung cấp");
+            return;
+        }
+
+        pnlCTPhieuNhap = new pnlCT_PhieuNhap();
+        SP.BLL.BLL_TaoPhieuNhap.TaoPhieuNhap();
+        pnlAddPnl.removeAll();
+        pnlAddPnl.add(pnlCTPhieuNhap).setVisible(true);
+        pnlAddPnl.revalidate();
+        pnlAddPnl.repaint();
 
 
     }//GEN-LAST:event_mniTaoPhieuNhap_NCCActionPerformed
