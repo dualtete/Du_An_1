@@ -321,7 +321,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel28" pref="176" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtMaKhachHang" min="-2" pref="295" max="-2" attributes="0"/>
+                      <Component id="txtIDKhachHang" min="-2" pref="295" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="lblMaNV" min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
@@ -331,7 +331,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="jLabel28" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="txtMaKhachHang" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="txtIDKhachHang" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <Component id="lblMaNV" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -369,12 +369,12 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtMaKhachHang">
+            <Component class="javax.swing.JTextField" name="txtIDKhachHang">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nguy&#x1ec5;n Xu&#xe2;n Khoa"/>
+                <Property name="text" type="java.lang.String" value="KHOA-1234"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -563,7 +563,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="T&#x1ea1; Quang Huy"/>
+                <Property name="text" type="java.lang.String" value="NGUY&#x1ec4;N XU&#xc2;N KHOA"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
