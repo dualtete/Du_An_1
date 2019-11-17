@@ -47,7 +47,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel28 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         lblMaNV = new javax.swing.JLabel();
-        txtIDKhachHang = new javax.swing.JTextField();
+        txtMaKhachHang = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         lblTBHoTen = new javax.swing.JLabel();
@@ -256,9 +256,9 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblMaNV.setForeground(new java.awt.Color(153, 0, 0));
         lblMaNV.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        txtIDKhachHang.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtIDKhachHang.setText("Nguyễn Xuân Khoa");
-        txtIDKhachHang.setBorder(null);
+        txtMaKhachHang.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtMaKhachHang.setText("Nguyễn Xuân Khoa");
+        txtMaKhachHang.setBorder(null);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -267,7 +267,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
             .addGroup(jPanel28Layout.createSequentialGroup()
                 .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIDKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(lblMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -275,7 +275,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(txtIDKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(lblMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -936,7 +936,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     public static javax.swing.JTextField txtEmail;
     public static javax.swing.JTextField txtGhiChu;
     public static javax.swing.JTextField txtHoTen1;
-    public static javax.swing.JTextField txtIDKhachHang;
+    public static javax.swing.JTextField txtMaKhachHang;
     public static javax.swing.JFormattedTextField txtNgaySinh;
     public static javax.swing.JFormattedTextField txtNgayThem;
     public static javax.swing.JTextField txtNguoiTao;
