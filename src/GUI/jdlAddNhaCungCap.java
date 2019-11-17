@@ -41,7 +41,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlIDNCC = new javax.swing.JPanel();
         lblIDNCC = new javax.swing.JLabel();
         lblTBIDNcc = new javax.swing.JLabel();
-        TXTIAIAIA = new javax.swing.JTextField();
+        id001 = new javax.swing.JTextField();
         pnlTenNCC = new javax.swing.JPanel();
         lblTenNCC = new javax.swing.JLabel();
         txtTenNCC = new javax.swing.JTextField();
@@ -163,9 +163,9 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBIDNcc.setForeground(new java.awt.Color(153, 0, 0));
         lblTBIDNcc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        TXTIAIAIA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        TXTIAIAIA.setText("TẠ QUANG HUY 111");
-        TXTIAIAIA.setBorder(null);
+        id001.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        id001.setText("TẠ QUANG HUY 111");
+        id001.setBorder(null);
 
         javax.swing.GroupLayout pnlIDNCCLayout = new javax.swing.GroupLayout(pnlIDNCC);
         pnlIDNCC.setLayout(pnlIDNCCLayout);
@@ -174,7 +174,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
             .addGroup(pnlIDNCCLayout.createSequentialGroup()
                 .addComponent(lblIDNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(TXTIAIAIA, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(id001, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblTBIDNcc, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -182,7 +182,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
             pnlIDNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlIDNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lblIDNCC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TXTIAIAIA, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(id001, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(lblTBIDNcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -780,7 +780,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 530, -1, 45));
 
         jLabel1.setText("tÊSST");
-        pnlChinh.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 180, 40));
+        pnlChinh.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 180, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -904,13 +904,13 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTextField TXTIAIAIA;
     private javax.swing.ButtonGroup bgrGioiTinh;
     public static javax.swing.JButton btnCapNhat;
     private javax.swing.JButton btnLamMoi;
     public static javax.swing.JButton btnThem;
     private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXoa;
+    public static javax.swing.JTextField id001;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblEmail;

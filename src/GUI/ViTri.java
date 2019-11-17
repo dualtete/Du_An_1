@@ -1428,7 +1428,7 @@ public class ViTri extends javax.swing.JInternalFrame {
         if (evt.getClickCount() == 2) {
             jdlAddNhaCungCap jdl = new jdlAddNhaCungCap(new JFrame(), true);
             jdlAddNhaCungCap.btnThem.setEnabled(false);
-            jdlAddNhaCungCap.TXTIAIAIA.setEditable(false);
+            jdlAddNhaCungCap.id001.setEditable(false);
             BLL.BLL_NhaCungCap.click();
             jdl.setVisible(true);
         }
