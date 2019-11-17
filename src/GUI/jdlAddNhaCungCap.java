@@ -164,7 +164,6 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         lblTBIDNcc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtKhoa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtKhoa.setText("TẠ QUANG HUY 111");
         txtKhoa.setBorder(null);
 
         javax.swing.GroupLayout pnlIDNCCLayout = new javax.swing.GroupLayout(pnlIDNCC);
@@ -270,6 +269,7 @@ public class jdlAddNhaCungCap extends javax.swing.JDialog {
         jLabel5.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtDiaChi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtDiaChi.setText("Quang huy");
         txtDiaChi.setBorder(null);
 
         lblTBDiaChi.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
