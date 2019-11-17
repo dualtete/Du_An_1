@@ -182,7 +182,7 @@ public class DaiLy extends javax.swing.JInternalFrame {
         pnlTieuDe.setForeground(new java.awt.Color(0, 102, 153));
         pnlTieuDe.setPreferredSize(new java.awt.Dimension(404, 50));
 
-        lblDaiLy.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblDaiLy.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblDaiLy.setForeground(new java.awt.Color(0, 102, 153));
         lblDaiLy.setText("THÔNG TIN ĐẠI LÝ");
 
