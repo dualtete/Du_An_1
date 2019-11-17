@@ -55,7 +55,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         btnThemLoai = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        txtHoTen = new javax.swing.JTextField();
+        txtHoTen1 = new javax.swing.JTextField();
         lblTBHoTen1 = new javax.swing.JLabel();
         jPanel29 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
@@ -247,7 +247,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel28.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         jLabel28.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("MÃ KHÁCH HÀNG (*)                  :");
         jLabel28.setMaximumSize(new java.awt.Dimension(115, 16));
         jLabel28.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -258,7 +257,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblMaNV.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtMaKhachHang.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtMaKhachHang.setForeground(new java.awt.Color(0, 0, 0));
         txtMaKhachHang.setBorder(null);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -286,7 +284,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         jLabel18.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("LOẠI KHÁCH HÀNG (*)               :");
         jLabel18.setMaximumSize(new java.awt.Dimension(115, 16));
         jLabel18.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -350,14 +347,13 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel15.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         jLabel19.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("HỌ VÀ TÊN (*)                              :");
         jLabel19.setMaximumSize(new java.awt.Dimension(115, 16));
         jLabel19.setMinimumSize(new java.awt.Dimension(115, 16));
         jLabel19.setPreferredSize(new java.awt.Dimension(115, 16));
 
-        txtHoTen.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtHoTen.setBorder(null);
+        txtHoTen1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtHoTen1.setBorder(null);
 
         lblTBHoTen1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTBHoTen1.setForeground(new java.awt.Color(153, 0, 0));
@@ -370,13 +366,13 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtHoTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(lblTBHoTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtHoTen)
+            .addComponent(txtHoTen1)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addComponent(lblTBHoTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 3, Short.MAX_VALUE))
@@ -389,7 +385,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel29.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         jLabel29.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("SỐ ĐIỆN THOẠI (*)                      :");
 
         lblTBSDT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -431,7 +426,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel31.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         jLabel34.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
         jLabel34.setText("ĐỊA CHỈ (*)                                    :");
         jLabel34.setMaximumSize(new java.awt.Dimension(115, 16));
         jLabel34.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -470,7 +464,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel26.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         jLabel26.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("EMAIL (*)                                 :");
         jLabel26.setMaximumSize(new java.awt.Dimension(115, 16));
         jLabel26.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -509,14 +502,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel33.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblNgaySinh.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNgaySinh.setForeground(new java.awt.Color(0, 0, 0));
         lblNgaySinh.setText("NGÀY SINH (*) ");
         lblNgaySinh.setMaximumSize(new java.awt.Dimension(115, 16));
         lblNgaySinh.setMinimumSize(new java.awt.Dimension(115, 16));
         lblNgaySinh.setPreferredSize(new java.awt.Dimension(115, 16));
 
         lblGioiTinh.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblGioiTinh.setForeground(new java.awt.Color(0, 0, 0));
         lblGioiTinh.setText("GIỚI TÍNH (*) ");
         lblGioiTinh.setMaximumSize(new java.awt.Dimension(115, 16));
         lblGioiTinh.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -525,14 +516,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         radNam.setBackground(new java.awt.Color(255, 255, 255));
         bgrGioiTinh.add(radNam);
         radNam.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        radNam.setForeground(new java.awt.Color(0, 0, 0));
         radNam.setSelected(true);
         radNam.setText("Nam");
 
         radNu.setBackground(new java.awt.Color(255, 255, 255));
         bgrGioiTinh.add(radNu);
         radNu.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        radNu.setForeground(new java.awt.Color(0, 0, 0));
         radNu.setText("Nữ");
 
         lblNgay1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -571,12 +560,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNgay1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radNam)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radNu)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -598,7 +587,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel30.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblNoiCap.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNoiCap.setForeground(new java.awt.Color(0, 0, 0));
         lblNoiCap.setText("NGƯỜI TẠO");
 
         lblTBNoiCap.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -635,7 +623,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         pnlGhiChu.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblTrangThai.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblTrangThai.setForeground(new java.awt.Color(0, 0, 0));
         lblTrangThai.setText("GHI CHÚ                                 :");
         lblTrangThai.setMaximumSize(new java.awt.Dimension(115, 16));
         lblTrangThai.setMinimumSize(new java.awt.Dimension(115, 16));
@@ -646,7 +633,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblTBGhiChu.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtGhiChu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtGhiChu.setForeground(new java.awt.Color(0, 0, 0));
         txtGhiChu.setBorder(null);
 
         javax.swing.GroupLayout pnlGhiChuLayout = new javax.swing.GroupLayout(pnlGhiChu);
@@ -676,7 +662,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel32.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         lblNoiCap1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNoiCap1.setForeground(new java.awt.Color(0, 0, 0));
         lblNoiCap1.setText("NGÀY THÊM");
 
         lblTBNoiCap1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -948,7 +933,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     public static javax.swing.JTextField txtDC;
     public static javax.swing.JTextField txtEmail;
     public static javax.swing.JTextField txtGhiChu;
-    public static javax.swing.JTextField txtHoTen;
+    public static javax.swing.JTextField txtHoTen1;
     public static javax.swing.JTextField txtMaKhachHang;
     public static javax.swing.JFormattedTextField txtNgaySinh;
     public static javax.swing.JFormattedTextField txtNgayThem;
