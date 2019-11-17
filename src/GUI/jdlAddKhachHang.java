@@ -257,6 +257,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblMaNV.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtIDKhachHang.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtIDKhachHang.setText("Nguyễn Xuân Khoa");
         txtIDKhachHang.setBorder(null);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -353,6 +354,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jLabel19.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtHoTen1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtHoTen1.setText("Tạ Quang Huy");
         txtHoTen1.setBorder(null);
 
         lblTBHoTen1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
