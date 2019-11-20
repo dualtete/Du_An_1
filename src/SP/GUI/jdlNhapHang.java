@@ -22,8 +22,8 @@ public class jdlNhapHang extends javax.swing.JDialog {
     public static page_Main_NhapHang main;
     public static page_ViTri viTri;
 
-    public static page_CT_PhieuNhap_Xuat pageCTPhieuXuatNhap;
-    public static JInternalFrame cpn;
+
+
 
     /**
      * Creates new form formSP

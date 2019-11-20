@@ -7,6 +7,7 @@ package GUI;
 
 import DAO.DBConnection;
 import SP.GUI.page_Main_NhapHang;
+import SP.GUI.page_ViTri;
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
 import static java.lang.Thread.sleep;
@@ -41,6 +42,7 @@ public class frmMain extends javax.swing.JFrame {
 // Các page trong phần sản phẩm:
     
     public static SP.GUI.page_Main_NhapHang pageMain;
+    public static SP.GUI.page_ViTri vitri;
     
     
     public frmMain() {
@@ -856,8 +858,10 @@ public class frmMain extends javax.swing.JFrame {
 
     private void pnlKhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKhoMouseClicked
         dkpRight.removeAll();
-        ViTri kh = new ViTri();
-        dkpRight.add(kh).setVisible(true);
+        vitri = new page_ViTri();
+        dkpRight.add(vitri);
+        dkpRight.revalidate();
+        dkpRight.repaint();
     }//GEN-LAST:event_pnlKhoMouseClicked
 
     private void pnlKhoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKhoMousePressed

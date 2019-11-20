@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SP.BLL;
+package sound;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -19,9 +19,9 @@ public class sound_huy {
 
     public static void sound(File file) {
         try {
-            File dir = new File("Sound\\");
+            File dir = new File("src\\sound\\");
             String parent = dir.getAbsolutePath();
-
+            System.out.println(parent);
             File sound = new File(parent, file.getName());
 
             Clip clip = AudioSystem.getClip();

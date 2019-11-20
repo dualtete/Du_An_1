@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -192,9 +193,12 @@ public class page_ViTri extends javax.swing.JInternalFrame {
 
                 @Override
                 public void mouseClicked(MouseEvent e) {
+                    
                     lblTitle.setText("Các lô trong kho " + kho.get(j).getTenKho());
                     fillLo(kho.get(j).getIDKho());
                     vt = kho.get(j);
+                    System.out.println(vt);
+                    sound.sound_huy.sound(new File("click.wav"));
 
                 }
             }
@@ -319,12 +323,13 @@ public class page_ViTri extends javax.swing.JInternalFrame {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     vt = kho.get(j);
-
+                    System.out.println(vt.getIDViTri());
                    TonKho = new pnlHangTonKho();
                    pnlAddpnl.removeAll();
                    pnlAddpnl.add(TonKho).setVisible(true);
                    pnlAddpnl.revalidate();
                    pnlAddpnl.repaint();
+                   sound.sound_huy.sound(new File("click.wav"));
                    
                 }
             }

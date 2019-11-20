@@ -5,7 +5,6 @@
  */
 package SP.GUI;
 
-
 import static SP.GUI.pnlThongTin.tblNCC;
 import java.awt.Component;
 import java.io.File;
@@ -20,7 +19,7 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
 
     public static pnlCT_PhieuNhap pnlCTPhieuNhap;
     public static pnlThongTin ThongTin;
-    public static pnlDonDatHang pnlDonDatHang;
+   
 //    public static page_NhapTheo_NCC formThemSP = new page_NhapTheo_NCC();
 
     /**
@@ -115,9 +114,13 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(313, 40));
+        jMenuBar1.setForeground(new java.awt.Color(0, 51, 204));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(313, 45));
 
+        jMenu1.setBackground(new java.awt.Color(0, 153, 255));
+        jMenu1.setForeground(new java.awt.Color(51, 51, 51));
         jMenu1.setText("Đơn đặt hàng");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenu4.setText("Tạo mới");
 
@@ -142,6 +145,7 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Nhập hàng");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenuItem3.setText("Nhập với đơn đặt hàng");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +174,7 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("QL Đơn nhập hàng");
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenuItem5.setText("Đơn đã nhập");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -185,6 +190,7 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu5.setText("Sản phẩm");
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenu6.setText("Danh mục sản phẩm");
 
@@ -224,7 +230,7 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
-        
+
         ThongTin = new pnlThongTin();
         pnlAddPnl.add(ThongTin).setVisible(true);
         pnlAddPnl.revalidate();
@@ -232,7 +238,7 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-       
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void formAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorRemoved
@@ -262,17 +268,12 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
 
-       File file = new File("CENSOR BEEP.wav");
-     SP.BLL.sound_huy.sound(file);
+       
 
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void mniDonDatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDonDatHangActionPerformed
-        pnlDonDatHang = new pnlDonDatHang();
-        pnlAddPnl.removeAll();
-        pnlAddPnl.add(pnlDonDatHang).setVisible(true);
-        pnlAddPnl.revalidate();
-        pnlAddPnl.repaint();
+   
     }//GEN-LAST:event_mniDonDatHangActionPerformed
 
 

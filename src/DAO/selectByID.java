@@ -24,4 +24,7 @@ public class selectByID {
     public static ResultSet NhaCungCap(String id){
         return DBConnection.getData("select * from NHACUNGCAP where IDNCC = '"+id+"'");
     }
+    public static ResultSet ViTri(String id){
+        return DBConnection.getData("select * from vitri where IDViTri ='"+id+"'");
+    }
 }

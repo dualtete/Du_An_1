@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -144,27 +145,31 @@ public class BLL_CTPhieuNhap {
         String ngayNhap = ChuyenDoi.dateTimeString(new Date());
         int lanNhap = SP.DAO.selectMax.maxLanNhap(idPN) + 1;
         String nguoiNhap = DTO.DTO_UserLogin.userName;
-        String viTri = DTO.DTO_UserLogin.viTri;
-        System.out.println(ngayNhap);
-        SP.DAO.update.UpdateCTPN(ngayNhap, lanNhap, nguoiNhap, viTri, idPN);
+        String viTri = SP.GUI.page_ViTri.vt.getIDViTri();
+        System.out.println(viTri);
+        
 
         int maxIdentity = 0 ;
         try {
             while (rsCTPN.next()) {
                 int sl = rsCTPN.getInt("SoLuong");
                 tongTien += rsCTPN.getDouble("GiaNhap") * sl;
+                double giasi = rsCTPN.getDouble("Giasi");
+                double giale = rsCTPN.getDouble("GiaLe");
                 for (int i = 0; i < sl; i++) {
                     maxIdentity = SP.DAO.selectMax.maxIdentityHangTonKho();
-                    String mavach = taoMaVach(viTri, rsCTPN.getString("barcode"), maxIdentity + 1);
-                    SP.DTO.DTO_HangTonKho htk = new DTO_HangTonKho();
+                    String mavach = taoMaVach( rsCTPN.getString("barcode"), maxIdentity + 1);
+                    
 
-                    htk.setChiTiet("");
-                    htk.setIDCTPN(String.valueOf(rsCTPN.getInt("IDCTPhieuNhap")));
-                    htk.setIDViTriHienTai(viTri);
-                    htk.setIdHangTonKho(maxIdentity);
-                    htk.setMaVach(mavach);
-                    htk.setSeriSP("Chua Nhap");
-                    htk.setTrangThai(false);
+                   
+                    String idCTPN = String.valueOf(rsCTPN.getInt("IDCTPhieuNhap"));
+                   
+                    
+                   
+                 
+                    
+                   
+                    SP.DTO.DTO_HangTonKho htk = new DTO_HangTonKho(mavach, "ChuaNhap",idCTPN,"" , rsCTPN.getString("barcode"), false,giale,giasi);
 
                     if (SP.DAO.insert.sanPhamTrongKho(htk) < 1) {
                         System.out.println("Chưa nhập được sản phẩm " + rsCTPN.getString("barcode") + " vào kho!");
@@ -178,12 +183,30 @@ public class BLL_CTPhieuNhap {
         } catch (SQLException ex) {
             Logger.getLogger(BLL_CTPhieuNhap.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if (SP.DAO.update.UpdateCTPN(ngayNhap, lanNhap, nguoiNhap, viTri, idPN) > 0) {
+            System.out.println("Cập nhật ctphieu nhập thành công");
+        }
+        
         SP.DAO.update.UpdatePhieuNhap(tongTien, idPN);
         return true;
     }
 
-    public static String taoMaVach(String idViTri, String barcode, int identity) {
-        String maVach = "VT-" + idViTri + barcode + "-" + identity;
+    public static String taoMaVach( String barcode, int identity) {
+        String maVach = "VT-"  + barcode + "-" + identity;
         return maVach;
     }
+    public static void loadDonViSP(){
+        ResultSet rs = DAO.select.LoadCT_PhieuNhap();
+        DefaultComboBoxModel cbbModel = (DefaultComboBoxModel) cbbDonViSP.getModel();
+        cbbModel.removeAllElements();
+        cbbModel.addElement("---Thêm Mới---");
+        try {
+            while(rs.next()){
+                cbbModel.addElement(rs.getString("DonVi"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_CTPhieuNhap.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 }

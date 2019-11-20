@@ -10,6 +10,7 @@ package SP.GUI;
  * @author bumte
  */
 import static SP.GUI.page_Main_NhapHang.*;
+import java.io.File;
 
 public class pnlThongTin extends javax.swing.JPanel {
 
@@ -152,6 +153,7 @@ public class pnlThongTin extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (tblNCC.getSelectedRowCount() != 1) {
+             
             System.out.println("Cần chọn nhà cung cấp");
             return;
         }
