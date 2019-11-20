@@ -100,7 +100,7 @@ public class BLL_KhachHang {
         DefaultTableModel tblModel = (DefaultTableModel) KhachHang.tblKhachHang.getModel();
         tblModel.setRowCount(0);
         Object obj[] = new Object[12];
-        ResultSet rs = DAO.select.KhachHang("");
+        ResultSet rs = DAO.select.KhachHang(timKiem);
         try {
             while(rs.next()){
                 obj[0] = tblModel.getRowCount() + 1;

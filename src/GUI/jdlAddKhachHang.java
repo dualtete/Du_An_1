@@ -121,14 +121,16 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         });
 
         pnlChinh.setBackground(new java.awt.Color(255, 255, 255));
+        pnlChinh.setMinimumSize(new java.awt.Dimension(1127, 577));
+        pnlChinh.setPreferredSize(new java.awt.Dimension(1149, 577));
         pnlChinh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlTieuDe.setBackground(new java.awt.Color(0, 102, 153));
-        pnlTieuDe.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 102, 153)));
+        pnlTieuDe.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 204, 51)));
         pnlTieuDe.setForeground(new java.awt.Color(0, 102, 153));
         pnlTieuDe.setPreferredSize(new java.awt.Dimension(1149, 50));
 
-        lblTaiKhoan.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblTaiKhoan.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lblTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
         lblTaiKhoan.setText("THÊM MỚI KHÁCH HÀNG");
 
@@ -151,13 +153,13 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
             .addGroup(pnlTieuDeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 601, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 597, Short.MAX_VALUE)
                 .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         pnlTieuDeLayout.setVerticalGroup(
             pnlTieuDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(lblTaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
             .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -166,7 +168,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         btnXoa.setBackground(new java.awt.Color(0, 102, 153));
         btnXoa.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnXoa.setForeground(new java.awt.Color(255, 255, 255));
-        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_delete_50px.png"))); // NOI18N
+        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_trash_35px.png"))); // NOI18N
         btnXoa.setText("XÓA");
         btnXoa.setBorder(null);
         btnXoa.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -178,12 +180,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnXoaMouseExited(evt);
             }
         });
-        pnlChinh.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 120, 47));
+        pnlChinh.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 530, 100, 47));
 
         btnCapNhat.setBackground(new java.awt.Color(0, 102, 153));
         btnCapNhat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnCapNhat.setForeground(new java.awt.Color(255, 255, 255));
-        btnCapNhat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_uninstalling_updates_50px_2.png"))); // NOI18N
+        btnCapNhat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_uninstalling_updates_filled_35px.png"))); // NOI18N
         btnCapNhat.setText("CẬP NHẬT");
         btnCapNhat.setBorder(null);
         btnCapNhat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -199,12 +201,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnCapNhatActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnCapNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, 47));
+        pnlChinh.add(btnCapNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 530, 120, 47));
 
         btnThem.setBackground(new java.awt.Color(0, 102, 153));
         btnThem.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnThem.setForeground(new java.awt.Color(255, 255, 255));
-        btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_save_50px.png"))); // NOI18N
+        btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_save_all_filled_35px.png"))); // NOI18N
         btnThem.setText("LƯU");
         btnThem.setBorder(null);
         btnThem.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -220,12 +222,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnThemActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 500, 120, 47));
+        pnlChinh.add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 530, 90, 47));
 
         btnLamMoi.setBackground(new java.awt.Color(0, 102, 153));
         btnLamMoi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnLamMoi.setForeground(new java.awt.Color(255, 255, 255));
-        btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_refresh_50px.png"))); // NOI18N
+        btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_synchronize_filled_35px.png"))); // NOI18N
         btnLamMoi.setText("LÀM MỚI");
         btnLamMoi.setBorder(null);
         btnLamMoi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -241,7 +243,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnLamMoiActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 500, -1, 45));
+        pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 530, 120, 45));
 
         jPanel28.setBackground(new java.awt.Color(255, 255, 255));
         jPanel28.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
@@ -257,7 +259,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblMaNV.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtIDKhachHang.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtIDKhachHang.setText("HUY-1234");
         txtIDKhachHang.setBorder(null);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -354,7 +355,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jLabel19.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtHoTen1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtHoTen1.setText("TẠ QUANG HUY");
         txtHoTen1.setBorder(null);
 
         lblTBHoTen1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -399,7 +399,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtSDT.setText("00000000000");
         txtSDT.setToolTipText("");
         txtSDT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
@@ -574,7 +573,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(lblGioiTinh, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addComponent(lblGioiTinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(radNam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(radNu)
                 .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -723,7 +722,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnthemActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnthem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 30));
+        pnlChinh.add(btnthem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -733,7 +732,9 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlChinh, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlChinh, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -797,18 +798,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNgaySinhKeyReleased
 
-    private void btnthemItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_btnthemItemStateChanged
-        
-    }//GEN-LAST:event_btnthemItemStateChanged
-
-    private void btnthemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnthemMousePressed
-        //pupLoaiKH.show(btnthem, evt.getX(), evt.getY());
-    }//GEN-LAST:event_btnthemMousePressed
-
-    private void btnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemActionPerformed
-        
-    }//GEN-LAST:event_btnthemActionPerformed
-
     private void mniUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniUpdateActionPerformed
         SuaKhachHang jdl = new SuaKhachHang(new JFrame(), true);
         jdl.setVisible(true);
@@ -820,7 +809,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     }//GEN-LAST:event_mniAddActionPerformed
 
     private void btnThemLoaiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemLoaiMousePressed
-        pupLoaiKH.show(btnthem, evt.getX(), evt.getY());
+        pupLoaiKH.show(btnThemLoai, evt.getX(), evt.getY());
     }//GEN-LAST:event_btnThemLoaiMousePressed
 
     private void btnThemLoaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemLoaiActionPerformed
@@ -837,8 +826,20 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     }//GEN-LAST:event_formWindowOpened
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void btnthemItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_btnthemItemStateChanged
+
+    }//GEN-LAST:event_btnthemItemStateChanged
+
+    private void btnthemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnthemMousePressed
+        //pupLoaiKH.show(btnthem, evt.getX(), evt.getY());
+    }//GEN-LAST:event_btnthemMousePressed
+
+    private void btnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemActionPerformed
+
+    }//GEN-LAST:event_btnthemActionPerformed
     
     /**
      * @param args the command line arguments

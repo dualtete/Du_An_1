@@ -84,10 +84,10 @@ public class insert {
                 + "           ,[TienKiQuy] "
                 + "           ,[NguoiTao]) "
                 + "     VALUES "
-                + "           (N' " + nv.getIDNV()
-                + "' "
-                + "           ,N' " + nv.getHoTen()
-                + "' "
+                + "           (N'" + nv.getIDNV()
+                + "'"
+                + "           ,N'" + nv.getHoTen()
+                + "'"
                 + "           ,'" + nv.getSDT() + "' "
                 + "           ,'" + nv.getCMND() + "' "
                 + "           ,'" + nv.getNgayCap() + "' "

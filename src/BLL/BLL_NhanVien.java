@@ -7,13 +7,24 @@ package BLL;
 
 import DTO.DTO_NhanVien;
 import GUI.TTTaiKhoan;
+import GUI.ThongBao;
 import GUI.jdlAddNhanVien;
 import static GUI.jdlAddNhanVien.*;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -36,6 +47,10 @@ public class BLL_NhanVien {
         txtNgayCapCMND.setText(nv.getNgayCap());
         txtNoiCapCMND.setText(nv.getNoiCap());
         txtSDT.setText(nv.getSDT());
+        lblHinhAnh.setToolTipText(nv.getHinhAnh());
+        if(nv.getHinhAnh() != null){
+            jdlAddNhanVien.lblHinhAnh.setIcon(readLogo(nv.getHinhAnh()));
+        }
     }
 
     public static void getComponent(DTO.DTO_NhanVien nv) {
@@ -51,13 +66,14 @@ public class BLL_NhanVien {
         nv.setNgaySinh(txtNgaySinh.getText());
         nv.setNoiCap(txtNoiCapCMND.getText());
         nv.setSDT(txtSDT.getText().replace("-", ""));
+        nv.setHinhAnh(jdlAddNhanVien.lblHinhAnh.getToolTipText());
     }
 
-    public static void loadBangNV() {
+    public static void loadBangNV(String timKiem) {
         DefaultTableModel tblModel = (DefaultTableModel) TTTaiKhoan.tblNhanVien.getModel();
         tblModel.setRowCount(0);
         Object obj[] = new Object[17];
-        ResultSet rs = DAO.select.NhanVien("");
+        ResultSet rs = DAO.select.NhanVien(timKiem);
         try {
             while (rs.next()) {
                 obj[0] = tblModel.getRowCount() + 1;
@@ -86,6 +102,12 @@ public class BLL_NhanVien {
 
     public static boolean insert() {
 //        code validate
+        if(!kiemTra("MaNV")){
+            return false;
+        }
+        if(!kiemTra("hoVaTen")){
+            return false;
+        }
 
         DTO.DTO_NhanVien nv = new DTO_NhanVien();
         getComponent(nv);
@@ -94,7 +116,7 @@ public class BLL_NhanVien {
         nv.setNguoiTao(DTO.DTO_UserLogin.userName);
         if (DAO.insert.NhanVien(nv) > 0) {
             GUI.ThongBao.ThongBao("Thêm nhân viên thành công!", "Thông báo");
-            loadBangNV();
+            loadBangNV("");
             return true;
         }
         GUI.ThongBao.ThongBao("Thêm nhân viên thất bại!", "Thông báo");
@@ -136,7 +158,7 @@ public class BLL_NhanVien {
         getComponent(nv);
         if (DAO.update.NhanVien(nv) > 0) {
             GUI.ThongBao.ThongBao("Cập nhật thành công!", "Thông báo");
-            loadBangNV();
+            loadBangNV("");
             return true;
         }
         GUI.ThongBao.ThongBao("Cập nhật thất bại!", "Thông báo");
@@ -185,5 +207,54 @@ public class BLL_NhanVien {
                 break;
         }
         return kt;
+    }
+    public static boolean saveLogo(File file){
+        File dir = new File("logosNhanVien");
+        //Tạo thư mục nếu chưa tồn tại
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+        File newFile = new File(dir, file.getName());
+        try{
+            //Copy vào thư mục logosNhanVien (đè lên nếu đã tồn tại)
+            Path source = Paths.get(file.getAbsolutePath());
+            Path destination = Paths.get(newFile.getAbsolutePath());
+            Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+            return true;
+        }catch(Exception ex){
+            return false;
+        }
+    }
+    public static ImageIcon readLogo(String fileName) {
+        File path = new File("logosNhanVien", fileName);
+        return new ImageIcon(path.getAbsolutePath());
+    }
+    
+    public static void selectImage(){
+        if(jdlAddNhanVien.fileChooser.showOpenDialog(new JFrame()) == JFileChooser.APPROVE_OPTION){
+            File FILE = jdlAddNhanVien.fileChooser.getSelectedFile();
+            if(!FILE.getName().matches(".+(\\.png|\\.jpg|\\.gif)$")){
+                GUI.ThongBao.ThongBao("Đây không phải hình ảnh!", "Thông báo");
+                return;
+            }
+            if(saveLogo(FILE)){
+                //Hiển thị hình lên form
+                jdlAddNhanVien.lblHinhAnh.setIcon(readLogo(FILE.getName()));
+                jdlAddNhanVien.lblHinhAnh.setToolTipText(FILE.getName());
+            }
+        }
+    }
+    public static boolean delete (JTable tbl){
+        int dongXoa[] = tbl.getSelectedRows();
+        String id;
+        if(ThongBao.ThongBaoLoai2("Bạn có chắc chắn muốn xóa không?", "Thông báo") != JOptionPane.OK_OPTION){
+            return false;
+        }
+        for (int i = dongXoa.length -1; i >= 0; i--) {
+            id = tbl.getValueAt(dongXoa[i], 2).toString();
+            DAO.delete.xoaNhanVien(tbl.getValueAt(dongXoa[i], 1).toString());
+        }
+        GUI.ThongBao.ThongBao("Xóa thành công!", "Thông báo");
+        return true;
     }
 }

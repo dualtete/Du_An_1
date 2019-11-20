@@ -100,7 +100,7 @@ public class frmMain extends javax.swing.JFrame {
                         lblTime.setText(gio + ":" + phut + ":" + giay + " " + buoi);
                         sleep(1000);
                         Calendar now = Calendar.getInstance();
-                        Home.lblThongTinHome.setText("Xin chào!, hôm nay là ngày " + now.get(Calendar.DATE) + "-" + (now.get(Calendar.MONTH) + 1) + "-" + now.get(Calendar.YEAR));
+                        Home.lblDate.setText("Xin chào!, hôm nay là ngày " + now.get(Calendar.DATE) + "-" + (now.get(Calendar.MONTH) + 1) + "-" + now.get(Calendar.YEAR));
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -1087,7 +1087,7 @@ public class frmMain extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

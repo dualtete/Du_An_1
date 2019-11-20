@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import static GUI.ViTri.tblNhaCungCap;
 import javax.swing.JFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -19,7 +20,8 @@ public class DSNhaCungCap extends javax.swing.JInternalFrame {
      */
     public DSNhaCungCap() {
         initComponents();
-        
+        tblNhaCungCap.getTableHeader().setDefaultRenderer(new ViTri.HeaderColor());
+        tblNhaCungCap.getTableHeader().setReorderingAllowed(true);
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
         bi.setNorthPane(null);
@@ -37,8 +39,8 @@ public class DSNhaCungCap extends javax.swing.JInternalFrame {
         pnlDaiLy = new javax.swing.JPanel();
         pnlTieuDe = new javax.swing.JPanel();
         lblThongTin = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        btnPrev = new javax.swing.JButton();
+        csbNhaCungCap = new javax.swing.JScrollPane();
         tblNhaCungCap = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(1430, 910));
@@ -71,12 +73,12 @@ public class DSNhaCungCap extends javax.swing.JInternalFrame {
         lblThongTin.setForeground(new java.awt.Color(0, 102, 153));
         lblThongTin.setText("DANH SÁCH NHÀ CUNG CẤP");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_arrows_long_left_50px_1.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_arrows_long_left_50px_6.png"))); // NOI18N
+        btnPrev.setBackground(new java.awt.Color(255, 255, 255));
+        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_arrows_long_left_50px_1.png"))); // NOI18N
+        btnPrev.setBorder(null);
+        btnPrev.setBorderPainted(false);
+        btnPrev.setContentAreaFilled(false);
+        btnPrev.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_arrows_long_left_50px_6.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlTieuDeLayout = new javax.swing.GroupLayout(pnlTieuDe);
         pnlTieuDe.setLayout(pnlTieuDeLayout);
@@ -84,7 +86,7 @@ public class DSNhaCungCap extends javax.swing.JInternalFrame {
             pnlTieuDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTieuDeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btnPrev)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblThongTin, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -94,7 +96,7 @@ public class DSNhaCungCap extends javax.swing.JInternalFrame {
             .addGroup(pnlTieuDeLayout.createSequentialGroup()
                 .addGroup(pnlTieuDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblThongTin, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -124,21 +126,21 @@ public class DSNhaCungCap extends javax.swing.JInternalFrame {
                 tblNhaCungCapMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(tblNhaCungCap);
+        csbNhaCungCap.setViewportView(tblNhaCungCap);
 
         javax.swing.GroupLayout pnlDaiLyLayout = new javax.swing.GroupLayout(pnlDaiLy);
         pnlDaiLy.setLayout(pnlDaiLyLayout);
         pnlDaiLyLayout.setHorizontalGroup(
             pnlDaiLyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTieuDe, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)
+            .addComponent(csbNhaCungCap, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)
         );
         pnlDaiLyLayout.setVerticalGroup(
             pnlDaiLyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDaiLyLayout.createSequentialGroup()
                 .addComponent(pnlTieuDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE))
+                .addComponent(csbNhaCungCap, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,8 +181,8 @@ public class DSNhaCungCap extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton btnPrev;
+    private javax.swing.JScrollPane csbNhaCungCap;
     private javax.swing.JLabel lblThongTin;
     private javax.swing.JPanel pnlDaiLy;
     private javax.swing.JPanel pnlTieuDe;

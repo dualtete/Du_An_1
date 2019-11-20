@@ -50,7 +50,7 @@ public class Home extends javax.swing.JInternalFrame {
         pnlHome = new javax.swing.JPanel();
         pnlChinh = new javax.swing.JPanel();
         pnlTieuDe = new javax.swing.JPanel();
-        lblThongTinHome = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
         pnlBody = new javax.swing.JPanel();
         pnlRight = new javax.swing.JPanel();
         btnRefresh = new javax.swing.JButton();
@@ -60,13 +60,13 @@ public class Home extends javax.swing.JInternalFrame {
         btnCalenter = new javax.swing.JButton();
         btnWeb = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        pnlBottom = new javax.swing.JPanel();
+        pnlBotRight = new javax.swing.JPanel();
         lblWeb = new javax.swing.JLabel();
         lblXemWeb = new javax.swing.JLabel();
         lblView = new javax.swing.JLabel();
         lblXemAll = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        pnlBotLeft = new javax.swing.JPanel();
         lblXemNgay = new javax.swing.JLabel();
         lblCalenter = new javax.swing.JLabel();
         lblFB = new javax.swing.JLabel();
@@ -116,9 +116,9 @@ public class Home extends javax.swing.JInternalFrame {
         pnlTieuDe.setForeground(new java.awt.Color(0, 102, 153));
         pnlTieuDe.setPreferredSize(new java.awt.Dimension(814, 50));
 
-        lblThongTinHome.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblThongTinHome.setForeground(new java.awt.Color(0, 102, 153));
-        lblThongTinHome.setText("hihi");
+        lblDate.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(0, 102, 153));
+        lblDate.setText("Ngày tháng năm");
 
         javax.swing.GroupLayout pnlTieuDeLayout = new javax.swing.GroupLayout(pnlTieuDe);
         pnlTieuDe.setLayout(pnlTieuDeLayout);
@@ -126,12 +126,12 @@ public class Home extends javax.swing.JInternalFrame {
             pnlTieuDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTieuDeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblThongTinHome, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlTieuDeLayout.setVerticalGroup(
             pnlTieuDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblThongTinHome, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         pnlBody.setBackground(new java.awt.Color(255, 255, 255));
@@ -254,9 +254,9 @@ public class Home extends javax.swing.JInternalFrame {
                 .addComponent(btnWeb, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBottom.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBotRight.setBackground(new java.awt.Color(255, 255, 255));
 
         lblWeb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ads.png"))); // NOI18N
         lblWeb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -274,39 +274,39 @@ public class Home extends javax.swing.JInternalFrame {
         lblXemAll.setText("Chọn để xem tất cả");
         lblXemAll.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBotRightLayout = new javax.swing.GroupLayout(pnlBotRight);
+        pnlBotRight.setLayout(pnlBotRightLayout);
+        pnlBotRightLayout.setHorizontalGroup(
+            pnlBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBotRightLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(pnlBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlBotRightLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(lblView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(lblWeb, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(pnlBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBotRightLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(lblXemWeb))
                     .addComponent(lblXemAll, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlBotRightLayout.setVerticalGroup(
+            pnlBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBotRightLayout.createSequentialGroup()
+                .addGroup(pnlBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblXemWeb, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWeb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblView)
                     .addComponent(lblXemAll, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBotLeft.setBackground(new java.awt.Color(255, 255, 255));
 
         lblXemNgay.setFont(new java.awt.Font("Dialog", 3, 16)); // NOI18N
         lblXemNgay.setForeground(new java.awt.Color(51, 51, 51));
@@ -324,50 +324,50 @@ public class Home extends javax.swing.JInternalFrame {
         lblXemFB.setText("Click để chuyển tới fanpage dienmayvituan");
         lblXemFB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBotLeftLayout = new javax.swing.GroupLayout(pnlBotLeft);
+        pnlBotLeft.setLayout(pnlBotLeftLayout);
+        pnlBotLeftLayout.setHorizontalGroup(
+            pnlBotLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBotLeftLayout.createSequentialGroup()
+                .addGroup(pnlBotLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBotLeftLayout.createSequentialGroup()
                         .addComponent(lblCalenter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblXemNgay))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(pnlBotLeftLayout.createSequentialGroup()
                         .addComponent(lblFB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblXemFB)))
                 .addGap(0, 41, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlBotLeftLayout.setVerticalGroup(
+            pnlBotLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBotLeftLayout.createSequentialGroup()
+                .addGroup(pnlBotLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCalenter)
                     .addComponent(lblXemNgay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlBotLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblFB)
                     .addComponent(lblXemFB, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBottomLayout = new javax.swing.GroupLayout(pnlBottom);
+        pnlBottom.setLayout(pnlBottomLayout);
+        pnlBottomLayout.setHorizontalGroup(
+            pnlBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBottomLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlBotLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlBotRight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(108, 108, 108))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        pnlBottomLayout.setVerticalGroup(
+            pnlBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlBotLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlBotRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnlCacTT.setBackground(new java.awt.Color(255, 255, 255));
@@ -802,7 +802,7 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlBodyLayout.createSequentialGroup()
                         .addGap(99, 99, 99)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 997, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlBottom, javax.swing.GroupLayout.PREFERRED_SIZE, 997, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(155, Short.MAX_VALUE))
                     .addGroup(pnlBodyLayout.createSequentialGroup()
                         .addGap(111, 111, 111)
@@ -824,7 +824,7 @@ public class Home extends javax.swing.JInternalFrame {
                         .addGap(57, 57, 57)
                         .addComponent(pnlCacTT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlBottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -999,11 +999,9 @@ public class Home extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbl;
     private javax.swing.JLabel lblCalenter;
+    public static javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblFB;
     private javax.swing.JLabel lblKhachHang;
     private javax.swing.JLabel lblKho;
@@ -1011,7 +1009,6 @@ public class Home extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNhan;
     private javax.swing.JLabel lblNhanVien;
     private javax.swing.JLabel lblSanPham;
-    public static javax.swing.JLabel lblThongTinHome;
     private javax.swing.JLabel lblView;
     private javax.swing.JLabel lblWeb;
     private javax.swing.JLabel lblXemAll;
@@ -1019,6 +1016,9 @@ public class Home extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblXemNgay;
     private javax.swing.JLabel lblXemWeb;
     private javax.swing.JPanel pnlBody;
+    private javax.swing.JPanel pnlBotLeft;
+    private javax.swing.JPanel pnlBotRight;
+    private javax.swing.JPanel pnlBottom;
     private javax.swing.JPanel pnlCacTT;
     private javax.swing.JPanel pnlChinh;
     private javax.swing.JPanel pnlHome;

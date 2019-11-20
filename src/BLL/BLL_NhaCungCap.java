@@ -74,7 +74,7 @@ public class BLL_NhaCungCap {
         //Thêm nhà cung cấp theo các dữ liệu dược ghi trong đối tượng ncc
         if (DAO.insert.NhaCungCap(ncc) > 0) {
             GUI.ThongBao.ThongBao("Thêm nhà cung cấp mới thành công!", "Thông báo");
-            loadBangNCC();
+            loadBangNCC("");
             return true;
         }
         GUI.ThongBao.ThongBao("Thêm nhà cung cấp thất bại!", "Thông báo");
@@ -92,7 +92,7 @@ public class BLL_NhaCungCap {
         //cập nhật nhà cung cấp theo các dữ liệu dược ghi trong đối tượng ncc
         if (DAO.update.NhaCungCap(ncc) > 0) {
             GUI.ThongBao.ThongBao("Cập nhật thành công!", "Thông báo");
-            loadBangNCC();
+            loadBangNCC("");
             return true;
         }
         GUI.ThongBao.ThongBao("Cập nhật thất bại!", "Thông báo");
@@ -100,11 +100,11 @@ public class BLL_NhaCungCap {
 
     }
 
-    public static void loadBangNCC() {
+    public static void loadBangNCC(String timKiem) {
         DefaultTableModel tbModel = (DefaultTableModel) ViTri.tblNhaCungCap.getModel();
         tbModel.setRowCount(0);
         Object obj[] = new Object[15];
-        ResultSet rs = DAO.select.NhaCungCap(true, "");
+        ResultSet rs = DAO.select.NhaCungCap(true, timKiem);
         try {
             while (rs.next()) {
                 obj[0] = tbModel.getRowCount() +1;

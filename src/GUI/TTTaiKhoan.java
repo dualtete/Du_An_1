@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import static GUI.ViTri.tblNhaCungCap;
 import static GUI.ViTri.txtNguoiLap;
 import java.awt.Color;
 import java.sql.ResultSet;
@@ -26,7 +27,8 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
      */
     public TTTaiKhoan() {
         initComponents();
-
+        tblNhanVien.getTableHeader().setDefaultRenderer(new ViTri.HeaderColor());
+        tblNhanVien.setAutoCreateRowSorter(true);
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
         bi.setNorthPane(null);
@@ -54,12 +56,9 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         btnExport = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        btnImport2 = new javax.swing.JButton();
         btnTimKiem1 = new javax.swing.JButton();
         txtTimKiem1 = new javax.swing.JTextField();
         sptTimKiem1 = new javax.swing.JSeparator();
-        radLocTheoTen1 = new javax.swing.JRadioButton();
-        radLocTheoMa1 = new javax.swing.JRadioButton();
         pnlTaiKhoan = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblTaiKhoan = new javax.swing.JTable();
@@ -207,7 +206,7 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblNhanVien.setRowHeight(25);
+        tblNhanVien.setRowHeight(35);
         tblNhanVien.getTableHeader().setReorderingAllowed(false);
         tblNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -275,7 +274,7 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(69, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnImport, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,20 +290,6 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        btnImport2.setBackground(new java.awt.Color(255, 255, 255));
-        btnImport2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnImport2.setForeground(new java.awt.Color(255, 255, 255));
-        btnImport2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_filter_50px.png"))); // NOI18N
-        btnImport2.setBorder(null);
-        btnImport2.setBorderPainted(false);
-        btnImport2.setContentAreaFilled(false);
-        btnImport2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_filter_50px_1.png"))); // NOI18N
-        btnImport2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImport2ActionPerformed(evt);
-            }
-        });
 
         btnTimKiem1.setBackground(new java.awt.Color(255, 255, 255));
         btnTimKiem1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -322,6 +307,11 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
                 btnTimKiem1MouseExited(evt);
             }
         });
+        btnTimKiem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimKiem1ActionPerformed(evt);
+            }
+        });
 
         txtTimKiem1.setBackground(new java.awt.Color(255, 255, 255));
         txtTimKiem1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -329,19 +319,6 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         txtTimKiem1.setBorder(null);
 
         sptTimKiem1.setBackground(new java.awt.Color(0, 102, 153));
-
-        radLocTheoTen1.setBackground(new java.awt.Color(255, 255, 255));
-        radLocTheoTen1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        radLocTheoTen1.setForeground(new java.awt.Color(0, 102, 153));
-        radLocTheoTen1.setSelected(true);
-        radLocTheoTen1.setText("Sắp Xếp Theo Tên");
-        radLocTheoTen1.setContentAreaFilled(false);
-
-        radLocTheoMa1.setBackground(new java.awt.Color(255, 255, 255));
-        radLocTheoMa1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        radLocTheoMa1.setForeground(new java.awt.Color(0, 102, 153));
-        radLocTheoMa1.setText("Sắp Xếp Theo Mã");
-        radLocTheoMa1.setContentAreaFilled(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -354,27 +331,13 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtTimKiem1)
                     .addComponent(sptTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addComponent(btnImport2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(radLocTheoTen1)
-                .addGap(18, 18, 18)
-                .addComponent(radLocTheoMa1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(488, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnImport2)
-                    .addComponent(btnTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radLocTheoTen1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(radLocTheoMa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addComponent(txtTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -1332,10 +1295,10 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         pnlViTri.setLayout(pnlViTriLayout);
         pnlViTriLayout.setHorizontalGroup(
             pnlViTriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlTieuDe, javax.swing.GroupLayout.DEFAULT_SIZE, 1440, Short.MAX_VALUE)
+            .addComponent(pnlTieuDe, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)
             .addGroup(pnlViTriLayout.createSequentialGroup()
                 .addGap(190, 190, 190)
-                .addComponent(pnlChuabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(pnlChuabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 840, Short.MAX_VALUE)
                 .addGap(390, 390, 390))
             .addComponent(pnlBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1455,7 +1418,7 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         BLL.BLL_TaiKhoan.loadCBBQuyen();
         BLL.BLL_TaiKhoan.loadBangTaiKhoan();
-        BLL.BLL_NhanVien.loadBangNV();
+        BLL.BLL_NhanVien.loadBangNV("");
         BLL.BLL_Quyen.loadBangQuyen();
         BLL.BLL_TaiKhoan.loadCBBNhanVien();
         txtNguoiLap.setText(DTO.DTO_UserLogin.userName);
@@ -1533,10 +1496,6 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnImportActionPerformed
 
-    private void btnImport2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImport2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnImport2ActionPerformed
-
     private void btnTimKiem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTimKiem1MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTimKiem1MouseEntered
@@ -1545,13 +1504,16 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTimKiem1MouseExited
 
+    private void btnTimKiem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiem1ActionPerformed
+        BLL.BLL_NhanVien.loadBangNV(txtTimKiem1.getText());
+    }//GEN-LAST:event_btnTimKiem1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
     private javax.swing.JButton btnExport;
     private javax.swing.JButton btnImport;
-    private javax.swing.JButton btnImport2;
     private javax.swing.JButton btnLamMoi;
     private javax.swing.JButton btnLamMoiQuyen;
     private javax.swing.JButton btnQuyen;
@@ -1625,8 +1587,6 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pnlTieuDe;
     private javax.swing.JPanel pnlTrangThai;
     private javax.swing.JPanel pnlViTri;
-    private javax.swing.JRadioButton radLocTheoMa1;
-    private javax.swing.JRadioButton radLocTheoTen1;
     private javax.swing.JScrollPane scbNhanVien;
     private javax.swing.JSeparator sptTimKiem1;
     public static javax.swing.JTable tblNhanVien;

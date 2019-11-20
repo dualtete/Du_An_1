@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import GUI.ViTri.HeaderColor;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,22 +13,25 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
  * @author Admin
  */
 public class KhachHang extends javax.swing.JInternalFrame {
-
     /**
      * Creates new form HuyTrinh
      */
     public KhachHang(){
         initComponents();
-        
+        tblKhachHang.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblKhachHang.setAutoCreateRowSorter(true);
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
         bi.setNorthPane(null);
+       
     }
 
     /**
@@ -48,12 +52,9 @@ public class KhachHang extends javax.swing.JInternalFrame {
         tblKhachHang = new javax.swing.JTable();
         pnlThaoTac = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        btnImport2 = new javax.swing.JButton();
         btnTimKiem1 = new javax.swing.JButton();
         txtTimKiem1 = new javax.swing.JTextField();
         sptTimKiem1 = new javax.swing.JSeparator();
-        radLocTheoTen1 = new javax.swing.JRadioButton();
-        radLocTheoMa1 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         btnImport = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
@@ -163,24 +164,13 @@ public class KhachHang extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane3.setViewportView(tblKhachHang);
+        if (tblKhachHang.getColumnModel().getColumnCount() > 0) {
+            tblKhachHang.getColumnModel().getColumn(0).setPreferredWidth(5);
+        }
 
         pnlThaoTac.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        btnImport2.setBackground(new java.awt.Color(255, 255, 255));
-        btnImport2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnImport2.setForeground(new java.awt.Color(255, 255, 255));
-        btnImport2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_filter_50px.png"))); // NOI18N
-        btnImport2.setBorder(null);
-        btnImport2.setBorderPainted(false);
-        btnImport2.setContentAreaFilled(false);
-        btnImport2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_filter_50px_1.png"))); // NOI18N
-        btnImport2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImport2ActionPerformed(evt);
-            }
-        });
 
         btnTimKiem1.setBackground(new java.awt.Color(255, 255, 255));
         btnTimKiem1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -198,6 +188,11 @@ public class KhachHang extends javax.swing.JInternalFrame {
                 btnTimKiem1MouseExited(evt);
             }
         });
+        btnTimKiem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimKiem1ActionPerformed(evt);
+            }
+        });
 
         txtTimKiem1.setBackground(new java.awt.Color(255, 255, 255));
         txtTimKiem1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -205,21 +200,6 @@ public class KhachHang extends javax.swing.JInternalFrame {
         txtTimKiem1.setBorder(null);
 
         sptTimKiem1.setBackground(new java.awt.Color(0, 102, 153));
-
-        radLocTheoTen1.setBackground(new java.awt.Color(255, 255, 255));
-        bgrLoc.add(radLocTheoTen1);
-        radLocTheoTen1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        radLocTheoTen1.setForeground(new java.awt.Color(0, 102, 153));
-        radLocTheoTen1.setSelected(true);
-        radLocTheoTen1.setText("Lọc Theo Tên");
-        radLocTheoTen1.setContentAreaFilled(false);
-
-        radLocTheoMa1.setBackground(new java.awt.Color(255, 255, 255));
-        bgrLoc.add(radLocTheoMa1);
-        radLocTheoMa1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        radLocTheoMa1.setForeground(new java.awt.Color(0, 102, 153));
-        radLocTheoMa1.setText("Lọc Theo Mã");
-        radLocTheoMa1.setContentAreaFilled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -232,13 +212,7 @@ public class KhachHang extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtTimKiem1)
                     .addComponent(sptTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addComponent(btnImport2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(radLocTheoTen1)
-                .addGap(18, 18, 18)
-                .addComponent(radLocTheoMa1)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,15 +224,7 @@ public class KhachHang extends javax.swing.JInternalFrame {
                         .addGap(0, 0, 0)
                         .addComponent(sptTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnImport2)
-                        .addComponent(btnTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radLocTheoTen1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(radLocTheoMa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -360,8 +326,8 @@ public class KhachHang extends javax.swing.JInternalFrame {
                 .addContainerGap(766, Short.MAX_VALUE))
             .addGroup(pnlChinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlChinhLayout.createSequentialGroup()
-                    .addGap(0, 70, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(72, 72, 72)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout pnlKhachHangLayout = new javax.swing.GroupLayout(pnlKhachHang);
@@ -394,7 +360,14 @@ public class KhachHang extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseClicked
-        
+        if (evt.getClickCount() == 2) {
+            jdlAddKhachHang jdl = new jdlAddKhachHang(new JFrame(), true);
+            jdlAddKhachHang.btnThem.setEnabled(false);
+            jdlAddKhachHang.txtIDKhachHang.setEditable(false);
+            //BLL.BLL_KhachHang.click();
+            jdl.setVisible(true);
+
+        }
     }//GEN-LAST:event_tblKhachHangMouseClicked
 
     private void tblKhachHangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMousePressed
@@ -403,10 +376,6 @@ public class KhachHang extends javax.swing.JInternalFrame {
             //        }
         //        BLL.BLL_NhanVien.click();
     }//GEN-LAST:event_tblKhachHangMousePressed
-
-    private void btnImport2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImport2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnImport2ActionPerformed
 
     private void btnTimKiem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTimKiem1MouseEntered
         // TODO add your handling code here:
@@ -441,12 +410,15 @@ public class KhachHang extends javax.swing.JInternalFrame {
         BLL.BLL_KhachHang.loadDSKhachHang("");
     }//GEN-LAST:event_formInternalFrameOpened
 
+    private void btnTimKiem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiem1ActionPerformed
+        BLL.BLL_KhachHang.loadDSKhachHang(txtTimKiem1.getText());
+    }//GEN-LAST:event_btnTimKiem1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgrLoc;
     private javax.swing.JButton btnExport;
     private javax.swing.JButton btnImport;
-    private javax.swing.JButton btnImport2;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnTimKiem1;
     private javax.swing.JPanel jPanel1;
@@ -457,8 +429,6 @@ public class KhachHang extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pnlKhachHang;
     private javax.swing.JPanel pnlThaoTac;
     private javax.swing.JPanel pnlTieuDe;
-    private javax.swing.JRadioButton radLocTheoMa1;
-    private javax.swing.JRadioButton radLocTheoTen1;
     private javax.swing.JSeparator sptTimKiem1;
     public static javax.swing.JTable tblKhachHang;
     public static javax.swing.JTextField txtTimKiem1;
