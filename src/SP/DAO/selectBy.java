@@ -49,12 +49,48 @@ public class selectBy {
     public static ResultSet CTPhieuNhap_By_IDPN(String idPN) {
         return DBConnection.getData("select * from CT_PhieuNhap where IDPN = '" + idPN + "' ");
     }
-    public static ResultSet HangTonKhoByPN_TrangThai(String IDPN, boolean TrangThai){
-        String cauLenh = "select * from HangTonKhoByPhieuNhap where idphieunhap = '"+IDPN+"' and (trangthaitk = '"+TrangThai+"')";
+
+    public static ResultSet HangTonKhoByPN_TrangThai(String IDPN, boolean TrangThai) {
+        String cauLenh = "select * from HangTonKhoByPhieuNhap where idphieunhap = '" + IDPN + "' and (trangthaitk = '" + TrangThai + "')";
         return DBConnection.getData(cauLenh);
     }
-    public static ResultSet HangTonKhoByTrangThai(boolean trangThai){
-        String cauLenh = "select * from HangTonKhoByPhieuNhap where trangthaitk = '"+trangThai+"'";
+
+    public static ResultSet HangTonKhoByTrangThai(boolean trangThai) {
+        String cauLenh = "select * from HangTonKhoByPhieuNhap where trangthaitk = '" + trangThai + "'";
+        return DBConnection.getData(cauLenh);
+    }
+
+    public static ResultSet HangTonKho_ByIDViTri(String id) {
+        String cauLenh = "SELECT [TenSP] "
+                + "      ,[HangSX] "
+                + "      ,[TenLoaiSP] "
+                + "      ,[masp] "
+                + "      ,[giasi] "
+                + "      ,[giale] "
+                + "	  , COUNT(masp) as soluong "
+                + "  FROM [dbo].[hangtonkho] "
+                + "   where idvitrihientai = '" + id + "' "
+                + "  group by [TenSP] "
+                + "      ,[HangSX] "
+                + "      ,[TenLoaiSP] "
+                + "      ,[masp] "
+                + "      ,[giasi] "
+                + "      ,[giale] ";
+        return DBConnection.getData(cauLenh);
+    }
+
+    public static ResultSet View_PhieuNhapDaDat(int trangThai) {
+        String cauLenh = "select * from view_phieuNhapdadat where trangthai = " + trangThai + "";
+        return DBConnection.getData(cauLenh);
+    }
+
+    public static ResultSet view_PhieuNhapByID(String id) {
+        String cauLenh = "select * from view_phieuNhapdadat where idpn = '" + id + "'";
+        return DBConnection.getData(cauLenh);
+    }
+
+    public static ResultSet view_CTPhieuNhap(String idPN) {
+        String cauLenh = "select * from view_CTPhieuNhap where IDPN = '" + idPN + "'";
         return DBConnection.getData(cauLenh);
     }
 }

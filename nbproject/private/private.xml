@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/bumte/Desktop/DuAn1_khoanxpk01148_PT14301B/DuAn1_khoanxpk01148_PT14301B/src/GUI/DoanhThu.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_TonKho.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/update.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlHangTonKho.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/page_Main_NhapHang.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_CTPhieuNhap.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/selectBy.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/jdlNhapHang.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/insert.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DTO/DTO_HangTonKho.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlCT_PhieuNhap.java</file>
         </group>
     </open-files>
 </project-private>

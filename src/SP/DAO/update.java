@@ -5,7 +5,9 @@
  */
 package SP.DAO;
 
+import BLL.ChuyenDoi;
 import DAO.DBConnection;
+import java.util.Date;
 
 /**
  *
@@ -30,6 +32,17 @@ public class update {
                 + "      ,[NguoiNhap] = '" + nguoiNhap + "' "
                 + "      ,[IDViTri] = '" + viTri + "' "
                 + " WHERE IDPN = '" + IDPN + "'";
+        return DBConnection.ExecuteData(cauLenh);
+    }
+
+    public static int UpdateHangTonKho(String mavach, SP.DTO.DTO_HangTonKho htk) {
+        String cauLenh = "set dateformat dMy UPDATE [dbo].[SANPHAMTRONGKHO] "
+                + "   SET [SeriSP] = '" + mavach + "' "
+                + "      ,[ChiTiet] = N'" + htk.getChiTiet() + "' "
+                + "      ,[IDViTriHienTai] = '" + htk.getIDViTriHienTai() + "' "
+                + "      ,[TrangThai] = '" + htk.isTrangThai() + "' "
+                + "      ,[NgayVaoKho] = '" + ChuyenDoi.dateTimeString(new Date()) + "' "
+                + " WHERE MaVach = '" + mavach + "' or SeriSP = '"+mavach+"'";
         return DBConnection.ExecuteData(cauLenh);
     }
 }

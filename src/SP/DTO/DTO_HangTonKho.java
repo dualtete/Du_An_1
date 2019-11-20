@@ -15,8 +15,127 @@ public class DTO_HangTonKho {
     String seriSP;
     String IDCTPN;
     String chiTiet;
+    String barcode;
     String IDViTriHienTai;
     boolean trangThai;
+    double giaLe;
+    double giaSi;
+
+    public double getGiaLe() {
+        return giaLe;
+    }
+
+    public void setGiaLe(double giaLe) {
+        this.giaLe = giaLe;
+    }
+
+    public double getGiaSi() {
+        return giaSi;
+    }
+
+    public void setGiaSi(double giaSi) {
+        this.giaSi = giaSi;
+    }
+
+    public DTO_HangTonKho(String maVach, String seriSP, String IDCTPN, String chiTiet, String barcode, boolean trangThai, double giaLe, double giaSi) {
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+        this.chiTiet = chiTiet;
+        this.barcode = barcode;
+        this.trangThai = trangThai;
+        this.giaLe = giaLe;
+        this.giaSi = giaSi;
+    }
+
+    public DTO_HangTonKho(String maVach, String seriSP, String IDCTPN, String chiTiet, String barcode, boolean trangThai) {
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+        this.chiTiet = chiTiet;
+        this.barcode = barcode;
+        this.trangThai = trangThai;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho) {
+        this.idHangTonKho = idHangTonKho;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho, String maVach) {
+        this.idHangTonKho = idHangTonKho;
+        this.maVach = maVach;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho, String maVach, String seriSP) {
+        this.idHangTonKho = idHangTonKho;
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho, String maVach, String seriSP, String IDCTPN) {
+        this.idHangTonKho = idHangTonKho;
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho, String maVach, String seriSP, String IDCTPN, String chiTiet) {
+        this.idHangTonKho = idHangTonKho;
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+        this.chiTiet = chiTiet;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho, String maVach, String seriSP, String IDCTPN, String chiTiet, String barcode) {
+        this.idHangTonKho = idHangTonKho;
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+        this.chiTiet = chiTiet;
+        this.barcode = barcode;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho, String maVach, String seriSP, String IDCTPN, String chiTiet, String barcode, String IDViTriHienTai) {
+        this.idHangTonKho = idHangTonKho;
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+        this.chiTiet = chiTiet;
+        this.barcode = barcode;
+        this.IDViTriHienTai = IDViTriHienTai;
+    }
+
+    public DTO_HangTonKho(int idHangTonKho, String maVach, String seriSP, String IDCTPN, String chiTiet, String barcode, String IDViTriHienTai, boolean trangThai) {
+        this.idHangTonKho = idHangTonKho;
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+        this.chiTiet = chiTiet;
+        this.barcode = barcode;
+        this.IDViTriHienTai = IDViTriHienTai;
+        this.trangThai = trangThai;
+    }
+
+    public DTO_HangTonKho(String seriSP, String chiTiet, String IDViTriHienTai, boolean trangThai) {
+        this.seriSP = seriSP;
+        this.chiTiet = chiTiet;
+        this.IDViTriHienTai = IDViTriHienTai;
+        this.trangThai = trangThai;
+    }
+
+    
+
+    
+    
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
 
     public int getIdHangTonKho() {
         return idHangTonKho;

@@ -6,6 +6,7 @@
 package SP.DAO;
 
 import DAO.DBConnection;
+import java.sql.ResultSet;
 //import com.sun.corba.se.impl.orbutil.ORBConstants;
 
 /**
@@ -50,7 +51,7 @@ public class insert {
                 + "     VALUES "
                 + "           ('" + ctpn.getIDPN() + "' "
                 + "           ," + ctpn.getSoluong() + " "
-                + "           ,'" + ctpn.getDonVi() + "' "
+                + "           ,N'" + ctpn.getDonVi() + "' "
                 + "           ," + ctpn.getGiaNhap() + " "
                 + "           ," + ctpn.getGiaSi() + " "
                 + "           ," + ctpn.getGiaLe() + " "
@@ -131,6 +132,9 @@ public class insert {
                 + "           ,[IDCTPN] "
                 + "           ,[ChiTiet] "
                 + "           ,[IDViTriHienTai] "
+                + "           ,[barcode] "
+                + "           ,[giale] "
+                + "           ,[Giasi] "
                 + "           ,[TrangThai]) "
                 + "     VALUES "
                 + "           ('" + htk.getMaVach() + "' "
@@ -138,7 +142,11 @@ public class insert {
                 + "           ," + htk.getIDCTPN() + " "
                 + "           ,N'" + htk.getChiTiet() + "' "
                 + "           ,'" + htk.getIDViTriHienTai() + "' "
+                + "           ,'" + htk.getBarcode() + "' "
+                + "           ," + htk.getGiaLe() + " "
+                + "           ," + htk.getGiaSi() + " "
                 + "           ,'" + htk.isTrangThai() + "')";
         return DBConnection.ExecuteData(cauLenh);
     }
+
 }
