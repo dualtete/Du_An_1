@@ -85,8 +85,13 @@ public class select {
     public static ResultSet dsHoaDon() {
         return DBConnection.getData("select * from HOADON");
     }
-    
+
     public static ResultSet dsHoaDonChuaNhap() {
         return DBConnection.getData("select * from HOADON where TrangThai = '0'");
+    }
+
+    public static ResultSet sanPham(String timKiem) {
+        return DBConnection.getData("select * from SANPHAM where Barcode like '%" + timKiem + "%' or TenSP like N'%" + timKiem + "%' "
+                + "or HangSX like N'%" + timKiem + "%'");
     }
 }

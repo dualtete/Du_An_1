@@ -32,6 +32,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
@@ -333,6 +334,32 @@ public class BLL_SanPham {
             return false;
         }
     }
-    
+    public static void loadDSanPham(JTable tbl, String timKiem){
+        DefaultTableModel tblModel = (DefaultTableModel) tbl.getModel();
+        tblModel.setRowCount(0);
+        Object rows[] = new Object[11];
+        ResultSet rs = DAO.select.sanPham(timKiem);
+        try {
+            while(rs.next()){
+                rows[0] = tblModel.getRowCount() + 1;
+                rows[1] = rs.getString("barcode");
+                rows[2] = rs.getString("TenSP");
+                rows[3] = rs.getBoolean("trangThai");
+                rows[4] = rs.getInt("idLoaisp");
+                rows[5] = rs.getString("hangsx");
+                rows[6] = rs.getInt("hanBH");
+                rows[7] = rs.getString("thongtinbh");
+                rows[8] = rs.getString("thongtinsp");
+                rows[9] = ChuyenDoi.dateTimeString(rs.getTimestamp("ngayThem"));
+                rows[10] = rs.getInt("nguoithem");
+                
+                tblModel.addRow(rows);
+                 
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

@@ -35,6 +35,16 @@ public class update {
         return DBConnection.ExecuteData(cauLenh);
     }
 
+    public static int update_SL_CTPN(String idPN, String barcode, String ngayThem, double tongTien,String ghiChu, int sl) {
+        String cauLenh = "update CT_PHIEUNHAP set Soluong = "+sl+" , NgayThem = '" + ngayThem + "' "
+                + ", TongTien = " + tongTien + " , GhiChu = N'"+ghiChu+"' where IDPN = '" + idPN + "' and (Barcode = '" + barcode + "' )";
+        return DBConnection.ExecuteData(cauLenh);
+    }
+    public static int update_SL_Gia_CTPhieuNhap(String idctpn, double tongTien, int soLuong){
+        String cauLenh = "update CT_PhieuNhap set SoLuong = "+soLuong+" , TongTien = "+tongTien+" where IDCTPhieuNhap = "+idctpn+"";
+        return DBConnection.ExecuteData(cauLenh);
+    }
+
     public static int UpdateHangTonKho(String mavach, SP.DTO.DTO_HangTonKho htk) {
         String cauLenh = "set dateformat dMy UPDATE [dbo].[SANPHAMTRONGKHO] "
                 + "   SET [SeriSP] = '" + mavach + "' "
@@ -42,7 +52,7 @@ public class update {
                 + "      ,[IDViTriHienTai] = '" + htk.getIDViTriHienTai() + "' "
                 + "      ,[TrangThai] = '" + htk.isTrangThai() + "' "
                 + "      ,[NgayVaoKho] = '" + ChuyenDoi.dateTimeString(new Date()) + "' "
-                + " WHERE MaVach = '" + mavach + "' or SeriSP = '"+mavach+"'";
+                + " WHERE MaVach = '" + mavach + "' or SeriSP = '" + mavach + "'";
         return DBConnection.ExecuteData(cauLenh);
     }
 }

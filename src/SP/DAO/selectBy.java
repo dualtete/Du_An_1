@@ -24,7 +24,7 @@ public class selectBy {
         String cauLenh = "select top 1 * from SANPHAM  FULL OUTER JOIN CT_PHIEUNHAP  on SANPHAM.Barcode = CT_PHIEUNHAP.Barcode "
                 + "FULL OUTER JOIN LOAISANPHAM on LOAISANPHAM.IDLoaiSP = SANPHAM.IDLoaiSP "
                 + "where SANPHAM.Barcode = '" + barcode + "' "
-                + "order by NgayNhap desc";
+                + "order by ct_phieunhap.NgayThem desc";
         return DBConnection.getData(cauLenh);
     }
 
@@ -91,6 +91,14 @@ public class selectBy {
 
     public static ResultSet view_CTPhieuNhap(String idPN) {
         String cauLenh = "select * from view_CTPhieuNhap where IDPN = '" + idPN + "'";
+        return DBConnection.getData(cauLenh);
+    }
+    public static ResultSet check_Barcode_CTPhieuNhap(String idPN, String barcode){
+        String cauLenh = "select * from CT_PHIEUNHAP where IDPN = '"+idPN+"' and Barcode = '"+barcode+"'";
+        return DBConnection.getData(cauLenh);
+    }
+    public static ResultSet CTPhieuNhap_ByIDCTPhieuNhap(int id){
+        String cauLenh = "select * from CT_PHIEUNHAP where IDCTPhieuNhap = "+id+"";
         return DBConnection.getData(cauLenh);
     }
 }

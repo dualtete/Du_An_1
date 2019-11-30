@@ -16,4 +16,7 @@ public class delete {
     public static int delPhieuNhap_CTPhieuNhap(String idPN) {
         return DBConnection.ExecuteData("exec sp_XoaPhieuNhap_CTPhieuNhap '" + idPN + "'");
     }
+    public static int xoaCTPhieuNhap(int id){
+        return DBConnection.ExecuteData("delete CT_PhieuNhap where IDCTPhieuNhap = "+id+"");
+    }
 }

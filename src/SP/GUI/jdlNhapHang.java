@@ -21,7 +21,7 @@ public class jdlNhapHang extends javax.swing.JDialog {
     public static DBConnection conn = new DBConnection();
     public static page_Main_NhapHang main;
     public static page_ViTri viTri;
-
+    public static boolean xacNhan;
 
 
 
