@@ -50,11 +50,11 @@ public class frmLogin extends javax.swing.JFrame {
         lblName = new javax.swing.JLabel();
         ckbRemember = new javax.swing.JCheckBox();
         lblForget = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
         dis = new javax.swing.JLabel();
         show = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -150,8 +150,8 @@ public class frmLogin extends javax.swing.JFrame {
         lblForget.setText("Quên Mật Khẩu");
         pnlRight.add(lblForget, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, 20));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_male_circle_100px.png"))); // NOI18N
-        pnlRight.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        lblUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_male_circle_100px.png"))); // NOI18N
+        pnlRight.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
         dis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_visible_25px.png"))); // NOI18N
         dis.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -178,8 +178,8 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel4.setOpaque(true);
         pnlTong.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 160, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Untitled-1.png"))); // NOI18N
-        pnlTong.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, -1));
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Untitled-1.png"))); // NOI18N
+        pnlTong.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,13 +290,13 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnSignup;
     private javax.swing.JCheckBox ckbRemember;
     private javax.swing.JLabel dis;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblForget;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblThoat;
+    private javax.swing.JLabel lblUser;
     private javax.swing.JPanel pnlRight;
     private javax.swing.JPanel pnlTong;
     private javax.swing.JLabel show;

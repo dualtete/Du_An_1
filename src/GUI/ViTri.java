@@ -1382,9 +1382,9 @@ public class ViTri extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnThemMouseExited
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        jdlAddNhaCungCap jdl = new jdlAddNhaCungCap(new JFrame(), true);
-        jdlAddNhaCungCap.btnCapNhat.setEnabled(false);
-        jdl.setVisible(true);
+//        jdlAddNhaCungCap jdl = new jdlAddNhaCungCap(new JFrame(), true);
+//        jdlAddNhaCungCap.btnCapNhat.setEnabled(false);
+//        jdl.setVisible(true);
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportActionPerformed
@@ -1393,11 +1393,11 @@ public class ViTri extends javax.swing.JInternalFrame {
 
     private void tblNhaCungCapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhaCungCapMouseClicked
         if (evt.getClickCount() == 2) {
-            jdlAddNhaCungCap jdl = new jdlAddNhaCungCap(new JFrame(), true);
-            jdlAddNhaCungCap.btnThem.setEnabled(false);
-            jdlAddNhaCungCap.txtKhoa.setEditable(false);
-            BLL.BLL_NhaCungCap.click();
-            jdl.setVisible(true);
+//            jdlAddNhaCungCap jdl = new jdlAddNhaCungCap(new JFrame(), true);
+//            jdlAddNhaCungCap.btnThem.setEnabled(false);
+//            jdlAddNhaCungCap.txtKhoa.setEditable(false);
+//            BLL.BLL_NhaCungCap.click();
+//            jdl.setVisible(true);
         }
     }//GEN-LAST:event_tblNhaCungCapMouseClicked
 

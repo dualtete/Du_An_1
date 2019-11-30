@@ -116,6 +116,7 @@ public class BLL_NhanVien {
         nv.setNguoiTao(DTO.DTO_UserLogin.userName);
         if (DAO.insert.NhanVien(nv) > 0) {
             GUI.ThongBao.ThongBao("Thêm nhân viên thành công!", "Thông báo");
+            TTTaiKhoan.IDNhanVien = txtMaNV.getText();
             loadBangNV("");
             return true;
         }

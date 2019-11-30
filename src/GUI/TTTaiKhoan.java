@@ -27,6 +27,7 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
      */
     public TTTaiKhoan() {
         initComponents();
+        this.getRootPane().setDefaultButton(btnTimKiem1);
         tblNhanVien.getTableHeader().setDefaultRenderer(new ViTri.HeaderColor());
         tblNhanVien.setAutoCreateRowSorter(true);
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));

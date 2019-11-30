@@ -27,4 +27,7 @@ public class selectByID {
     public static ResultSet ViTri(String id){
         return DBConnection.getData("select * from vitri where IDViTri ='"+id+"'");
     }
+    
+    
+    
 }

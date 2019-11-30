@@ -26,6 +26,7 @@ public class KhachHang extends javax.swing.JInternalFrame {
      */
     public KhachHang(){
         initComponents();
+        this.getRootPane().setDefaultButton(btnTimKiem1);
         tblKhachHang.getTableHeader().setDefaultRenderer(new HeaderColor());
         tblKhachHang.setAutoCreateRowSorter(true);
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));

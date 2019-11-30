@@ -267,9 +267,7 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_mniTaoPhieuNhap_NCCActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-
-       
-
+        sound.sound_huy.sound(new File("ding.wav"));
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void mniDonDatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDonDatHangActionPerformed

@@ -73,8 +73,20 @@ public class select {
     public static ResultSet Lo(String idKho) {
         return DBConnection.getData("select * from VITRI where IDKho = '" + idKho + "'");
     }
-     public static ResultSet LoadCT_PhieuNhap(){
+
+    public static ResultSet LoadCT_PhieuNhap() {
         return DBConnection.getData("select * from CT_PhieuNhap");
     }
 
+    public static ResultSet banHangSP() {
+        return DBConnection.getData("SELECT * FROM hangtonkho");
+    }
+
+    public static ResultSet dsHoaDon() {
+        return DBConnection.getData("select * from HOADON");
+    }
+    
+    public static ResultSet dsHoaDonChuaNhap() {
+        return DBConnection.getData("select * from HOADON where TrangThai = '0'");
+    }
 }
