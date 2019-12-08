@@ -5,6 +5,8 @@
  */
 package DTO;
 
+import java.util.Date;
+
 /**
  *
  * @author bumte
@@ -16,11 +18,11 @@ public class DTO_KhachHang {
     String SDT;
     String DC;
     String email;
-    String NgaySinh;
+    Date NgaySinh;
     boolean gioiTinh;
     String ghiChu;
     boolean trangThai;
-    String ngayThem;
+    Date ngayThem;
     int IDTK;
 
     public String getIDKH() {
@@ -71,14 +73,6 @@ public class DTO_KhachHang {
         this.email = email;
     }
 
-    public String getNgaySinh() {
-        return NgaySinh;
-    }
-
-    public void setNgaySinh(String NgaySinh) {
-        this.NgaySinh = NgaySinh;
-    }
-
     public boolean isGioiTinh() {
         return gioiTinh;
     }
@@ -103,14 +97,22 @@ public class DTO_KhachHang {
         this.trangThai = trangThai;
     }
 
-    public String getNgayThem() {
+    public Date getNgaySinh() {
+        return NgaySinh;
+    }
+
+    public void setNgaySinh(Date NgaySinh) {
+        this.NgaySinh = NgaySinh;
+    }
+
+    public Date getNgayThem() {
         return ngayThem;
     }
 
-    public void setNgayThem(String ngayThem) {
+    public void setNgayThem(Date ngayThem) {
         this.ngayThem = ngayThem;
     }
-
+    
     public int getIDTK() {
         return IDTK;
     }

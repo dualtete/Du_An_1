@@ -94,8 +94,8 @@ public class BLL_BanHang {
                 kh.setIDKH(rs.getString("IDKH"));
                 kh.setIDLoaiKH(String.valueOf(rs.getInt("IDLoaiKH")));
                 kh.setIDTK(rs.getInt("IDTK"));
-                kh.setNgaySinh(ChuyenDoi.GetNgay(rs.getDate("NgaySinh")));
-                kh.setNgayThem(ChuyenDoi.GetNgay(rs.getDate("NgayThem")));
+                kh.setNgaySinh(rs.getDate("NgaySinh"));
+                kh.setNgayThem(rs.getDate("NgayThem"));
                 kh.setSDT(rs.getString("SDT"));
                 kh.setTrangThai(rs.getBoolean("TrangThai"));
                 setComponentTTKH(kh);
@@ -115,7 +115,7 @@ public class BLL_BanHang {
         txtDC.setText(kh.getDC());
         txtEmail.setText(kh.getEmail());
         txtIDKH.setText(kh.getIDKH());
-        txtNgaySinh.setText(kh.getNgaySinh());
+        txtNgaySinh.setText(ChuyenDoi.GetNgay(kh.getNgaySinh()));
         txtSDT.setText(kh.getSDT());
         txtTenKH.setText(kh.getHoTen());
         radNam.setSelected(kh.isGioiTinh());

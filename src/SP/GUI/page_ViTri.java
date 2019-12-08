@@ -29,6 +29,7 @@ public class page_ViTri extends javax.swing.JInternalFrame {
      */
     public page_ViTri() {
         initComponents();
+        //Cho boder của internal = 0
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
         bi.setNorthPane(null);
@@ -46,8 +47,9 @@ public class page_ViTri extends javax.swing.JInternalFrame {
     private void FillBan() {
         btnThemLo.setVisible(false);
         btnThemKho.setVisible(true);
+        btnVeKho.setVisible(false);
         
-        lblTitle.setText("Các kho hiện tại của Vi Tuấn");
+        lblTitle.setText("CÁC KHO HIỆN TẠI CỦA CÔNG TY");
         scpViTri.removeAll();
         kho = BLL.BLL_VitriHangHoa.getAllKho();
         ArrayList<Boolean> checkclick = new ArrayList<>();
@@ -213,6 +215,7 @@ public class page_ViTri extends javax.swing.JInternalFrame {
     public void fillLo(String lo) {
         btnThemLo.setVisible(true);
         btnThemKho.setVisible(false);
+        btnVeKho.setVisible(true);
         scpViTri.removeAll();
         ArrayList<DTO.DTO_ViTriHangHoa> kho = BLL.BLL_VitriHangHoa.getAllLo(lo);
         ArrayList<Boolean> checkclick = new ArrayList<>();
@@ -378,23 +381,31 @@ public class page_ViTri extends javax.swing.JInternalFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnThemKho.setText("Thêm kho");
-        btnThemKho.setPreferredSize(new java.awt.Dimension(89, 50));
+        btnThemKho.setBackground(new java.awt.Color(0, 102, 153));
+        btnThemKho.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnThemKho.setText("THÊM KHO");
+        btnThemKho.setBorder(null);
+        btnThemKho.setPreferredSize(new java.awt.Dimension(120, 50));
         jPanel2.add(btnThemKho);
 
-        btnThemLo.setText("Thêm lô");
-        btnThemLo.setPreferredSize(new java.awt.Dimension(79, 50));
+        btnThemLo.setBackground(new java.awt.Color(0, 102, 153));
+        btnThemLo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnThemLo.setText("THÊM LÔ");
+        btnThemLo.setBorder(null);
+        btnThemLo.setPreferredSize(new java.awt.Dimension(120, 50));
         jPanel2.add(btnThemLo);
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 0));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Các kho hiện tại của Vi Tuấn");
+        lblTitle.setText("CÁC KHO HIỆN TẠI CỦA CÔNG TY");
 
         btnVeKho.setBackground(new java.awt.Color(255, 255, 255));
         btnVeKho.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnVeKho.setForeground(new java.awt.Color(204, 102, 0));
         btnVeKho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconHuy/icons8_return_16px.png"))); // NOI18N
         btnVeKho.setText("Quay lại");
+        btnVeKho.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 102, 153)));
         btnVeKho.setContentAreaFilled(false);
         btnVeKho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVeKho.addActionListener(new java.awt.event.ActionListener() {
@@ -412,7 +423,7 @@ public class page_ViTri extends javax.swing.JInternalFrame {
                 .addComponent(btnVeKho, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 876, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

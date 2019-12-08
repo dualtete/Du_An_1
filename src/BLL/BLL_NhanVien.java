@@ -43,12 +43,12 @@ public class BLL_NhanVien {
         jdlAddNhanVien.txtMaNV.setText(nv.getIDNV());
         radNu.setSelected(!nv.isGioiTinh());
         radNam.setSelected(nv.isGioiTinh());
-        txtNgaySinh.setText(nv.getNgaySinh());
-        txtNgayCapCMND.setText(nv.getNgayCap());
+        txtNgaySinh.setDate(nv.getNgaySinh());
+        txtNgayCap.setDate(nv.getNgayCap());
         txtNoiCapCMND.setText(nv.getNoiCap());
         txtSDT.setText(nv.getSDT());
         lblHinhAnh.setToolTipText(nv.getHinhAnh());
-        if(nv.getHinhAnh() != null){
+        if (nv.getHinhAnh() != null) {
             jdlAddNhanVien.lblHinhAnh.setIcon(readLogo(nv.getHinhAnh()));
         }
     }
@@ -62,8 +62,8 @@ public class BLL_NhanVien {
         nv.setIDNV(jdlAddNhanVien.txtMaNV.getText());
         nv.setKiQuy(ChuyenDoi.stringToDouble(txtKiQuy.getText()));
         nv.setLuong(ChuyenDoi.stringToDouble(txtLuong.getText()));
-        nv.setNgayCap(txtNgayCapCMND.getText());
-        nv.setNgaySinh(txtNgaySinh.getText());
+        nv.setNgayCap(txtNgayCap.getDate());
+        nv.setNgaySinh(txtNgaySinh.getDate());
         nv.setNoiCap(txtNoiCapCMND.getText());
         nv.setSDT(txtSDT.getText().replace("-", ""));
         nv.setHinhAnh(jdlAddNhanVien.lblHinhAnh.getToolTipText());
@@ -102,13 +102,54 @@ public class BLL_NhanVien {
 
     public static boolean insert() {
 //        code validate
-        if(!kiemTra("MaNV")){
+        if (!kiemTra("MaNV")) {
+            ThongBao.ThongBao("Mã nhân viên là số và bao gồm 5 kí tự!", "Thông báo!");
             return false;
         }
-        if(!kiemTra("hoVaTen")){
+        if (!kiemTra("hoVaTen")) {
+            ThongBao.ThongBao("Họ tên gồm 5 đến 50 kí tự!", "Thông báo!");
             return false;
         }
+        if (!kiemTra("SDT")) {
+            ThongBao.ThongBao("Phải đủ 10 kí tự!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("cmnd")) {
+            ThongBao.ThongBao("Phải đủ 9 kí tự!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("ngaycapcm")) {
+            ThongBao.ThongBao("Ngày cấp phải bé hơn ngày hiện tại!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("noicap")) {
+            ThongBao.ThongBao("Không được bỏ trống!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("ngaysinh")) {
+            ThongBao.ThongBao("Phải lớn hơn 18 tuổi!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("email")) {
+            ThongBao.ThongBao("Sai định dạng email!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("diachi")) {
+            ThongBao.ThongBao("Địa chỉ gồm 5 đến 50 kí tự!", "Thông báo!");
+            return false;
+        }
+        ResultSet rsMail = DAO.selectByID.emailNhanVien(txtEmail.getText());
+        try {
+            if (rsMail.next()) {
+                lblTBEmail.setText("!");
+                GUI.ThongBao.ThongBao("Email đã được sử dụng!", "Thông báo");
+                return false;
 
+            }
+        } catch (SQLException ex) {
+
+        }
+        
         DTO.DTO_NhanVien nv = new DTO_NhanVien();
         getComponent(nv);
         Date date = new Date();
@@ -123,7 +164,8 @@ public class BLL_NhanVien {
         GUI.ThongBao.ThongBao("Thêm nhân viên thất bại!", "Thông báo");
         return false;
     }
-    public static void click(){
+
+    public static void click() {
         String id = TTTaiKhoan.tblNhanVien.getValueAt(TTTaiKhoan.tblNhanVien.getSelectedRow(), 1).toString();
         ResultSet rs = DAO.selectBy.NhanVien(id);
         try {
@@ -138,15 +180,15 @@ public class BLL_NhanVien {
                 nv.setHoTen(rs.getString("HoTen"));
                 nv.setKiQuy(rs.getDouble("TienKiQuy"));
                 nv.setLuong(rs.getDouble("Luong"));
-                nv.setNgayCap(ChuyenDoi.GetNgay(rs.getDate("NgayCapCMND")));
-                nv.setNgaySinh(ChuyenDoi.GetNgay(rs.getDate("NgaySinh")));
+                nv.setNgayCap(rs.getDate("NgayCapCMND"));
+                nv.setNgaySinh(rs.getDate("NgaySinh"));
                 nv.setNgayVaoLam(ChuyenDoi.GetNgay(rs.getDate("NgayVaoLam")));
                 nv.setNguoiTao(rs.getString("NguoiTao"));
                 nv.setNoiCap(rs.getString("NoiCapCMND"));
                 nv.setSDT(rs.getString("SDT"));
                 nv.setTrangThai(rs.getBoolean("TrangThai"));
                 setComponent(nv);
-                
+
             }
         } catch (SQLException ex) {
             GUI.ThongBao.ThongBao("Lỗi khi click vào bảng nhân viên!", "Thông báo");
@@ -155,6 +197,53 @@ public class BLL_NhanVien {
 
     public static boolean update() {
 //        code validate
+        if (!kiemTra("MaNV")) {
+            ThongBao.ThongBao("Mã nhân viên là số và bao gồm 5 kí tự!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("hoVaTen")) {
+            ThongBao.ThongBao("Họ tên gồm 5 đến 50 kí tự!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("SDT")) {
+            ThongBao.ThongBao("Phải đủ 10 kí tự!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("cmnd")) {
+            ThongBao.ThongBao("Phải đủ 9 kí tự!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("ngaycapcm")) {
+            ThongBao.ThongBao("Ngày cấp phải bé hơn ngày hiện tại!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("noicap")) {
+            ThongBao.ThongBao("Không được bỏ trống!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("ngaysinh")) {
+            ThongBao.ThongBao("Phải lớn hơn hoặc bằng 18 tuổi!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("email")) {
+            ThongBao.ThongBao("Sai định dạng email!", "Thông báo!");
+            return false;
+        }
+        if (!kiemTra("diachi")) {
+            ThongBao.ThongBao("Địa chỉ gồm 5 đến 50 kí tự!", "Thông báo!");
+            return false;
+        }
+        ResultSet rsMail = DAO.selectByID.emailNhanVien(txtEmail.getText());
+        try {
+            if (rsMail.next()) {
+                lblTBEmail.setText("!");
+                GUI.ThongBao.ThongBao("Email đã được sử dụng!", "Thông báo");
+                return false;
+
+            }
+        } catch (SQLException ex) {
+
+        }
         DTO_NhanVien nv = new DTO_NhanVien();
         getComponent(nv);
         if (DAO.update.NhanVien(nv) > 0) {
@@ -165,26 +254,27 @@ public class BLL_NhanVien {
         GUI.ThongBao.ThongBao("Cập nhật thất bại!", "Thông báo");
         return false;
     }
-    public static void refresh(){
+
+    public static void refresh() {
         jdlAddNhanVien.txtMaNV.setText("");
         txtHoTen.setText("");
         txtSDT.setText("");
         txtCMND.setText("");
-        txtNgayCapCMND.setText("");
+        txtNgayCap.setEnabled(true);
         txtNoiCapCMND.setText("");
-        txtNgaySinh.setText("");
+        txtNgaySinh.setEnabled(true);
         txtEmail.setText("");
         txtDC.setText("");
         txtLuong.setText("");
         txtKiQuy.setText("");
     }
+
     //Kiem tra trước khi thêm
-    public static boolean kiemTra(String component){
+    public static boolean kiemTra(String component) {
         boolean kt = true;
-        switch (component){
+        switch (component) {
             case "MaNV":
-                if(!jdlAddNhanVien.txtMaNV.getText().matches("")){
-                    GUI.ThongBao.ThongBao("Mã nhân viên phải đủ 7 kí tự!", "Thông báo");
+                if (!jdlAddNhanVien.txtMaNV.getText().matches("^[a-zA-Z0-9]{5}$")) {
                     jdlAddNhanVien.lblMaNV.setText("!");
                     kt = false;
                     break;
@@ -193,66 +283,147 @@ public class BLL_NhanVien {
                 kt = true;
                 break;
             case "hoVaTen":
-                if(!jdlAddNhanVien.txtHoTen.getText().matches("^[a-zA-Z\\s+]{1,50}")){
-                    GUI.ThongBao.ThongBao("Họ và tên không được chứa số và các kí tự đặc biệt!", "Thông báo");
-                    jdlAddNhanVien.lblTBHoTen.setText("!");
+                try {
+                    String hoten = ChuyenDoi.unAccent(txtHoTen.getText());
+                    if (!hoten.matches("^[a-zA-Z\\s+]{5,50}$")) {
+                        jdlAddNhanVien.lblTBHoTen.setText("!");
+                        kt = false;
+                        break;
+                    }
+                } catch (Exception e) {
                     kt = false;
                     break;
                 }
+                kt = true;
                 jdlAddNhanVien.lblTBHoTen.setText("");
                 break;
             case "SDT":
-                if(!jdlAddNhanVien.txtSDT.getText().matches("")){
-                    
+                if (jdlAddNhanVien.txtSDT.getText().length() < 10) {
+                    kt = false;
+                    lblTBSDT.setText("!");
+                    break;
+                } else {
+                    lblTBSDT.setText("");
+                    kt = true;
+                    break;
                 }
+            case "cmnd":
+                if (jdlAddNhanVien.txtCMND.getText().length() < 9) {
+                    kt = false;
+                    lblTBCMND.setText("!");
+                    break;
+                } else {
+                    lblTBCMND.setText("");
+                    kt = true;
+                    break;
+                }
+            case "ngaycapcm":
+                Date ngaycap = txtNgayCap.getDate();
+                Date date = new Date();
+                if (date.before(ngaycap)) {
+                    kt = false;
+                    lblTBNgayCap.setText("!");
+                    break;
+                }
+                lblTBNgayCap.setText("");
+                kt = true;
                 break;
+            case "noicap":
+                if (txtNoiCapCMND.getText().length() == 0) {
+                    kt = false;
+                    lblTBNoiCap.setText("!");
+                    break;
+                }
+                lblTBNoiCap.setText("");
+                kt = true;
+                break;
+            case "ngaysinh":
+                try {
+                    Date toDay = new Date();
+                    if (ChuyenDoi.soSanhDate(ChuyenDoi.GetNgay(txtNgaySinh.getDate()), ChuyenDoi.GetNgay(toDay)).getYears() < 17) {
+                        kt = false;
+                        break;
+                    }
+                } catch (Exception e) {
+                    kt = false;
+                    break;
+                }
+                kt = true;
+                break;
+            case"email":
+                String regex = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,6}$";
+                if(!txtEmail.getText().matches(regex)){
+                    lblTBEmail.setText("!");
+                    kt = false;
+                    break;
+                }
+                kt = true;
+                lblTBEmail.setText("");
+                break;
+            case "diachi":
+                try {
+                    String diachi = ChuyenDoi.unAccent(txtDC.getText());
+                    if (!diachi.matches("^[a-zA-Z0-9\\s+]{5,100}$")) {
+                        jdlAddNhanVien.lblTBDC.setText("!");
+                        kt = false;
+                        break;
+                    }
+                } catch (Exception e) {
+                    kt = false;
+                    break;
+                }
+                kt = true;
+                jdlAddNhanVien.lblTBDC.setText("");
+                break;    
         }
         return kt;
     }
-    public static boolean saveLogo(File file){
+
+    public static boolean saveLogo(File file) {
         File dir = new File("logosNhanVien");
         //Tạo thư mục nếu chưa tồn tại
-        if(!dir.exists()){
+        if (!dir.exists()) {
             dir.mkdirs();
         }
         File newFile = new File(dir, file.getName());
-        try{
+        try {
             //Copy vào thư mục logosNhanVien (đè lên nếu đã tồn tại)
             Path source = Paths.get(file.getAbsolutePath());
             Path destination = Paths.get(newFile.getAbsolutePath());
             Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
             return true;
-        }catch(Exception ex){
+        } catch (Exception ex) {
             return false;
         }
     }
+
     public static ImageIcon readLogo(String fileName) {
         File path = new File("logosNhanVien", fileName);
         return new ImageIcon(path.getAbsolutePath());
     }
-    
-    public static void selectImage(){
-        if(jdlAddNhanVien.fileChooser.showOpenDialog(new JFrame()) == JFileChooser.APPROVE_OPTION){
+
+    public static void selectImage() {
+        if (jdlAddNhanVien.fileChooser.showOpenDialog(new JFrame()) == JFileChooser.APPROVE_OPTION) {
             File FILE = jdlAddNhanVien.fileChooser.getSelectedFile();
-            if(!FILE.getName().matches(".+(\\.png|\\.jpg|\\.gif)$")){
+            if (!FILE.getName().matches(".+(\\.png|\\.jpg|\\.gif)$")) {
                 GUI.ThongBao.ThongBao("Đây không phải hình ảnh!", "Thông báo");
                 return;
             }
-            if(saveLogo(FILE)){
+            if (saveLogo(FILE)) {
                 //Hiển thị hình lên form
                 jdlAddNhanVien.lblHinhAnh.setIcon(readLogo(FILE.getName()));
                 jdlAddNhanVien.lblHinhAnh.setToolTipText(FILE.getName());
             }
         }
     }
-    public static boolean delete (JTable tbl){
+
+    public static boolean delete(JTable tbl) {
         int dongXoa[] = tbl.getSelectedRows();
-        String id;
-        if(ThongBao.ThongBaoLoai2("Bạn có chắc chắn muốn xóa không?", "Thông báo") != JOptionPane.OK_OPTION){
+        if (ThongBao.ThongBaoLoai2("Bạn có chắc chắn muốn xóa không?", "Thông báo") != JOptionPane.OK_OPTION) {
             return false;
         }
-        for (int i = dongXoa.length -1; i >= 0; i--) {
-            id = tbl.getValueAt(dongXoa[i], 2).toString();
+        for (int i = dongXoa.length - 1; i >= 0; i--) {
+            String id = tbl.getValueAt(dongXoa[i], 2).toString();
             DAO.delete.xoaNhanVien(tbl.getValueAt(dongXoa[i], 1).toString());
         }
         GUI.ThongBao.ThongBao("Xóa thành công!", "Thông báo");

@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/BLL/BLL_BanHang.java</file>
             <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/jdlHangTonKho.java</file>
             <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/page_BanHang.java</file>
+=======
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlCT_PhieuNhap.java</file>
+>>>>>>> 14260ce2ff5d972ce4c9b6f376370181fa6b7447
         </group>
     </open-files>
 </project-private>

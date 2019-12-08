@@ -93,23 +93,21 @@ public class insert {
                 + "           ,[TienKiQuy] "
                 + "           ,[NguoiTao]) "
                 + "     VALUES "
-                + "           (N'" + nv.getIDNV()
-                + "'"
-                + "           ,N'" + nv.getHoTen()
-                + "'"
+                + "           (N'" + nv.getIDNV()+"'"
+                + "           ,N'" + nv.getHoTen()+"'"
                 + "           ,'" + nv.getSDT() + "' "
                 + "           ,'" + nv.getCMND() + "' "
-                + "           ,'" + nv.getNgayCap() + "' "
+                + "           ,'" + BLL.ChuyenDoi.GetNgay(nv.getNgayCap()) + "' "
                 + "           ,N'" + nv.getNoiCap() + "' "
-                + "           ,'" + nv.getNgaySinh() + "' "
+                + "           ,'" + BLL.ChuyenDoi.GetNgay(nv.getNgaySinh()) + "' "
                 + "           ,'" + nv.isGioiTinh() + "' "
                 + "           ,N'" + nv.getHinhAnh() + "' "
                 + "           ,'" + nv.getEmail() + "' "
                 + "           ,N'" + nv.getDC() + "' "
                 + "           ,'" + nv.getNgayVaoLam() + "' "
-                + "           , " + nv.getLuong() + " "
+                + "           ," + nv.getLuong() + " "
                 + "           ,'true' "
-                + "           , " + nv.getKiQuy() + " "
+                + "           ," + nv.getKiQuy() + " "
                 + "           ,N'" + nv.getNguoiTao() + "')";
         return DBConnection.ExecuteData(cauLenh);
     }
@@ -146,7 +144,6 @@ public class insert {
                 + "           ,[GioiTinh] "
                 + "           ,[GhiChu] "
                 + "           ,[TrangThai] "
-                + "           ,[NgayThem] "
                 + "           ,[IDTK]) "
                 + "     VALUES "
                 + "           ('" + kh.getIDKH() + "' "
@@ -155,17 +152,15 @@ public class insert {
                 + "           ,'" + kh.getSDT() + "' "
                 + "           ,N'" + kh.getDC() + "' "
                 + "           ,'" + kh.getEmail() + "' "
-                + "           ,'" + kh.getNgaySinh() + "' "
+                + "           ,'" + BLL.ChuyenDoi.GetNgay(kh.getNgaySinh()) + "' "
                 + "           ,'" + kh.isGioiTinh() + "' "
                 + "           ,N'" + kh.getGhiChu() + "' "
                 + "           ,'" + kh.isTrangThai() + "' "
-                + "           ,'" + kh.getNgayThem() + "' "
                 + "           ," + kh.getIDTK() + ")";
         return DBConnection.ExecuteData(cauLenh);
     }
 
     public static int LoaiKH(DTO.DTO_LoaiKH loaiKH) {
-
         String cauLenh = "INSERT INTO [dbo].[LOAIKHACHHANG] "
                 + "           ([TenLoaiKH] "
                 + "           ,[GhiChu] "

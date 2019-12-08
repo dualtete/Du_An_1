@@ -46,7 +46,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         btnLamMoi = new javax.swing.JButton();
         jPanel28 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        lblMaNV = new javax.swing.JLabel();
+        lblTDMaKH = new javax.swing.JLabel();
         txtIDKhachHang = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -75,10 +75,10 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         radNam = new javax.swing.JRadioButton();
         radNu = new javax.swing.JRadioButton();
         lblNgay1 = new javax.swing.JLabel();
-        txtNgaySinh = new javax.swing.JFormattedTextField();
+        txtNgaySinh = new com.toedter.calendar.JDateChooser();
         jPanel30 = new javax.swing.JPanel();
         lblNoiCap = new javax.swing.JLabel();
-        lblTBNoiCap = new javax.swing.JLabel();
+        lblTBNguoiTao = new javax.swing.JLabel();
         txtNguoiTao = new javax.swing.JTextField();
         pnlGhiChu = new javax.swing.JPanel();
         lblTrangThai = new javax.swing.JLabel();
@@ -86,8 +86,8 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         txtGhiChu = new javax.swing.JTextField();
         jPanel32 = new javax.swing.JPanel();
         lblNoiCap1 = new javax.swing.JLabel();
-        lblTBNoiCap1 = new javax.swing.JLabel();
-        txtNgayThem = new javax.swing.JFormattedTextField();
+        lblTBNgayThem = new javax.swing.JLabel();
+        txtNgayThem = new com.toedter.calendar.JDateChooser();
         btnthem = new javax.swing.JButton();
 
         pupLoaiKH.setBackground(new java.awt.Color(255, 255, 255));
@@ -180,7 +180,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnXoaMouseExited(evt);
             }
         });
-        pnlChinh.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 530, 100, 47));
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
+        pnlChinh.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 517, 100, 60));
 
         btnCapNhat.setBackground(new java.awt.Color(0, 102, 153));
         btnCapNhat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -201,7 +206,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnCapNhatActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnCapNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 530, 120, 47));
+        pnlChinh.add(btnCapNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 517, 120, 60));
 
         btnThem.setBackground(new java.awt.Color(0, 102, 153));
         btnThem.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -222,7 +227,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnThemActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 530, 90, 47));
+        pnlChinh.add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 517, 90, 60));
 
         btnLamMoi.setBackground(new java.awt.Color(0, 102, 153));
         btnLamMoi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -243,7 +248,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 btnLamMoiActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 530, 120, 45));
+        pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 517, 120, 60));
 
         jPanel28.setBackground(new java.awt.Color(255, 255, 255));
         jPanel28.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
@@ -254,12 +259,23 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jLabel28.setMinimumSize(new java.awt.Dimension(115, 16));
         jLabel28.setPreferredSize(new java.awt.Dimension(115, 16));
 
-        lblMaNV.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblMaNV.setForeground(new java.awt.Color(153, 0, 0));
-        lblMaNV.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTDMaKH.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTDMaKH.setForeground(new java.awt.Color(153, 0, 0));
+        lblTDMaKH.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtIDKhachHang.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtIDKhachHang.setToolTipText("Mã gồm 5 kí tự!");
         txtIDKhachHang.setBorder(null);
+        txtIDKhachHang.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtIDKhachHangFocusLost(evt);
+            }
+        });
+        txtIDKhachHang.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtIDKhachHangKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -270,14 +286,14 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIDKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(lblMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblTDMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(txtIDKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(lblMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblTDMaKH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnlChinh.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 105, 530, -1));
@@ -296,6 +312,11 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblTBHoTen.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         cbbLoaiKH.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cbbLoaiKH.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cbbLoaiKHFocusLost(evt);
+            }
+        });
 
         btnThemLoai.setBackground(new java.awt.Color(255, 255, 255));
         btnThemLoai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_menu_2_30px_1.png"))); // NOI18N
@@ -355,7 +376,18 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jLabel19.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtHoTen1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtHoTen1.setToolTipText("Họ tên là chữ bao gôm từ 5 đến 50 kí tự!");
         txtHoTen1.setBorder(null);
+        txtHoTen1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtHoTen1FocusLost(evt);
+            }
+        });
+        txtHoTen1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtHoTen1KeyReleased(evt);
+            }
+        });
 
         lblTBHoTen1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTBHoTen1.setForeground(new java.awt.Color(153, 0, 0));
@@ -399,8 +431,18 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtSDT.setToolTipText("");
+        txtSDT.setToolTipText("Gồm 10 kí tự");
         txtSDT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtSDT.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSDTFocusLost(evt);
+            }
+        });
+        txtSDT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSDTKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -433,7 +475,18 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jLabel34.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtDC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtDC.setToolTipText("Địa chỉ gồm 5 đến 50 kí tự!");
         txtDC.setBorder(null);
+        txtDC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDCFocusLost(evt);
+            }
+        });
+        txtDC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDCKeyReleased(evt);
+            }
+        });
 
         lblTBDC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTBDC.setForeground(new java.awt.Color(153, 0, 0));
@@ -471,7 +524,18 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         jLabel26.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtEmail.setToolTipText("Sai định dạng email!");
         txtEmail.setBorder(null);
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmailKeyReleased(evt);
+            }
+        });
 
         lblTBEmail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTBEmail.setForeground(new java.awt.Color(153, 0, 0));
@@ -516,34 +580,24 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
 
         radNam.setBackground(new java.awt.Color(255, 255, 255));
         bgrGioiTinh.add(radNam);
-        radNam.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        radNam.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         radNam.setSelected(true);
         radNam.setText("Nam");
 
         radNu.setBackground(new java.awt.Color(255, 255, 255));
         bgrGioiTinh.add(radNu);
-        radNu.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        radNu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         radNu.setText("Nữ");
 
         lblNgay1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblNgay1.setForeground(new java.awt.Color(204, 0, 0));
 
-        txtNgaySinh.setBorder(null);
-        try {
-            txtNgaySinh.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNgaySinh.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNgaySinh.setToolTipText("Phải lớn hơn hoặc bằng 18 tuổi!");
+        txtNgaySinh.setDateFormatString("dd/MM/yyyy");
         txtNgaySinh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtNgaySinh.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtNgaySinhCaretUpdate(evt);
-            }
-        });
-        txtNgaySinh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNgaySinhActionPerformed(evt);
+        txtNgaySinh.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNgaySinhFocusLost(evt);
             }
         });
         txtNgaySinh.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -560,8 +614,8 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 .addComponent(lblNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNgay1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -575,11 +629,11 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
             .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lblGioiTinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(radNam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(radNu)
-                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(radNu))
             .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lblNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(lblNgay1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(txtNgaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnlChinh.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 162, -1, 40));
@@ -590,12 +644,23 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblNoiCap.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblNoiCap.setText("NGƯỜI TẠO");
 
-        lblTBNoiCap.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblTBNoiCap.setForeground(new java.awt.Color(153, 0, 0));
-        lblTBNoiCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTBNguoiTao.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTBNguoiTao.setForeground(new java.awt.Color(153, 0, 0));
+        lblTBNguoiTao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtNguoiTao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtNguoiTao.setToolTipText("");
         txtNguoiTao.setBorder(null);
+        txtNguoiTao.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNguoiTaoFocusLost(evt);
+            }
+        });
+        txtNguoiTao.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNguoiTaoKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -606,13 +671,13 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTBNoiCap, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblTBNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblTBNoiCap, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTBNguoiTao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNoiCap, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNguoiTao, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(0, 2, Short.MAX_VALUE))
@@ -634,7 +699,18 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblTBGhiChu.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtGhiChu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtGhiChu.setToolTipText("Có thể bỏ trống");
         txtGhiChu.setBorder(null);
+        txtGhiChu.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtGhiChuFocusLost(evt);
+            }
+        });
+        txtGhiChu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtGhiChuKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlGhiChuLayout = new javax.swing.GroupLayout(pnlGhiChu);
         pnlGhiChu.setLayout(pnlGhiChuLayout);
@@ -665,18 +741,23 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         lblNoiCap1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblNoiCap1.setText("NGÀY THÊM");
 
-        lblTBNoiCap1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblTBNoiCap1.setForeground(new java.awt.Color(153, 0, 0));
-        lblTBNoiCap1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTBNgayThem.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTBNgayThem.setForeground(new java.awt.Color(153, 0, 0));
+        lblTBNgayThem.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        txtNgayThem.setBorder(null);
-        try {
-            txtNgayThem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNgayThem.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtNgayThem.setToolTipText("Là ngày hiện tại");
+        txtNgayThem.setDateFormatString("dd/MM/yyyy");
         txtNgayThem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtNgayThem.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNgayThemFocusLost(evt);
+            }
+        });
+        txtNgayThem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNgayThemKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -685,18 +766,18 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addComponent(lblNoiCap1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                 .addGap(325, 325, 325)
-                .addComponent(lblTBNoiCap1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblTBNgayThem, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
-                    .addContainerGap(166, Short.MAX_VALUE)
-                    .addComponent(txtNgayThem, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(39, Short.MAX_VALUE)))
+                .addGroup(jPanel32Layout.createSequentialGroup()
+                    .addGap(168, 168, 168)
+                    .addComponent(txtNgayThem, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(38, Short.MAX_VALUE)))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTBNoiCap1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTBNgayThem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNoiCap1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 1, Short.MAX_VALUE))
             .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -754,7 +835,10 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLamMoiMouseEntered
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
-        BLL.BLL_KhachHang.update();
+        if(!BLL.BLL_KhachHang.update()){
+            return;
+        }
+        this.dispose();
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
     private void btnCapNhatMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCapNhatMouseExited
@@ -766,7 +850,9 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCapNhatMouseEntered
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        BLL.BLL_KhachHang.insert();
+        if(!BLL.BLL_KhachHang.insert()){
+            return;
+        }
         this.dispose();
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -785,18 +871,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     private void btnXoaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoaMouseEntered
         btnXoa.setBackground(new Color(0,102,204));
     }//GEN-LAST:event_btnXoaMouseEntered
-
-    private void txtNgaySinhCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtNgaySinhCaretUpdate
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgaySinhCaretUpdate
-
-    private void txtNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgaySinhActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgaySinhActionPerformed
-
-    private void txtNgaySinhKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNgaySinhKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgaySinhKeyReleased
 
     private void mniUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniUpdateActionPerformed
         SuaKhachHang jdl = new SuaKhachHang(new JFrame(), true);
@@ -840,6 +914,140 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     private void btnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemActionPerformed
 
     }//GEN-LAST:event_btnthemActionPerformed
+
+    private void txtIDKhachHangFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIDKhachHangFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_KhachHang.kiemTra("makh")) {
+            return;
+        }
+    }//GEN-LAST:event_txtIDKhachHangFocusLost
+
+    private void txtHoTen1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHoTen1FocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_KhachHang.kiemTra("hovaten")) {
+            return;
+        }
+    }//GEN-LAST:event_txtHoTen1FocusLost
+
+    private void cbbLoaiKHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbbLoaiKHFocusLost
+//        if (evt.isTemporary()) {
+//            return;
+//        }
+//        if (!BLL.BLL_NhanVien.kiemTra("hoVaTen")) {
+//            return;
+//        }
+    }//GEN-LAST:event_cbbLoaiKHFocusLost
+
+    private void txtSDTFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSDTFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_KhachHang.kiemTra("sdt")) {
+            return;
+        }
+    }//GEN-LAST:event_txtSDTFocusLost
+
+    private void txtDCFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDCFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_KhachHang.kiemTra("diachi")) {
+            return;
+        }
+    }//GEN-LAST:event_txtDCFocusLost
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_KhachHang.kiemTra("email")) {
+            return;
+        }
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void txtNgaySinhFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNgaySinhFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_KhachHang.kiemTra("ngaysinh")) {
+            return;
+        }
+    }//GEN-LAST:event_txtNgaySinhFocusLost
+
+    private void txtNgayThemFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNgayThemFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_KhachHang.kiemTra("ngaythem")) {
+            return;
+        }
+    }//GEN-LAST:event_txtNgayThemFocusLost
+
+    private void txtNguoiTaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNguoiTaoFocusLost
+//        if (evt.isTemporary()) {
+//            return;
+//        }
+//        if (!BLL.BLL_NhanVien.kiemTra("hoVaTen")) {
+//            return;
+//        }
+    }//GEN-LAST:event_txtNguoiTaoFocusLost
+
+    private void txtGhiChuFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGhiChuFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_NhanVien.kiemTra("ghichu")) {
+            return;
+        }
+    }//GEN-LAST:event_txtGhiChuFocusLost
+
+    private void txtIDKhachHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKhachHangKeyReleased
+        BLL.BLL_KhachHang.kiemTra("makh");
+    }//GEN-LAST:event_txtIDKhachHangKeyReleased
+
+    private void txtHoTen1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHoTen1KeyReleased
+        BLL.BLL_KhachHang.kiemTra("hovaten");
+    }//GEN-LAST:event_txtHoTen1KeyReleased
+
+    private void txtSDTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSDTKeyReleased
+        BLL.BLL_KhachHang.kiemTra("sdt");
+    }//GEN-LAST:event_txtSDTKeyReleased
+
+    private void txtDCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDCKeyReleased
+       BLL.BLL_KhachHang.kiemTra("diachi");
+    }//GEN-LAST:event_txtDCKeyReleased
+
+    private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
+        BLL.BLL_KhachHang.kiemTra("email");
+    }//GEN-LAST:event_txtEmailKeyReleased
+
+    private void txtNgaySinhKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNgaySinhKeyReleased
+        BLL.BLL_KhachHang.kiemTra("ngaysinh");
+    }//GEN-LAST:event_txtNgaySinhKeyReleased
+
+    private void txtNgayThemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNgayThemKeyReleased
+        //BLL.BLL_KhachHang.kiemTra("ngaythem");
+    }//GEN-LAST:event_txtNgayThemKeyReleased
+
+    private void txtNguoiTaoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNguoiTaoKeyReleased
+        BLL.BLL_KhachHang.kiemTra("nguoitao");
+    }//GEN-LAST:event_txtNguoiTaoKeyReleased
+
+    private void txtGhiChuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGhiChuKeyReleased
+        BLL.BLL_KhachHang.kiemTra("ghichu");
+    }//GEN-LAST:event_txtGhiChuKeyReleased
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        if(!BLL.BLL_KhachHang.delete(KhachHang.tblKhachHang)){
+            return;
+        }
+        BLL.BLL_KhachHang.loadDSKhachHang("");
+        this.dispose();
+    }//GEN-LAST:event_btnXoaActionPerformed
     
     /**
      * @param args the command line arguments
@@ -910,7 +1118,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JLabel lblGioiTinh;
-    public static javax.swing.JLabel lblMaNV;
     private javax.swing.JLabel lblNgay1;
     private javax.swing.JLabel lblNgaySinh;
     private javax.swing.JLabel lblNoiCap;
@@ -920,9 +1127,10 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     public static javax.swing.JLabel lblTBGhiChu;
     public static javax.swing.JLabel lblTBHoTen;
     public static javax.swing.JLabel lblTBHoTen1;
-    public static javax.swing.JLabel lblTBNoiCap;
-    public static javax.swing.JLabel lblTBNoiCap1;
+    public static javax.swing.JLabel lblTBNgayThem;
+    public static javax.swing.JLabel lblTBNguoiTao;
     public static javax.swing.JLabel lblTBSDT;
+    public static javax.swing.JLabel lblTDMaKH;
     private javax.swing.JLabel lblTaiKhoan;
     private javax.swing.JLabel lblTrangThai;
     private javax.swing.JMenuItem mniAdd;
@@ -938,8 +1146,8 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     public static javax.swing.JTextField txtGhiChu;
     public static javax.swing.JTextField txtHoTen1;
     public static javax.swing.JTextField txtIDKhachHang;
-    public static javax.swing.JFormattedTextField txtNgaySinh;
-    public static javax.swing.JFormattedTextField txtNgayThem;
+    public static com.toedter.calendar.JDateChooser txtNgaySinh;
+    public static com.toedter.calendar.JDateChooser txtNgayThem;
     public static javax.swing.JTextField txtNguoiTao;
     public static javax.swing.JFormattedTextField txtSDT;
     // End of variables declaration//GEN-END:variables

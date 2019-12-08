@@ -1418,10 +1418,10 @@ public class ViTri extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tblTaiKhoanMouseClicked
 
     private void tblTaiKhoanMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTaiKhoanMousePressed
-        if (tblTaiKhoan.getRowCount() <= 0) {
-            return;
-        }
-        BLL.BLL_TaiKhoan.click();
+//        if (tblTaiKhoan.getRowCount() <= 0) {
+//            return;
+//        }
+//        BLL.BLL_TaiKhoan.click();
     }//GEN-LAST:event_tblTaiKhoanMousePressed
 
     private void txtNgayLapCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtNgayLapCaretUpdate

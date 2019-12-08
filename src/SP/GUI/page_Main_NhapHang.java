@@ -52,17 +52,12 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
         jMenu4 = new javax.swing.JMenu();
         mniTaoPhieuNhap_NCC = new javax.swing.JMenuItem();
         mniDonDatHang = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        mniNhapSPExcel = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        mniNhapSPExcel = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        mniSanPhamHienCo = new javax.swing.JMenuItem();
 
         chfFile.setApproveButtonText("Chọn");
         chfFile.setApproveButtonToolTipText("Chọn file excel");
@@ -113,17 +108,20 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
-        jMenuBar1.setForeground(new java.awt.Color(0, 51, 204));
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setForeground(new java.awt.Color(0, 102, 153));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(313, 45));
 
-        jMenu1.setBackground(new java.awt.Color(0, 153, 255));
-        jMenu1.setForeground(new java.awt.Color(51, 51, 51));
+        jMenu1.setBackground(new java.awt.Color(0, 102, 153));
         jMenu1.setText("Đơn đặt hàng");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
+        jMenu4.setBackground(new java.awt.Color(0, 102, 153));
         jMenu4.setText("Tạo mới");
+        jMenu4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
+        mniTaoPhieuNhap_NCC.setBackground(new java.awt.Color(0, 102, 153));
+        mniTaoPhieuNhap_NCC.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         mniTaoPhieuNhap_NCC.setText("Tạo hóa đơn với nhà cung cấp");
         mniTaoPhieuNhap_NCC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +132,8 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
 
         jMenu1.add(jMenu4);
 
+        mniDonDatHang.setBackground(new java.awt.Color(0, 102, 153));
+        mniDonDatHang.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         mniDonDatHang.setText("Đơn đã đặt");
         mniDonDatHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,61 +144,44 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Nhập hàng");
-        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu5.setBackground(new java.awt.Color(0, 102, 153));
+        jMenu5.setText("Sản phẩm");
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem3.setText("Nhập với đơn đặt hàng");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
+        jMenu6.setBackground(new java.awt.Color(0, 102, 153));
+        jMenu6.setText("Danh mục sản phẩm");
+        jMenu6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
+        jMenu3.setBackground(new java.awt.Color(0, 102, 153));
+        jMenu3.setText("Thêm mới");
+        jMenu3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        mniNhapSPExcel.setBackground(new java.awt.Color(0, 102, 153));
+        mniNhapSPExcel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         mniNhapSPExcel.setText("Nhập hàng bằng Excel");
         mniNhapSPExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mniNhapSPExcelActionPerformed(evt);
             }
         });
-        jMenu2.add(mniNhapSPExcel);
+        jMenu3.add(mniNhapSPExcel);
 
+        jMenuItem7.setBackground(new java.awt.Color(0, 102, 153));
+        jMenuItem7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jMenuItem7.setText("Xuất file nhập mẫu");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem7);
+        jMenu3.add(jMenuItem7);
 
-        jMenuBar1.add(jMenu2);
+        jMenu6.add(jMenu3);
 
-        jMenu3.setText("QL Đơn nhập hàng");
-        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        jMenuItem5.setText("Đơn đã nhập");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem5);
-
-        jMenuItem6.setText("Đơn đã đặt hàng");
-        jMenu3.add(jMenuItem6);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu5.setText("Sản phẩm");
-        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        jMenu6.setText("Danh mục sản phẩm");
-
-        jMenuItem1.setText("Thêm mới");
-        jMenu6.add(jMenuItem1);
-
-        jMenuItem4.setText("Sản phẩm hiện có");
-        jMenu6.add(jMenuItem4);
+        mniSanPhamHienCo.setBackground(new java.awt.Color(0, 102, 153));
+        mniSanPhamHienCo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        mniSanPhamHienCo.setText("Sản phẩm hiện có");
+        jMenu6.add(mniSanPhamHienCo);
 
         jMenu5.add(jMenu6);
 
@@ -278,22 +261,17 @@ public class page_Main_NhapHang extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JFileChooser chfFile;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JFileChooser jfileTest;
     private javax.swing.JMenuItem mniDonDatHang;
     private javax.swing.JMenuItem mniNhapSPExcel;
+    private javax.swing.JMenuItem mniSanPhamHienCo;
     private javax.swing.JMenuItem mniTaoPhieuNhap_NCC;
     public static javax.swing.JPanel pnlAddPnl;
     // End of variables declaration//GEN-END:variables

@@ -94,11 +94,11 @@ public class BLL_TonKho {
         SP.DTO.DTO_HangTonKho htk = new DTO_HangTonKho(txtSeriSP.getText(), txtChiTiet.getText(), idViTri, true);
         if (SP.DAO.update.UpdateHangTonKho(maVach, htk) < 1) {
             
-            System.out.println("Chưa nhập vào kho được");
+            GUI.ThongBao.ThongBao("Lỗi chưa nhập được vào kho!", "Thông báo!");
             return false;
         }
         
-        System.out.println("Đã nhập vào kho");
+        GUI.ThongBao.ThongBao("Đã nhập vào kho!", "Thông báo!");
         loadDSPSChuaVaoKho();
         loadSPTonKho_ByKho(idViTri, tblHangTonKho);
         return true;
@@ -144,7 +144,6 @@ public class BLL_TonKho {
         } catch (SQLException ex) {
             Logger.getLogger(BLL_TonKho.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("đã load");
     }
     public static void openPNL(){
         String tenKho = SP.GUI.page_ViTri.vt.getTenKho() + " - " + SP.GUI.page_ViTri.vt.getTenLo();
