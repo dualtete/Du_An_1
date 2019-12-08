@@ -107,24 +107,25 @@ public class BLL_TaiKhoan {
     public static void refresh(){
         
     }
-    public static void click(){
-        String id = TTTaiKhoan.tblTaiKhoan.getValueAt(TTTaiKhoan.tblTaiKhoan.getSelectedRow(), 1).toString();
-        ResultSet rs = DAO.selectByID.TaiKhoan(id);
-        try {
-            if(rs.next()){
-                DTO_TaiKhoan tk = new DTO_TaiKhoan();
-                tk.setIDTK(rs.getInt("IDTaiKhoan"));
-                tk.setUserName(rs.getString("UserName"));
-                tk.setPass(rs.getString("PassWords"));
-                tk.setNgaylap(ChuyenDoi.GetNgay(rs.getDate("NgayLap")));
-                tk.setIDNV(rs.getString("IDNV"));
-                tk.setIDQuyen(rs.getString("IDQuyen"));
-                tk.setNguoiLap(rs.getString("NguoiLap"));
-                tk.setTrangThai(rs.getBoolean("TrangThai"));
-            }
-        } catch (SQLException ex) {
-            ThongBao.ThongBao("Lỗi click vào bảng tài khoản!", "Thông báo");
-        }
-    }
+//    public static void click(){
+//        String id = TTTaiKhoan.tblTaiKhoan.getValueAt(TTTaiKhoan.tblTaiKhoan.getSelectedRow(), 1).toString();
+//        ResultSet rs = DAO.selectByID.TaiKhoan(id);
+//        try {
+//            if(rs.next()){
+//                DTO_TaiKhoan tk = new DTO_TaiKhoan();
+//                tk.setIDTK(rs.getInt("IDTaiKhoan"));
+//                tk.setUserName(rs.getString("UserName"));
+//                tk.setPass(rs.getString("PassWords"));
+//                tk.setNgaylap(ChuyenDoi.GetNgay(rs.getDate("NgayLap")));
+//                tk.setIDNV(rs.getString("IDNV"));
+//                tk.setIDQuyen(rs.getString("IDQuyen"));
+//                tk.setNguoiLap(rs.getString("NguoiLap"));
+//                tk.setTrangThai(rs.getBoolean("TrangThai"));
+//                setComponent(tk);
+//            }
+//        } catch (SQLException ex) {
+//            ThongBao.ThongBao("Lỗi click vào bảng tài khoản!", "Thông báo");
+//        }
+//    }
     
 }

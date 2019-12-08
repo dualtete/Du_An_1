@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import BLL.ChuyenDoi;
+import DTO.DTO_TaiKhoan;
+import DTO.MyComboBox;
 import static GUI.ViTri.tblNhaCungCap;
 import static GUI.ViTri.txtNguoiLap;
 import java.awt.Color;
@@ -97,7 +100,6 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnLamMoi = new javax.swing.JButton();
-        btnThoat = new javax.swing.JButton();
         pnlQuyen = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblQuyen = new javax.swing.JTable();
@@ -130,7 +132,6 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         btnSuaQuyen = new javax.swing.JButton();
         btnXoaQuyen = new javax.swing.JButton();
         btnLamMoiQuyen = new javax.swing.JButton();
-        btnThoat1 = new javax.swing.JButton();
         pnlChuabtn = new javax.swing.JPanel();
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
@@ -403,6 +404,9 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tblTaiKhoanMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblTaiKhoanMouseReleased(evt);
             }
         });
         jScrollPane2.setViewportView(tblTaiKhoan);
@@ -725,43 +729,31 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         btnLamMoi.setText("LÀM MỚI");
         btnLamMoi.setBorder(null);
 
-        btnThoat.setBackground(new java.awt.Color(0, 204, 51));
-        btnThoat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
-        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_rewind_50px.png"))); // NOI18N
-        btnThoat.setText("THOÁT");
-        btnThoat.setBorder(null);
-
         javax.swing.GroupLayout pnlAUDR2Layout = new javax.swing.GroupLayout(pnlAUDR2);
         pnlAUDR2.setLayout(pnlAUDR2Layout);
         pnlAUDR2Layout.setHorizontalGroup(
             pnlAUDR2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAUDR2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(pnlAUDR2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlAUDR2Layout.createSequentialGroup()
-                        .addComponent(btnThem1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addComponent(btnThem1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlAUDR2Layout.setVerticalGroup(
             pnlAUDR2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAUDR2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlAUDR2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnThem1)
-                    .addComponent(btnSua)
-                    .addComponent(btnXoa)
-                    .addComponent(btnLamMoi))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnThoat)
-                .addContainerGap())
+                .addGroup(pnlAUDR2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnLamMoi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnThem1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlTaiKhoanLayout = new javax.swing.GroupLayout(pnlTaiKhoan);
@@ -1119,6 +1111,11 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         btnXoaQuyen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_delete_50px.png"))); // NOI18N
         btnXoaQuyen.setText("XÓA");
         btnXoaQuyen.setBorder(null);
+        btnXoaQuyen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaQuyenActionPerformed(evt);
+            }
+        });
 
         btnLamMoiQuyen.setBackground(new java.awt.Color(0, 102, 153));
         btnLamMoiQuyen.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -1127,42 +1124,31 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         btnLamMoiQuyen.setText("LÀM MỚI");
         btnLamMoiQuyen.setBorder(null);
 
-        btnThoat1.setBackground(new java.awt.Color(0, 204, 51));
-        btnThoat1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnThoat1.setForeground(new java.awt.Color(255, 255, 255));
-        btnThoat1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_rewind_50px.png"))); // NOI18N
-        btnThoat1.setText("THOÁT");
-        btnThoat1.setBorder(null);
-
         javax.swing.GroupLayout pnlAUDRLayout = new javax.swing.GroupLayout(pnlAUDR);
         pnlAUDR.setLayout(pnlAUDRLayout);
         pnlAUDRLayout.setHorizontalGroup(
             pnlAUDRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAUDRLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(btnThemQuyen)
-                .addGap(18, 18, 18)
-                .addComponent(btnSuaQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnThemQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnXoaQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLamMoiQuyen)
-                .addContainerGap(77, Short.MAX_VALUE))
-            .addGroup(pnlAUDRLayout.createSequentialGroup()
-                .addComponent(btnThoat1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(btnSuaQuyen, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnXoaQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLamMoiQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
         pnlAUDRLayout.setVerticalGroup(
             pnlAUDRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAUDRLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(pnlAUDRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnThemQuyen)
-                    .addComponent(btnSuaQuyen)
-                    .addComponent(btnXoaQuyen)
-                    .addComponent(btnLamMoiQuyen))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                .addComponent(btnThoat1))
+                    .addComponent(btnThemQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSuaQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoaQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLamMoiQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(201, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlQuyenLayout = new javax.swing.GroupLayout(pnlQuyen);
@@ -1379,21 +1365,45 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         jdlAddNhanVien.btnCapNhat.setEnabled(false);
         jdl.setVisible(true);
     }//GEN-LAST:event_btnThemActionPerformed
-
+    public static String idtaikhoan;
     private void tblTaiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTaiKhoanMouseClicked
+        boolean flag = false;
         if (evt.getClickCount() == 2) {
-            //ThongTinTaiKhoan.IDTaiKhoan = tblTaiKhoan.getValueAt(tblTaiKhoan.getSelectedRow(), 1).toString();
-            TTTaiKhoan jdl = new TTTaiKhoan();
-            jdl.setVisible(true);
-
+            int vitri = tblTaiKhoan.getSelectedRow();
+            idtaikhoan = tblTaiKhoan.getValueAt(vitri, 1).toString();
+            ResultSet rs = DAO.selectByID.TaiKhoan(idtaikhoan);
+            try {
+                if(rs.next()){
+                    DTO.DTO_TaiKhoan tk = new DTO_TaiKhoan();
+                    txtTenDN.setText(rs.getString("UserName"));
+                    txtPass.setText(rs.getString("Passwords"));
+                    txtNgayLap.setText(ChuyenDoi.GetNgay(rs.getDate("NgayLap")));
+//                    for (int i = 0; i < cbbMaNhanVien.getItemCount(); i++) {
+//                        try {
+//                            MyComboBox mbb = (MyComboBox) cbbMaNhanVien.getItemAt(i);
+//                            if(tk.getIDNV().equals(mbb.MaString())){
+//                               cbbMaNhanVien.setSelectedIndex(i);
+//                               flag = true;
+//                            }
+//                        } catch (Exception e) {
+//                            break;
+//                        }
+//                    }
+                    txtTrangThai.setText(rs.getString("TrangThai"));
+                    String tt = rs.getBoolean("TrangThai")?"Đang hoạt động":"Dừng hoạt động";
+                    txtTrangThai.setText(tt);
+                }
+            } catch (Exception e) {
+            }
         }
+        
     }//GEN-LAST:event_tblTaiKhoanMouseClicked
 
     private void tblTaiKhoanMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTaiKhoanMousePressed
-        if (tblTaiKhoan.getRowCount() <= 0) {
-            return;
-        }
-        BLL.BLL_TaiKhoan.click();
+//        if (tblTaiKhoan.getRowCount() <= 0) {
+//            return;
+//        }
+//        BLL.BLL_TaiKhoan.click();
     }//GEN-LAST:event_tblTaiKhoanMousePressed
 
     private void txtNgayLapCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtNgayLapCaretUpdate
@@ -1486,7 +1496,8 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnThemQuyenActionPerformed
 
     private void btnSuaQuyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaQuyenActionPerformed
-        //BLL.BLL_Quyen.updateQuyen();
+        int vitri = tblQuyen.getSelectedRow();
+        BLL.BLL_Quyen.updateQuyen(tblQuyen.getValueAt(vitri, 1).hashCode());
     }//GEN-LAST:event_btnSuaQuyenActionPerformed
 
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
@@ -1509,6 +1520,15 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         BLL.BLL_NhanVien.loadBangNV(txtTimKiem1.getText());
     }//GEN-LAST:event_btnTimKiem1ActionPerformed
 
+    private void tblTaiKhoanMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTaiKhoanMouseReleased
+//        BLL.BLL_TaiKhoan.click();
+    }//GEN-LAST:event_tblTaiKhoanMouseReleased
+
+    private void btnXoaQuyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaQuyenActionPerformed
+        BLL.BLL_Quyen.deleteQuyen(tblQuyen);
+        BLL.BLL_Quyen.loadBangQuyen();
+    }//GEN-LAST:event_btnXoaQuyenActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn1;
@@ -1523,8 +1543,6 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnThem1;
     private javax.swing.JButton btnThemQuyen;
-    private javax.swing.JButton btnThoat;
-    private javax.swing.JButton btnThoat1;
     private javax.swing.JButton btnTimKiem1;
     private javax.swing.JButton btnXoa;
     private javax.swing.JButton btnXoaQuyen;

@@ -59,10 +59,8 @@ public class BLL_TaoPhieuNhap {
         String idpn = "PN-" + pn.getIDNCC().replace(" ", "").replace("-", "") + pn.getNgayTao().replace(" ", "").replace("/", "").replace(":", "");
         pn.setIDPN(idpn);
         if (SP.DAO.insert.insertPhieuNhap(pn) > 0) {
-            System.out.println("Đã tạo phiếu nhập");
             return true;
         }
-        System.out.println("Lỗi tạo phiếu nhập");
         return false;
     }
 

@@ -5,6 +5,8 @@
  */
 package DTO;
 
+import java.util.Date;
+
 /**
  *
  * @author bumte
@@ -14,9 +16,9 @@ public class DTO_NhanVien {
     String hoTen;
     String SDT;
     String CMND;
-    String ngayCap;
+    Date ngayCap;
     String noiCap;
-    String ngaySinh;
+    Date ngaySinh;
     boolean gioiTinh;
     String hinhAnh;
     String email;
@@ -67,13 +69,7 @@ public class DTO_NhanVien {
         this.CMND = CMND;
     }
 
-    public String getNgayCap() {
-        return ngayCap;
-    }
-
-    public void setNgayCap(String ngayCap) {
-        this.ngayCap = ngayCap;
-    }
+    
 
     public String getNoiCap() {
         return noiCap;
@@ -83,13 +79,23 @@ public class DTO_NhanVien {
         this.noiCap = noiCap;
     }
 
-    public String getNgaySinh() {
+    public Date getNgayCap() {
+        return ngayCap;
+    }
+
+    public void setNgayCap(Date ngayCap) {
+        this.ngayCap = ngayCap;
+    }
+
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(String ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
+
+    
 
 
     public String getHinhAnh() {

@@ -140,12 +140,14 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="M&#xe3; g&#x1ed3;m 5 k&#xed; t&#x1ef1;!"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtMaNVFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMaNVKeyReleased"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -222,12 +224,14 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="H&#x1ecd; t&#xea;n l&#xe0; ch&#x1eef; bao g&#x1ed3;m t&#x1eeb; 5 &#x111;&#x1ebf;n 50 k&#xed; t&#x1ef1;!"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtHoTenFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtHoTenKeyReleased"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -325,12 +329,16 @@
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="###-###-####" subtype="-1" type="5"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="0000000000"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="text" type="java.lang.String" value="0123456789"/>
+                <Property name="toolTipText" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i g&#x1ed3;m 10 k&#xed; t&#x1ef1;"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtSDTFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSDTKeyReleased"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -421,13 +429,18 @@
                   <Border info="null"/>
                 </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="#### ### ###" subtype="-1" type="5"/>
+                  <Format format="#### ### ##" subtype="-1" type="5"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="0000000000"/>
+                <Property name="text" type="java.lang.String" value="123456789"/>
+                <Property name="toolTipText" type="java.lang.String" value="CMND g&#x1ed3;m 9 k&#xed; t&#x1ef1;!"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCMNDFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCMNDKeyReleased"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -459,21 +472,23 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel24" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtNgayCapCMND" min="-2" pref="294" max="-2" attributes="0"/>
-                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <Component id="txtNgayCap" min="-2" pref="297" max="-2" attributes="0"/>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
                       <Component id="lblTBNgayCap" min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="jLabel24" alignment="3" max="32767" attributes="0"/>
-                      <Component id="txtNgayCapCMND" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Component id="txtNgayCap" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Component id="lblTBNgayCap" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -513,23 +528,17 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtNgayCapCMND">
+            <Component class="com.toedter.calendar.JDateChooser" name="txtNgayCap">
               <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
-                </Property>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="##/##/####" subtype="-1" type="5"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtNgayCapCMNDCaretUpdate"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNgayCapCMNDActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNgayCapCMNDKeyReleased"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNgayCapFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNgayCapFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNgayCapKeyReleased"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -612,10 +621,15 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Kh&#xf4;ng &#x111;&#x1b0;&#x1ee3;c &#x111;&#x1ec3; tr&#x1ed1;ng!"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNoiCapCMNDFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNoiCapCMNDKeyReleased"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -637,7 +651,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="570" y="200" width="-1" height="-1"/>
+              <AbsoluteConstraints x="570" y="200" width="-1" height="40"/>
             </Constraint>
           </Constraints>
 
@@ -648,9 +662,9 @@
                       <Component id="lblNgaySinh" min="-2" pref="92" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblNgay1" min="-2" pref="9" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtNgaySinh" min="-2" pref="128" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="txtNgaySinh" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblGioiTinh" min="-2" pref="81" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="radNam" min="-2" max="-2" attributes="0"/>
@@ -666,12 +680,15 @@
                       <Component id="lblGioiTinh" alignment="3" max="32767" attributes="0"/>
                       <Component id="radNam" alignment="3" max="32767" attributes="0"/>
                       <Component id="radNu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtNgaySinh" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="lblNgaySinh" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="lblNgay1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNgaySinh" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="lblNgay1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="txtNgaySinh" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -767,24 +784,14 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtNgaySinh">
+            <Component class="com.toedter.calendar.JDateChooser" name="txtNgaySinh">
               <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
-                </Property>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="##/##/####" subtype="-1" type="5"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtNgaySinhCaretUpdate"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNgaySinhActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNgaySinhKeyReleased"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -859,10 +866,15 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="V&#xed; d&#x1ee5;: khoa@gmail.com"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtEmailFocusLost"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmailKeyPressed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -951,10 +963,15 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9; bao g&#x1ed3;m t&#x1eeb; 5 &#x111;&#x1ebf;n 100 k&#xed; t&#x1ef1;!"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtDCFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDCKeyReleased"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -1064,6 +1081,7 @@
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="0"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Kh&#xf4;ng &#x111;&#x1b0;&#x1ee3;c nh&#x1ead;p ch&#x1eef;!"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -1177,6 +1195,7 @@
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="0"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Kh&#xf4;ng &#x111;&#x1b0;&#x1ee3;c nh&#x1ead;p ch&#x1eef;!"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -1305,7 +1324,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="630" y="500" width="100" height="47"/>
+              <AbsoluteConstraints x="630" y="500" width="100" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -1338,7 +1357,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="850" y="500" width="130" height="47"/>
+              <AbsoluteConstraints x="850" y="500" width="130" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -1360,6 +1379,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+            <Property name="hideActionText" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnThemMouseEntered"/>
@@ -1371,7 +1391,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="740" y="500" width="100" height="47"/>
+              <AbsoluteConstraints x="740" y="500" width="100" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -1401,7 +1421,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="990" y="500" width="120" height="45"/>
+              <AbsoluteConstraints x="990" y="500" width="120" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -1414,10 +1434,11 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                <MatteColorBorder>
-                  <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
-                </MatteColorBorder>
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="H&#xcc;NH &#x1ea2;NH">
+                  <Font PropertyName="font" name="Dialog" size="14" style="0"/>
+                  <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
+                </TitledBorder>
               </Border>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

@@ -29,26 +29,23 @@ public class BLL_CTPhieuNhap {
     //Hiện thông tin của phiếu nhập và nhà cung cấp trong page_PhieuNhap
 
     public static void setThongTinPhieuNhap(String id) {
-        System.out.println(id);
         ResultSet rs = SP.DAO.selectBy.PhieuNhapByIDPhieuNhap(id);
         String thongTinPhieuNhap = "";
         try {
             if (rs.next()) {
                 System.out.println(rs.getString("IDPhieuNhap"));
-                thongTinPhieuNhap += "Mã phiếu nhập:     " + rs.getString("IDPhieuNhap") + "\n";
-                thongTinPhieuNhap += "Mã nhà cung cấp:   " + rs.getString("MaNCC") + "\n";
-                thongTinPhieuNhap += "Tên nhà cung cấp : " + rs.getString("tenNCC") + "\n";
-                thongTinPhieuNhap += "Ngày tạo:          " + ChuyenDoi.dateTimeString(rs.getTimestamp("NgayTaoPhieuNhap")) + "\n";
-                thongTinPhieuNhap += "Người liên hệ:     " + rs.getString("NguoiLH") + "\n";
-                thongTinPhieuNhap += "SDT:               " + rs.getString("SDTNCC") + "\n";
-                thongTinPhieuNhap += "Email:             " + rs.getString("emailNCC") + "\n";
-                thongTinPhieuNhap += "Địa chỉ:           " + rs.getString("DCNCC") + "\n";
+                thongTinPhieuNhap += "* Mã phiếu nhập       : " + rs.getString("IDPhieuNhap") + "\n";
+                thongTinPhieuNhap += "* Mã nhà cung cấp    : " + rs.getString("MaNCC") + "\n";
+                thongTinPhieuNhap += "* Tên nhà cung cấp   : " + rs.getString("tenNCC") + "\n";
+                thongTinPhieuNhap += "* Ngày tạo               : " + ChuyenDoi.dateTimeString(rs.getTimestamp("NgayTaoPhieuNhap")) + "\n";
+                thongTinPhieuNhap += "* Người liên hệ         : " + rs.getString("NguoiLH") + "\n";
+                thongTinPhieuNhap += "* SDT                     : " + rs.getString("SDTNCC") + "\n";
+                thongTinPhieuNhap += "* Email                    : " + rs.getString("emailNCC") + "\n";
+                thongTinPhieuNhap += "* Địa chỉ                  : " + rs.getString("DCNCC") + "\n";
             }
         } catch (SQLException ex) {
             Logger.getLogger(BLL_CTPhieuNhap.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Lỗi");
         }
-        System.out.println(thongTinPhieuNhap);
         txtThongTinDonDatHang.setText(thongTinPhieuNhap);
     }
     // insert chi tiết phiếu nhập theo mã phiếu nhập
@@ -70,11 +67,11 @@ public class BLL_CTPhieuNhap {
                 //Nếu chưa có chi tiết phiếu nhập của sản phẩm này thì tạo mới
 
                 if (SP.DAO.insert.insertChiTietPhieuNhap(ct) > 0) {
-                    System.out.println("Thêm sản phẩm vào phiếu nhập thành công");
+                    GUI.ThongBao.ThongBao("Thêm sản phẩm vào phiếu nhập thành công!", "Thông báo!");
                     loadBangDanhSachSanPham();
                     return true;
                 } else {
-                    System.out.println("Thêm sản phẩm vào phiếu nhập thất bại");
+                    GUI.ThongBao.ThongBao("Chưa có sản phẩm nào để thêm!", "Thông báo!");
                     return false;
                 }
 

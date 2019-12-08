@@ -5,6 +5,7 @@
  */
 package SP.GUI;
 
+import GUI.ViTri.HeaderColor;
 import static SP.GUI.pnlCT_PhieuNhap.spnSL;
 import static SP.GUI.pnlCT_PhieuNhap.txtBarcode;
 import static SP.GUI.pnlCT_PhieuNhap.txtGiaLeMoi;
@@ -23,6 +24,8 @@ public class jdlChonSP extends javax.swing.JDialog {
     public jdlChonSP(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        tblSP.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblSP.setAutoCreateRowSorter(true);
     }
 
     /**
@@ -38,6 +41,7 @@ public class jdlChonSP extends javax.swing.JDialog {
         tblSP = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         txtTimKiem = new javax.swing.JTextField();
+        btnTimKiem1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -54,7 +58,7 @@ public class jdlChonSP extends javax.swing.JDialog {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "Barcode", "Tên sản phẩm", "Trạng thái", "ID loại sả phẩm", "Hãng sản xuất", "Hạn bảo hành(Tháng)", "TT Bảo hành", "TT Sản phẩm", "Ngày thêm", "ID tài khoản thêm"
+                "STT", "BARCODE", "TÊN SẢN PHẨM", "Trạng thái", "ID loại sả phẩm", "HÃNG SẢN XUẤT", "BẢO HÀNH(Tháng)", "TT Bảo hành", "TT Sản phẩm", "Ngày thêm", "ID tài khoản thêm"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -72,9 +76,15 @@ public class jdlChonSP extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblSP);
         if (tblSP.getColumnModel().getColumnCount() > 0) {
-            tblSP.getColumnModel().getColumn(0).setMinWidth(50);
-            tblSP.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tblSP.getColumnModel().getColumn(0).setMaxWidth(100);
+            tblSP.getColumnModel().getColumn(0).setMinWidth(20);
+            tblSP.getColumnModel().getColumn(0).setPreferredWidth(20);
+            tblSP.getColumnModel().getColumn(0).setMaxWidth(50);
+            tblSP.getColumnModel().getColumn(1).setMinWidth(100);
+            tblSP.getColumnModel().getColumn(1).setPreferredWidth(100);
+            tblSP.getColumnModel().getColumn(1).setMaxWidth(150);
+            tblSP.getColumnModel().getColumn(2).setMinWidth(350);
+            tblSP.getColumnModel().getColumn(2).setPreferredWidth(350);
+            tblSP.getColumnModel().getColumn(2).setMaxWidth(350);
             tblSP.getColumnModel().getColumn(3).setMinWidth(0);
             tblSP.getColumnModel().getColumn(3).setPreferredWidth(0);
             tblSP.getColumnModel().getColumn(3).setMaxWidth(0);
@@ -86,7 +96,7 @@ public class jdlChonSP extends javax.swing.JDialog {
             tblSP.getColumnModel().getColumn(5).setMaxWidth(200);
             tblSP.getColumnModel().getColumn(6).setMinWidth(50);
             tblSP.getColumnModel().getColumn(6).setPreferredWidth(100);
-            tblSP.getColumnModel().getColumn(6).setMaxWidth(150);
+            tblSP.getColumnModel().getColumn(6).setMaxWidth(200);
             tblSP.getColumnModel().getColumn(7).setMinWidth(0);
             tblSP.getColumnModel().getColumn(7).setPreferredWidth(0);
             tblSP.getColumnModel().getColumn(7).setMaxWidth(0);
@@ -103,6 +113,14 @@ public class jdlChonSP extends javax.swing.JDialog {
 
         txtTimKiem.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txtTimKiem.setText("Tìm kiếm");
+        txtTimKiem.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTimKiemFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTimKiemFocusLost(evt);
+            }
+        });
         txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimKiemActionPerformed(evt);
@@ -113,18 +131,23 @@ public class jdlChonSP extends javax.swing.JDialog {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtTimKiem)
-                .addContainerGap())
+            .addComponent(txtTimKiem, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(txtTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
         );
+
+        btnTimKiem1.setBackground(new java.awt.Color(255, 255, 255));
+        btnTimKiem1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnTimKiem1.setForeground(new java.awt.Color(255, 255, 255));
+        btnTimKiem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_50px_1.png"))); // NOI18N
+        btnTimKiem1.setBorder(null);
+        btnTimKiem1.setBorderPainted(false);
+        btnTimKiem1.setContentAreaFilled(false);
+        btnTimKiem1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_50px_2.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,18 +156,23 @@ public class jdlChonSP extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(btnTimKiem1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 933, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnTimKiem1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -174,6 +202,14 @@ public class jdlChonSP extends javax.swing.JDialog {
             this.dispose();
         }
     }//GEN-LAST:event_tblSPMouseClicked
+
+    private void txtTimKiemFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemFocusGained
+        txtTimKiem.setText("");
+    }//GEN-LAST:event_txtTimKiemFocusGained
+
+    private void txtTimKiemFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemFocusLost
+        
+    }//GEN-LAST:event_txtTimKiemFocusLost
 
     /**
      * @param args the command line arguments
@@ -218,6 +254,7 @@ public class jdlChonSP extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnTimKiem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblSP;

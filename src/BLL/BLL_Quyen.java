@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -47,6 +49,17 @@ public class BLL_Quyen {
         }
         ThongBao.ThongBao("Cập nhật thất bại!", "Thông báo");
         return false;
+    }
+    public static boolean deleteQuyen(JTable tbl){
+        int dongXoa[] = tbl.getSelectedRows();
+        if (ThongBao.ThongBaoLoai2("Bạn có chắc chắn muốn xóa không?", "Thông báo") != JOptionPane.OK_OPTION) {
+            return false;
+        }
+        for (int i = dongXoa.length - 1; i >= 0; i--) {
+            DAO.delete.Quyen(tbl.getValueAt(dongXoa[i], 1).hashCode());
+        }
+        GUI.ThongBao.ThongBao("Xóa thành công!", "Thông báo");
+        return true; 
     }
 
     public static void setComponent(DTO_Quyen q) {
@@ -118,4 +131,5 @@ public class BLL_Quyen {
         txtNguoiSua.setText(DTO.DTO_UserLogin.userName);
 
     }
+    
 }

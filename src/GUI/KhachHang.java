@@ -365,7 +365,7 @@ public class KhachHang extends javax.swing.JInternalFrame {
             jdlAddKhachHang jdl = new jdlAddKhachHang(new JFrame(), true);
             jdlAddKhachHang.btnThem.setEnabled(false);
             jdlAddKhachHang.txtIDKhachHang.setEditable(false);
-            //BLL.BLL_KhachHang.click();
+            BLL.BLL_KhachHang.click();
             jdl.setVisible(true);
 
         }

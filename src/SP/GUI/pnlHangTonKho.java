@@ -91,6 +91,7 @@ public class pnlHangTonKho extends javax.swing.JPanel {
         lblTenKho = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        btnVeKho = new javax.swing.JButton();
         pnlAddpnlTonKho = new javax.swing.JPanel();
         pnlNhapHangNhanh = new javax.swing.JPanel();
 
@@ -761,8 +762,9 @@ public class pnlHangTonKho extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jPanel2.setPreferredSize(new java.awt.Dimension(1386, 70));
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 255));
+        jButton1.setBackground(new java.awt.Color(0, 102, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Chưa vào kho");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -774,8 +776,9 @@ public class pnlHangTonKho extends javax.swing.JPanel {
         lblTenKho.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTenKho.setText("jLabel2");
 
-        jButton3.setBackground(new java.awt.Color(51, 153, 255));
+        jButton3.setBackground(new java.awt.Color(0, 102, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Đơn đã đặt hàng");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -783,12 +786,27 @@ public class pnlHangTonKho extends javax.swing.JPanel {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(51, 153, 255));
+        jButton7.setBackground(new java.awt.Color(0, 102, 153));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Nhập hàng nhanh");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
+            }
+        });
+
+        btnVeKho.setBackground(new java.awt.Color(255, 255, 255));
+        btnVeKho.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnVeKho.setForeground(new java.awt.Color(204, 102, 0));
+        btnVeKho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconHuy/icons8_return_16px.png"))); // NOI18N
+        btnVeKho.setText("Quay lại");
+        btnVeKho.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 102, 153)));
+        btnVeKho.setContentAreaFilled(false);
+        btnVeKho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVeKho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVeKhoActionPerformed(evt);
             }
         });
 
@@ -798,12 +816,14 @@ public class pnlHangTonKho extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(btnVeKho, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 734, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 494, Short.MAX_VALUE)
                 .addComponent(lblTenKho, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -815,9 +835,10 @@ public class pnlHangTonKho extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVeKho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -952,6 +973,21 @@ public class pnlHangTonKho extends javax.swing.JPanel {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void btnVeKhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeKhoActionPerformed
+       String lo = page_ViTri.vt.getIDKho();
+        if(GUI.frmMain.vitri != null){
+            GUI.frmMain.vitri.dispose();
+        }
+        
+        GUI.frmMain.vitri = new page_ViTri();
+        GUI.frmMain.dkpRight.removeAll();
+        GUI.frmMain.dkpRight.add(GUI.frmMain.vitri);
+        GUI.frmMain.vitri.fillLo(lo);
+        GUI.frmMain.vitri.revalidate();
+        GUI.frmMain.vitri.repaint();
+        
+    }//GEN-LAST:event_btnVeKhoActionPerformed
     public void addPnl(JPanel pnl) {
         pnlAddpnlTonKho.removeAll();
         pnlAddpnlTonKho.add(pnl);
@@ -962,6 +998,7 @@ public class pnlHangTonKho extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnChucNang;
     private javax.swing.JButton btnInMaVach;
+    private javax.swing.JButton btnVeKho;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;

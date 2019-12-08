@@ -52,7 +52,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         jPanel25 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         lblTBNgayCap = new javax.swing.JLabel();
-        txtNgayCapCMND = new javax.swing.JFormattedTextField();
+        txtNgayCap = new com.toedter.calendar.JDateChooser();
         jPanel30 = new javax.swing.JPanel();
         lblNoiCap = new javax.swing.JLabel();
         lblTBNoiCap = new javax.swing.JLabel();
@@ -63,7 +63,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         radNam = new javax.swing.JRadioButton();
         radNu = new javax.swing.JRadioButton();
         lblNgay1 = new javax.swing.JLabel();
-        txtNgaySinh = new javax.swing.JFormattedTextField();
+        txtNgaySinh = new com.toedter.calendar.JDateChooser();
         jPanel26 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
@@ -114,10 +114,16 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
 
         txtMaNV.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtMaNV.setForeground(new java.awt.Color(0, 0, 0));
+        txtMaNV.setToolTipText("Mã gồm 5 kí tự!");
         txtMaNV.setBorder(null);
         txtMaNV.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtMaNVFocusLost(evt);
+            }
+        });
+        txtMaNV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtMaNVKeyReleased(evt);
             }
         });
 
@@ -154,10 +160,16 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         jLabel18.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtHoTen.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtHoTen.setToolTipText("Họ tên là chữ bao gồm từ 5 đến 50 kí tự!");
         txtHoTen.setBorder(null);
         txtHoTen.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtHoTenFocusLost(evt);
+            }
+        });
+        txtHoTen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtHoTenKeyReleased(evt);
             }
         });
 
@@ -205,9 +217,19 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtSDT.setText("0000000000");
-        txtSDT.setToolTipText("");
+        txtSDT.setText("0123456789");
+        txtSDT.setToolTipText("Số điện thoại gồm 10 kí tự");
         txtSDT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtSDT.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSDTFocusLost(evt);
+            }
+        });
+        txtSDT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSDTKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -247,12 +269,23 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
 
         txtCMND.setBorder(null);
         try {
-            txtCMND.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#### ### ###")));
+            txtCMND.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#### ### ##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtCMND.setText("0000000000");
+        txtCMND.setText("123456789");
+        txtCMND.setToolTipText("CMND gồm 9 kí tự!");
         txtCMND.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtCMND.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCMNDFocusLost(evt);
+            }
+        });
+        txtCMND.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCMNDKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -291,27 +324,19 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         lblTBNgayCap.setForeground(new java.awt.Color(153, 0, 0));
         lblTBNgayCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        txtNgayCapCMND.setBorder(null);
-        try {
-            txtNgayCapCMND.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNgayCapCMND.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNgayCapCMND.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtNgayCapCMND.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtNgayCapCMNDCaretUpdate(evt);
+        txtNgayCap.setDateFormatString("dd/MM/yyyy");
+        txtNgayCap.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtNgayCap.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNgayCapFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNgayCapFocusLost(evt);
             }
         });
-        txtNgayCapCMND.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNgayCapCMNDActionPerformed(evt);
-            }
-        });
-        txtNgayCapCMND.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNgayCap.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNgayCapCMNDKeyReleased(evt);
+                txtNgayCapKeyReleased(evt);
             }
         });
 
@@ -322,18 +347,20 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNgayCapCMND, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(txtNgayCap, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(lblTBNgayCap, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtNgayCapCMND, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(txtNgayCap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addComponent(lblTBNgayCap, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pnlChinh.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, -1, -1));
@@ -350,7 +377,18 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         lblTBNoiCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         txtNoiCapCMND.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtNoiCapCMND.setToolTipText("Không được để trống!");
         txtNoiCapCMND.setBorder(null);
+        txtNoiCapCMND.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNoiCapCMNDFocusLost(evt);
+            }
+        });
+        txtNoiCapCMND.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNoiCapCMNDKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -408,29 +446,9 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         lblNgay1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblNgay1.setForeground(new java.awt.Color(204, 0, 0));
 
-        txtNgaySinh.setBorder(null);
-        try {
-            txtNgaySinh.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNgaySinh.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNgaySinh.setToolTipText("");
+        txtNgaySinh.setDateFormatString("dd/MM/yyyy");
         txtNgaySinh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtNgaySinh.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtNgaySinhCaretUpdate(evt);
-            }
-        });
-        txtNgaySinh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNgaySinhActionPerformed(evt);
-            }
-        });
-        txtNgaySinh.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNgaySinhKeyReleased(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -440,9 +458,9 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
                 .addComponent(lblNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNgay1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
+                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radNam)
@@ -455,14 +473,16 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
             .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lblGioiTinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(radNam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(radNu)
-                .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(lblNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(lblNgay1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(radNu))
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNgay1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 1, Short.MAX_VALUE))
+            .addComponent(txtNgaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pnlChinh.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, -1));
+        pnlChinh.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, 40));
 
         jPanel26.setBackground(new java.awt.Color(255, 255, 255));
         jPanel26.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
@@ -475,7 +495,18 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         jLabel26.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtEmail.setToolTipText("Ví dụ: khoa@gmail.com");
         txtEmail.setBorder(null);
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
+        });
 
         lblTBEmail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTBEmail.setForeground(new java.awt.Color(153, 0, 0));
@@ -514,7 +545,18 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         jLabel34.setPreferredSize(new java.awt.Dimension(115, 16));
 
         txtDC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtDC.setToolTipText("Địa chỉ bao gồm từ 5 đến 100 kí tự!");
         txtDC.setBorder(null);
+        txtDC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDCFocusLost(evt);
+            }
+        });
+        txtDC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDCKeyReleased(evt);
+            }
+        });
 
         lblTBDC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTBDC.setForeground(new java.awt.Color(153, 0, 0));
@@ -558,6 +600,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
 
         txtLuong.setBorder(null);
         txtLuong.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        txtLuong.setToolTipText("Không được nhập chữ!");
         txtLuong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtLuong.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -611,6 +654,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
 
         txtKiQuy.setBorder(null);
         txtKiQuy.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        txtKiQuy.setToolTipText("Không được nhập chữ!");
         txtKiQuy.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtKiQuy.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -706,7 +750,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
                 btnXoaActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, 100, 47));
+        pnlChinh.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, 100, 60));
 
         btnCapNhat.setBackground(new java.awt.Color(0, 102, 153));
         btnCapNhat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -727,7 +771,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
                 btnCapNhatActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnCapNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, 130, 47));
+        pnlChinh.add(btnCapNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, 130, 60));
 
         btnThem.setBackground(new java.awt.Color(0, 102, 153));
         btnThem.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -735,6 +779,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_save_all_filled_35px.png"))); // NOI18N
         btnThem.setText("LƯU");
         btnThem.setBorder(null);
+        btnThem.setHideActionText(true);
         btnThem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnThemMouseEntered(evt);
@@ -748,7 +793,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
                 btnThemActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, 100, 47));
+        pnlChinh.add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, 100, 60));
 
         btnLamMoi.setBackground(new java.awt.Color(0, 102, 153));
         btnLamMoi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -769,11 +814,11 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
                 btnLamMoiActionPerformed(evt);
             }
         });
-        pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 500, 120, 45));
+        pnlChinh.add(btnLamMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 500, 120, 60));
 
         lblHinhAnh.setBackground(new java.awt.Color(255, 255, 255));
         lblHinhAnh.setForeground(new java.awt.Color(0, 0, 0));
-        lblHinhAnh.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 102)));
+        lblHinhAnh.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HÌNH ẢNH", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
         lblHinhAnh.setMaximumSize(new java.awt.Dimension(15, 15));
         lblHinhAnh.setOpaque(true);
         lblHinhAnh.setPreferredSize(new java.awt.Dimension(15, 15));
@@ -799,18 +844,6 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNgayCapCMNDCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtNgayCapCMNDCaretUpdate
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgayCapCMNDCaretUpdate
-
-    private void txtNgayCapCMNDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayCapCMNDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgayCapCMNDActionPerformed
-
-    private void txtNgayCapCMNDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNgayCapCMNDKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgayCapCMNDKeyReleased
-
     private void txtLuongKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLuongKeyReleased
         txtLuong.setText(BLL.ChuyenDoi.doubleToString(BLL.ChuyenDoi.stringToDouble(txtLuong.getText())));
     }//GEN-LAST:event_txtLuongKeyReleased
@@ -818,18 +851,6 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
     private void txtKiQuyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKiQuyKeyReleased
         txtKiQuy.setText(BLL.ChuyenDoi.doubleToString(BLL.ChuyenDoi.stringToDouble(txtKiQuy.getText())));
     }//GEN-LAST:event_txtKiQuyKeyReleased
-
-    private void txtNgaySinhCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtNgaySinhCaretUpdate
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgaySinhCaretUpdate
-
-    private void txtNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgaySinhActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgaySinhActionPerformed
-
-    private void txtNgaySinhKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNgaySinhKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgaySinhKeyReleased
 
     private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
         BLL.BLL_NhanVien.refresh();
@@ -847,7 +868,10 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLamMoiMouseEntered
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
-        BLL.BLL_NhanVien.update();
+        if(!BLL.BLL_NhanVien.update()){
+            return;
+        }
+        
         this.dispose();
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
@@ -860,7 +884,9 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCapNhatMouseEntered
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        BLL.BLL_NhanVien.insert();
+        if(!BLL.BLL_NhanVien.insert()){
+            return;
+        }
         this.dispose();
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -901,6 +927,8 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
         if(!BLL.BLL_NhanVien.delete(TTTaiKhoan.tblNhanVien)){
             return;
         }
+        BLL.BLL_NhanVien.loadBangNV("");
+        this.dispose();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void txtHoTenFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHoTenFocusLost
@@ -911,6 +939,96 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
             return;
         }
     }//GEN-LAST:event_txtHoTenFocusLost
+
+    private void txtMaNVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMaNVKeyReleased
+        BLL.BLL_NhanVien.kiemTra("MaNV");
+    }//GEN-LAST:event_txtMaNVKeyReleased
+
+    private void txtHoTenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHoTenKeyReleased
+        BLL.BLL_NhanVien.kiemTra("hoVaTen");
+    }//GEN-LAST:event_txtHoTenKeyReleased
+
+    private void txtSDTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSDTKeyReleased
+        BLL.BLL_NhanVien.kiemTra("SDT");
+    }//GEN-LAST:event_txtSDTKeyReleased
+
+    private void txtCMNDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCMNDKeyReleased
+        BLL.BLL_NhanVien.kiemTra("cmnd");
+    }//GEN-LAST:event_txtCMNDKeyReleased
+
+    private void txtNoiCapCMNDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoiCapCMNDKeyReleased
+        BLL.BLL_NhanVien.kiemTra("noicap");
+    }//GEN-LAST:event_txtNoiCapCMNDKeyReleased
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+        BLL.BLL_NhanVien.kiemTra("email");
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtDCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDCKeyReleased
+        BLL.BLL_NhanVien.kiemTra("diachi");
+    }//GEN-LAST:event_txtDCKeyReleased
+
+    private void txtSDTFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSDTFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_NhanVien.kiemTra("SDT")) {
+            return;
+        }
+    }//GEN-LAST:event_txtSDTFocusLost
+
+    private void txtCMNDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCMNDFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_NhanVien.kiemTra("cmnd")) {
+            return;
+        }
+    }//GEN-LAST:event_txtCMNDFocusLost
+
+    private void txtNoiCapCMNDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNoiCapCMNDFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_NhanVien.kiemTra("noicap")) {
+            return;
+        }
+    }//GEN-LAST:event_txtNoiCapCMNDFocusLost
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_NhanVien.kiemTra("email")) {
+            return;
+        }
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void txtDCFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDCFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_NhanVien.kiemTra("diachi")) {
+            return;
+        }
+    }//GEN-LAST:event_txtDCFocusLost
+
+    private void txtNgayCapKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNgayCapKeyReleased
+        BLL.BLL_NhanVien.kiemTra("ngaycapcm");
+    }//GEN-LAST:event_txtNgayCapKeyReleased
+
+    private void txtNgayCapFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNgayCapFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNgayCapFocusGained
+
+    private void txtNgayCapFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNgayCapFocusLost
+        if (evt.isTemporary()) {
+            return;
+        }
+        if (!BLL.BLL_NhanVien.kiemTra("ngaycapcm")) {
+            return;
+        }
+    }//GEN-LAST:event_txtNgayCapFocusLost
     
     /**
      * @param args the command line arguments
@@ -1011,8 +1129,8 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
     public static javax.swing.JFormattedTextField txtKiQuy;
     public static javax.swing.JFormattedTextField txtLuong;
     public static javax.swing.JTextField txtMaNV;
-    public static javax.swing.JFormattedTextField txtNgayCapCMND;
-    public static javax.swing.JFormattedTextField txtNgaySinh;
+    public static com.toedter.calendar.JDateChooser txtNgayCap;
+    public static com.toedter.calendar.JDateChooser txtNgaySinh;
     public static javax.swing.JTextField txtNoiCapCMND;
     public static javax.swing.JFormattedTextField txtSDT;
     // End of variables declaration//GEN-END:variables
