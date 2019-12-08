@@ -53,7 +53,6 @@
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder title="DANH S&#xc1;CH H&#xd3;A &#x110;&#x1a0;N">
               <Font PropertyName="font" name="Dialog" size="14" style="0"/>
-              <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
             </TitledBorder>
           </Border>
         </Property>

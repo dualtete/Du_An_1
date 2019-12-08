@@ -109,7 +109,7 @@ public class BLL_TaiKhoan {
     }
     public static void click(){
         String id = TTTaiKhoan.tblTaiKhoan.getValueAt(TTTaiKhoan.tblTaiKhoan.getSelectedRow(), 1).toString();
-        ResultSet rs = DAO.selectByID.TaiKhoan(id);
+        ResultSet rs = DAO.selectBy.TaiKhoan(id);
         try {
             if(rs.next()){
                 DTO_TaiKhoan tk = new DTO_TaiKhoan();

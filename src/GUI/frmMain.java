@@ -43,6 +43,7 @@ public class frmMain extends javax.swing.JFrame {
     
     public static SP.GUI.page_Main_NhapHang pageMain;
     public static SP.GUI.page_ViTri vitri;
+    public static page_BanHang formBanHang;
     
     
     public frmMain() {
@@ -816,8 +817,16 @@ public class frmMain extends javax.swing.JFrame {
 
     private void pnlBanHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBanHangMouseClicked
         dkpRight.removeAll();
-        BanHang ad = new BanHang();
-        dkpRight.add(ad).setVisible(true);
+        if (formBanHang != null) {
+            System.out.println("Đã tồn tại");
+            System.out.println(formBanHang);
+            formBanHang.dispose();
+            System.out.println("Đã xóa");
+        }
+        formBanHang = new page_BanHang();
+        dkpRight.add(formBanHang).setVisible(true);
+        dkpRight.revalidate();
+        dkpRight.repaint();
     }//GEN-LAST:event_pnlBanHangMouseClicked
 
     private void pnlKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKhachHangMouseClicked

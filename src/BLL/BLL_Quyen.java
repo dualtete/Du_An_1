@@ -69,7 +69,7 @@ public class BLL_Quyen {
 
     public static void click() {
         String id = TTTaiKhoan.tblQuyen.getValueAt(TTTaiKhoan.tblQuyen.getSelectedRow(), 1).toString();
-        ResultSet rs = DAO.selectByID.Quyen(id);
+        ResultSet rs = DAO.selectBy.Quyen(id);
         try {
             if (rs.next()) {
                 //System.out.println(rs.getInt(1));

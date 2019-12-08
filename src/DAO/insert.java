@@ -5,6 +5,15 @@
  */
 package DAO;
 
+import BLL.ChuyenDoi;
+import DTO.DTO_HoaDon;
+import com.sun.javafx.sg.prism.NGAmbientLight;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author bumte
@@ -124,6 +133,7 @@ public class insert {
                 + "           ,'" + tk.getNguoiLap() + "')";
         return DBConnection.ExecuteData(cauLenh);
     }
+
     public static int KhachHang(DTO.DTO_KhachHang kh) {
         String cauLenh = "set dateformat dMy INSERT INTO [dbo].[KHACHHANG] "
                 + "           ([IDKH] "
@@ -153,6 +163,7 @@ public class insert {
                 + "           ," + kh.getIDTK() + ")";
         return DBConnection.ExecuteData(cauLenh);
     }
+
     public static int LoaiKH(DTO.DTO_LoaiKH loaiKH) {
 
         String cauLenh = "INSERT INTO [dbo].[LOAIKHACHHANG] "
@@ -165,4 +176,47 @@ public class insert {
                 + "           ,'true')";
         return DBConnection.ExecuteData(cauLenh);
     }
+
+    public static int ThemHoaDon(DTO.DTO_HoaDon hd) {
+        String cauLenh = "set dateformat dMy INSERT INTO [dbo].[HOADON] "
+                + "           ([IDHD] "
+                + "           ,[NgayTaoHD] "
+                + "           ,[IDKH] "
+                + "           ,[TrangThai] "
+                + "           ,[IDTK] "
+                + "           ,[TongTien]) "
+                + "     VALUES "
+                + "           ('" + hd.getIdHoaDon() + "' "
+                + "           ,'" + ChuyenDoi.dateTimeString(hd.getNgayTaoHD()) + "' "
+                + "           ,'" + hd.getIdKH() + "' "
+                + "           ,'" + hd.isTrangThai() + "' "
+                + "           ," + hd.getIdTK() + " "
+                + "           ," + hd.getTongTien() + ")";
+        return DBConnection.ExecuteData(cauLenh);
+    }
+
+    public static int ThemCTHoaDon(DTO.DTO_CTHoaDon cthd) {
+        String cauLenh = "INSERT INTO [dbo].[CT_HOADON] "
+                + "           ([IDCTHoaDon] "
+                + "           ,[IDHD] "
+                + "           ,[IDCTPhieuNhap] "
+                + "           ,[Barcode] "
+                + "           ,[SoLuong] "
+                + "           ,[DonGia] "
+                + "           ,[ThanhTien] "
+                + "           ,[IDBH] "
+                + "           ,[GhiChu]) "
+                + "     VALUES "
+                + "           ('" + cthd.getIdCTHD() + "' "
+                + "           ,'" + cthd.getIdHD() + "' "
+                + "           ,'" + cthd.getIdCTPhieuNhap() + "' "
+                + "           ,'" + cthd.getBarcode() + "' "
+                + "           ," + cthd.getSl() + " "
+                + "           ," + cthd.getDonGia() + " "
+                + "           ," + cthd.getThanhTien() + " "
+                + "           ,'" + cthd.getIdBH() + "' "
+                + "           ,N'" + cthd.getGhiChu() + "')";
+        return DBConnection.ExecuteData(cauLenh);
+    }
+
 }

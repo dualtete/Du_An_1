@@ -158,7 +158,7 @@ public class BLL_NhaCungCap {
     }
     public static void click(){
         String id = ViTri.tblNhaCungCap.getValueAt(ViTri.tblNhaCungCap.getSelectedRow(), 1).toString();
-        ResultSet rs = DAO.selectByID.NhaCungCap(id);
+        ResultSet rs = DAO.selectBy.NhaCungCap(id);
         try {
             if(rs.next()){
                 DTO_NhaCungCap ncc = new DTO_NhaCungCap();

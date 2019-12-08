@@ -94,4 +94,11 @@ public class select {
         return DBConnection.getData("select * from SANPHAM where Barcode like '%" + timKiem + "%' or TenSP like N'%" + timKiem + "%' "
                 + "or HangSX like N'%" + timKiem + "%'");
     }
+    public static ResultSet BHKhachHang(boolean trangThai){
+        String cauLenh = "select * from BH_KhachHang where trangThai = '"+trangThai+"'";
+        return DBConnection.getData(cauLenh);
+    }
+    public static ResultSet LayTop1IDHD(){
+        return DBConnection.getData("select top 1 IDHD from HOADON order by NgayTaoHD desc");
+    }
 }

@@ -125,7 +125,7 @@ public class BLL_NhanVien {
     }
     public static void click(){
         String id = TTTaiKhoan.tblNhanVien.getValueAt(TTTaiKhoan.tblNhanVien.getSelectedRow(), 1).toString();
-        ResultSet rs = DAO.selectByID.NhanVien(id);
+        ResultSet rs = DAO.selectBy.NhanVien(id);
         try {
             if (rs.next()) {
                 DTO_NhanVien nv = new DTO_NhanVien();

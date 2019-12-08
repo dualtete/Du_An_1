@@ -132,7 +132,7 @@ public class frmChonSanPham extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        BLL.BLL_BanHang.loadDSSanPham(tblDSHD);
+//        BLL.BLL_BanHang.loadDSSanPham(tblDSHD);
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -1424,7 +1424,7 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         BLL.BLL_TaiKhoan.loadCBBNhanVien();
         txtNguoiLap.setText(DTO.DTO_UserLogin.userName);
         txtNguoiLap.setEditable(false);
-        ResultSet rs = DAO.selectByID.NhanVien(TTTaiKhoan.IDNhanVien);
+        ResultSet rs = DAO.selectBy.NhanVien(TTTaiKhoan.IDNhanVien);
         try {
             if (rs.next()) {
                 TTTaiKhoan.lblThongTinTaiKhoan.setText("Tạo tài khoản cho nhân viên: " + rs.getString("HoTen"));

@@ -102,4 +102,14 @@ public class ChuyenDoi {
 
     }
     
+    // Tạo chuỗi các chữ số 000...
+    public static String taoChuoiCacSo0(int so, int len){
+        String str = "";
+        len = len - String.valueOf(so).length();
+        for (int i = 0; i < len; i++) {
+            str += "0";
+        }
+        return str + so;
+    }
+    
 }

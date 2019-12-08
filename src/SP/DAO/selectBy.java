@@ -101,4 +101,8 @@ public class selectBy {
         String cauLenh = "select * from CT_PHIEUNHAP where IDCTPhieuNhap = "+id+"";
         return DBConnection.getData(cauLenh);
     }
+    public static ResultSet LayHangTonKho(String id){
+        return DBConnection.getData("select * from hangtonkho where SeriSP = '"+id+"' or MaVach = '"+id+"'");
+    }
+    
 }
