@@ -5,12 +5,17 @@
  */
 package SP.BLL;
 import BLL.ChuyenDoi;
+import DAO.DBConnection;
+import DTO.MyComboBox;
 import SP.DTO.DTO_HangTonKho;
 import static SP.GUI.pnlHangTonKho.*;
+import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -144,6 +149,28 @@ public class BLL_TonKho {
         } catch (SQLException ex) {
             Logger.getLogger(BLL_TonKho.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public static boolean loadCBBNCC(JComboBox cbb){
+        DefaultComboBoxModel cbbModel = (DefaultComboBoxModel) cbb.getModel();
+        cbbModel.removeAllElements();
+        ResultSet rs = DAO.select.NhaCungCap(true, "");
+        cbbModel.addElement("---Chọn nhà cung cấp---");
+        cbb.setForeground(Color.red);
+        try {
+            while(rs.next()){
+                Object name, value;
+                name = rs.getString("TenNCC");
+                value = rs.getString("IDNCC");
+                MyComboBox mb =  new MyComboBox(value, name);
+                cbbModel.addElement(mb);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BLL_TonKho.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
     }
     public static void openPNL(){
         String tenKho = SP.GUI.page_ViTri.vt.getTenKho() + " - " + SP.GUI.page_ViTri.vt.getTenLo();

@@ -96,7 +96,7 @@ public class BLL_KhachHang {
     public static boolean insert(){
         // code validate       
         if (!kiemTra("makh")) {
-            ThongBao.ThongBao("Mã khách hàng là số và bao gồm 5 kí tự!", "Thông báo!");
+            ThongBao.ThongBao("Mã khách hàng bao gồm 5 kí tự!", "Thông báo!");
             return false;
         }
         if (!kiemTra("hovaten")) {
@@ -261,7 +261,7 @@ public class BLL_KhachHang {
     public static boolean update(){
         //code validate
         if (!kiemTra("makh")) {
-            ThongBao.ThongBao("Mã khách hàng là số và bao gồm 5 kí tự!", "Thông báo!");
+            ThongBao.ThongBao("Mã khách hàng bao gồm 5 kí tự!", "Thông báo!");
             return false;
         }
         if (!kiemTra("hovaten")) {

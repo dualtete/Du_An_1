@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/BLL/BLL_BanHang.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/jdlHangTonKho.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/delete.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/DAO/selectBy.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlHangTonKho.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_CTPhieuNhap.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/selectBy.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/insert.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_TaoPhieuNhap.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_NhapHangNhanh.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/page_ViTri.java</file>
             <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/page_BanHang.java</file>
-=======
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlCT_PhieuNhap.java</file>
->>>>>>> 14260ce2ff5d972ce4c9b6f376370181fa6b7447
         </group>
     </open-files>
 </project-private>

@@ -204,7 +204,8 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder/>
                           </Border>
-                          <Font PropertyName="font" name="Tahoma" size="14" style="0"/>
+                          <Font PropertyName="font" name="Tahoma" size="14" style="1"/>
+                          <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -263,7 +264,7 @@
                                       <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="39" max="32767" attributes="0"/>
+                              <EmptySpace pref="38" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -325,6 +326,11 @@
                       </Events>
                     </Component>
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                      </Properties>
                       <AccessibilityProperties>
                         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Th&#xf4;ng tin s&#x1ea3;n ph&#x1ea9;m"/>
                       </AccessibilityProperties>
@@ -400,6 +406,7 @@
                                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                                         <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                                       </Border>
+                                      <Font PropertyName="font" name="Tahoma" size="14" style="1"/>
                                     </TitledBorder>
                                   </Border>
                                 </Property>
@@ -725,7 +732,7 @@
             <Container class="javax.swing.JPanel" name="jPanel2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="f0" green="f6" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -733,7 +740,8 @@
                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                         <MatteColorBorder/>
                       </Border>
-                      <Font PropertyName="font" name="Tahoma" size="14" style="0"/>
+                      <Font PropertyName="font" name="Tahoma" size="24" style="1"/>
+                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
                     </TitledBorder>
                   </Border>
                 </Property>
@@ -771,7 +779,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jSeparator2" min="-2" pref="15" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" pref="514" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" pref="498" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -798,7 +806,7 @@
                                       </Group>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtEmail" pref="56" max="32767" attributes="0"/>
+                                  <Component id="txtEmail" max="32767" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="txtNgaySinh" min="-2" pref="51" max="-2" attributes="0"/>
                               </Group>
@@ -815,6 +823,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="txtIDKH">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f0" green="f6" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
@@ -824,7 +835,7 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                           </Border>
-                          <Font PropertyName="font" name="Tahoma" size="14" style="0"/>
+                          <Font PropertyName="font" name="Tahoma" size="18" style="0"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -835,6 +846,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtTenKH">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f0" green="f6" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
@@ -844,6 +858,7 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                           </Border>
+                          <Font PropertyName="font" name="Tahoma" size="18" style="0"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -854,6 +869,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtSDT">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f0" green="f6" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
@@ -863,6 +881,7 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                           </Border>
+                          <Font PropertyName="font" name="Tahoma" size="18" style="0"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -876,6 +895,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtEmail">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f0" green="f6" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
@@ -885,6 +907,7 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                           </Border>
+                          <Font PropertyName="font" name="Tahoma" size="18" style="0"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -900,6 +923,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNgaySinh">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f0" green="f6" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
@@ -909,10 +935,14 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                           </Border>
+                          <Font PropertyName="font" name="Tahoma" size="18" style="0"/>
                         </TitledBorder>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNgaySinhActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                   </AuxValues>
@@ -920,7 +950,7 @@
                 <Container class="javax.swing.JPanel" name="jPanel3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                      <Color blue="f0" green="f6" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -954,6 +984,9 @@
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="buttonGroup1"/>
                         </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="18" style="0"/>
+                        </Property>
                         <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="Nam"/>
                       </Properties>
@@ -968,6 +1001,9 @@
                         </Property>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="buttonGroup1"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="18" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="N&#x1eef;"/>
                       </Properties>
@@ -1000,6 +1036,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextArea" name="txtDC">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f0" green="f6" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="14" style="1"/>
@@ -1007,7 +1046,9 @@
                         <Property name="rows" type="int" value="5"/>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                            <TitledBorder justification="4" position="2"/>
+                            <TitledBorder justification="4" position="2">
+                              <Font PropertyName="font" name="Tahoma" size="18" style="0"/>
+                            </TitledBorder>
                           </Border>
                         </Property>
                       </Properties>
@@ -1031,6 +1072,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextArea" name="jTextArea1">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f0" green="f6" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
                       </Properties>

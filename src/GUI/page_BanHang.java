@@ -7,6 +7,7 @@ package GUI;
 
 import BLL.ChuyenDoi;
 import DTO.MyComboBox;
+import GUI.ViTri.HeaderColor;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -28,6 +29,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
      */
     public page_BanHang() {
         initComponents();
+        tblHoaDon.getTableHeader().setDefaultRenderer(new HeaderColor());
     }
 
     /**
@@ -182,7 +184,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
         jPanel4.setLayout(new java.awt.BorderLayout());
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin sản phảm", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin sản phảm", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(0, 102, 153))); // NOI18N
         jPanel6.setPreferredSize(new java.awt.Dimension(1510, 400));
 
         txtCacGoiBaoHanh.setColumns(20);
@@ -213,10 +215,12 @@ public class page_BanHang extends javax.swing.JInternalFrame {
             }
         });
 
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
         txtMaVach.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtMaVach.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Mã SKU/Mã vạch", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP));
+        txtMaVach.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Mã SKU/Mã vạch", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         txtMaVach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMaVachActionPerformed(evt);
@@ -359,7 +363,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Thông tin sản phẩm");
@@ -423,41 +427,53 @@ public class page_BanHang extends javax.swing.JInternalFrame {
 
         pnlMain.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(255, 246, 240));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 153))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(1510, 300));
 
+        txtIDKH.setBackground(new java.awt.Color(255, 246, 240));
         txtIDKH.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtIDKH.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Mã khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        txtIDKH.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Mã khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
+        txtTenKH.setBackground(new java.awt.Color(255, 246, 240));
         txtTenKH.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtTenKH.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Họ tên khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP));
+        txtTenKH.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Họ tên khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
+        txtSDT.setBackground(new java.awt.Color(255, 246, 240));
         txtSDT.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtSDT.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Số điện thoại", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP));
+        txtSDT.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Số điện thoại", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
         txtSDT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSDTActionPerformed(evt);
             }
         });
 
+        txtEmail.setBackground(new java.awt.Color(255, 246, 240));
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtEmail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Email", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP));
+        txtEmail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Email", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        txtNgaySinh.setBackground(new java.awt.Color(255, 246, 240));
         txtNgaySinh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtNgaySinh.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Ngày sinh", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP));
+        txtNgaySinh.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Ngày sinh", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
+        txtNgaySinh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNgaySinhActionPerformed(evt);
+            }
+        });
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 246, 240));
 
         radNam.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(radNam);
+        radNam.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         radNam.setSelected(true);
         radNam.setText("Nam");
 
         radNu.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(radNu);
+        radNu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         radNu.setText("Nữ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -481,14 +497,16 @@ public class page_BanHang extends javax.swing.JInternalFrame {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Địa chỉ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP));
 
+        txtDC.setBackground(new java.awt.Color(255, 246, 240));
         txtDC.setColumns(20);
         txtDC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtDC.setRows(5);
-        txtDC.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP));
+        txtDC.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
         jScrollPane1.setViewportView(txtDC);
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        jTextArea1.setBackground(new java.awt.Color(255, 246, 240));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane3.setViewportView(jTextArea1);
@@ -515,7 +533,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -537,7 +555,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                        .addComponent(txtEmail)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -663,6 +681,10 @@ public class page_BanHang extends javax.swing.JInternalFrame {
     private void btnLuuHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuHDActionPerformed
        BLL.BLL_BanHang.luuHoaDon();
     }//GEN-LAST:event_btnLuuHDActionPerformed
+
+    private void txtNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgaySinhActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNgaySinhActionPerformed
     public void addPNL(JPanel pnl) {
         pnlAddPnl.removeAll();
         pnlAddPnl.add(pnl);

@@ -21,6 +21,18 @@ public class DTO_HangTonKho {
     double giaLe;
     double giaSi;
 
+    public DTO_HangTonKho(String maVach, String seriSP, String IDCTPN, String chiTiet, String barcode, String IDViTriHienTai, boolean trangThai, double giaLe, double giaSi) {
+        this.maVach = maVach;
+        this.seriSP = seriSP;
+        this.IDCTPN = IDCTPN;
+        this.chiTiet = chiTiet;
+        this.barcode = barcode;
+        this.IDViTriHienTai = IDViTriHienTai;
+        this.trangThai = trangThai;
+        this.giaLe = giaLe;
+        this.giaSi = giaSi;
+    }
+
     public double getGiaLe() {
         return giaLe;
     }

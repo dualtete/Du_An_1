@@ -95,7 +95,9 @@ public class selectBy {
     }
     public static ResultSet check_Barcode_CTPhieuNhap(String idPN, String barcode){
         String cauLenh = "select * from CT_PHIEUNHAP where IDPN = '"+idPN+"' and Barcode = '"+barcode+"'";
+        System.out.println(cauLenh);
         return DBConnection.getData(cauLenh);
+        
     }
     public static ResultSet CTPhieuNhap_ByIDCTPhieuNhap(int id){
         String cauLenh = "select * from CT_PHIEUNHAP where IDCTPhieuNhap = "+id+"";
@@ -103,6 +105,9 @@ public class selectBy {
     }
     public static ResultSet LayHangTonKho(String id){
         return DBConnection.getData("select * from hangtonkho where SeriSP = '"+id+"' or MaVach = '"+id+"'");
+    }
+    public static ResultSet HangTonKhoTrue(){
+        return DBConnection.getData("Select * from SANPHAMTRONGKHO where TrangThai = 'true'");
     }
     
 }

@@ -326,8 +326,11 @@ public class page_ViTri extends javax.swing.JInternalFrame {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     vt = kho.get(j);
-                    System.out.println(vt.getIDViTri());
-                   TonKho = new pnlHangTonKho();
+                    
+                    if (TonKho == null) {
+                       TonKho = new pnlHangTonKho();
+                    }
+                   
                    pnlAddpnl.removeAll();
                    pnlAddpnl.add(TonKho).setVisible(true);
                    pnlAddpnl.revalidate();
