@@ -103,7 +103,7 @@ public class BLL_NhanVien {
     public static boolean insert() {
 //        code validate
         if (!kiemTra("MaNV")) {
-            ThongBao.ThongBao("Mã nhân viên là số và bao gồm 5 kí tự!", "Thông báo!");
+            ThongBao.ThongBao("Mã nhân viên  bao gồm 5 kí tự!", "Thông báo!");
             return false;
         }
         if (!kiemTra("hoVaTen")) {
@@ -195,7 +195,7 @@ public class BLL_NhanVien {
         }
     }
 
-    public static boolean update() {
+    public static boolean update(String idnv) {
 //        code validate
         if (!kiemTra("MaNV")) {
             ThongBao.ThongBao("Mã nhân viên là số và bao gồm 5 kí tự!", "Thông báo!");
@@ -235,11 +235,13 @@ public class BLL_NhanVien {
         }
         ResultSet rsMail = DAO.selectByID.emailNhanVien(txtEmail.getText());
         try {
-            if (rsMail.next()) {
+            if(rsMail.next()){
+            if (!rsMail.getString("IDNV").equals(idnv)) {
                 lblTBEmail.setText("!");
                 GUI.ThongBao.ThongBao("Email đã được sử dụng!", "Thông báo");
                 return false;
 
+            }
             }
         } catch (SQLException ex) {
 
@@ -361,20 +363,16 @@ public class BLL_NhanVien {
                 lblTBEmail.setText("");
                 break;
             case "diachi":
-                try {
-                    String diachi = ChuyenDoi.unAccent(txtDC.getText());
-                    if (!diachi.matches("^[a-zA-Z0-9\\s+]{5,100}$")) {
-                        jdlAddNhanVien.lblTBDC.setText("!");
-                        kt = false;
-                        break;
-                    }
-                } catch (Exception e) {
+                String diachi = txtDC.getText();
+                if (diachi.length() < 5) {
                     kt = false;
+                    lblTBDC.setText("!");
                     break;
-                }
-                kt = true;
-                jdlAddNhanVien.lblTBDC.setText("");
-                break;    
+                } else {
+                    lblTBDC.setText("");
+                    kt = true;
+                    break;
+                }   
         }
         return kt;
     }

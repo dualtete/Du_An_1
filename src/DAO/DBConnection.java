@@ -22,8 +22,8 @@ public class DBConnection {
     private static String DB_URL = "jdbc:sqlserver://Localhost;"
             + "databaseName=data_vituan;";
     private static String USER = "sa";
-    private static String PASSWORD = "admin";
-    static Connection conn = null;
+    private static String PASSWORD = "songlong";
+    public static Connection conn = null;
 
     public DBConnection() {
         try {

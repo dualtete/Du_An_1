@@ -166,7 +166,6 @@ public class BLL_BanHang {
         //Bảng không hiển thị tblmodel1
         ResultSet rs = SP.DAO.selectBy.LayHangTonKho(id);
         Object rows[] = new Object[10];
-
         try {
             if (rs.next()) {
                 // them vào bảng chi tiết hóa đơn
@@ -175,10 +174,9 @@ public class BLL_BanHang {
                         System.out.println(tblCTHoaDon.getValueAt(i, 2).toString());
                         System.out.println(id);
                         if (tblCTHoaDon.getValueAt(i, 2).toString().trim().equals(id.trim())) {
-                            System.out.println("Sãn phẩm đã có trong hóa đơn");
+                            GUI.ThongBao.ThongBao("Sản phẩm đã có trong hoá đơn!", "Thông báo!");
                             return;
                         }
-
                     }
                 }
                 ctHoaDon[0] = rs.getString("masp");
@@ -197,7 +195,7 @@ public class BLL_BanHang {
                             tongTien += ChuyenDoi.stringToDouble(txtGiaBan.getText());
                             tblHoaDon.setValueAt(sl, i, 3);
                             tblHoaDon.setValueAt(ChuyenDoi.doubleToString(tongTien), i, 4);
-                            System.out.println("Đã tăng số lượng");
+                            ThongBao.ThongBao("Cùng loại sản phẩm - đã tăng số lượng", "Thông báo!");
                             return;
                         }
                     }
@@ -213,7 +211,7 @@ public class BLL_BanHang {
                 rows[8] = rs.getString("seriSP");
                 rows[9] = rs.getString("IDCTPN");
                 tblModel.addRow(rows);
-                System.out.println("Đã thêm mới");
+                //System.out.println("Đã thêm mới");
             }
         } catch (SQLException ex) {
             Logger.getLogger(BLL_BanHang.class.getName()).log(Level.SEVERE, null, ex);
@@ -228,6 +226,7 @@ public class BLL_BanHang {
         }
         lblTongTien.setText(ChuyenDoi.doubleToString(tongTien) + "đ");
     }
+    
     public static boolean luuHoaDon() {
         DTO.DTO_HoaDon hd = new DTO_HoaDon();
         DTO.DTO_CTHoaDon ct = new DTO_CTHoaDon();
@@ -241,7 +240,12 @@ public class BLL_BanHang {
         
         System.out.println(hd.getIdHoaDon() +"-"+ hd.getIdKH() +"-"+ hd.getIdTK()+"-"+ hd.getNgayTaoHD()+"-"+ hd.getTongTien() );
         if ( DAO.insert.ThemHoaDon(hd) <= 0) {
-            System.out.println("Chưa tạo được hóa đơn");
+            if(txtSDT.getText().length()==0){
+                GUI.ThongBao.ThongBao("Bạn chưa thêm thông tin khách hàng!", "Thông báo!");
+                return false;
+            }
+           GUI.ThongBao.ThongBao("Hoá đơn chưa đầy đủ thông tin!", "Thông báo!");
+           System.out.println("Chưa tạo được hóa đơn");
             return false;
         }
        

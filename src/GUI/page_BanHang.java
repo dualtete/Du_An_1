@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -30,6 +31,9 @@ public class page_BanHang extends javax.swing.JInternalFrame {
     public page_BanHang() {
         initComponents();
         tblHoaDon.getTableHeader().setDefaultRenderer(new HeaderColor());
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
+        bi.setNorthPane(null);
     }
 
     /**
@@ -184,7 +188,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
         jPanel4.setLayout(new java.awt.BorderLayout());
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin sản phảm", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 153))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin sản phẩm", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(204, 204, 0))); // NOI18N
         jPanel6.setPreferredSize(new java.awt.Dimension(1510, 400));
 
         txtCacGoiBaoHanh.setColumns(20);
@@ -218,9 +222,11 @@ public class page_BanHang extends javax.swing.JInternalFrame {
             }
         });
 
+        jTabbedPane1.setBackground(new java.awt.Color(0, 102, 153));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jPanel7.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel7.setBackground(new java.awt.Color(56, 102, 118));
 
         txtMaVach.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         txtMaVach.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Mã SKU/Mã vạch", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 3, 18), new java.awt.Color(153, 0, 0))); // NOI18N
@@ -257,7 +263,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
         });
 
         jScrollPane5.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)), "Tên sản phẩm", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri Light", 0, 18))); // NOI18N
+        jScrollPane5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)), "Tên sản phẩm", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri Light", 0, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         txtTenSP.setColumns(20);
         txtTenSP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -348,7 +354,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLuuHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTongTien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnThemVaoHoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                    .addComponent(btnThemVaoHoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
                     .addComponent(btnThanhToan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
         );
@@ -437,8 +443,8 @@ public class page_BanHang extends javax.swing.JInternalFrame {
 
         pnlMain.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 153))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(56, 102, 118));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Thông tin khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(204, 204, 0))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(1510, 300));
 
         txtIDKH.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -451,7 +457,8 @@ public class page_BanHang extends javax.swing.JInternalFrame {
         });
 
         txtTenKH.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txtTenKH.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)), "Họ tên khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri Light", 0, 18))); // NOI18N
+        txtTenKH.setForeground(new java.awt.Color(255, 255, 255));
+        txtTenKH.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)), "Họ tên khách hàng", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri Light", 1, 18))); // NOI18N
 
         txtSDT.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         txtSDT.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)), "Số điện thoại", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 3, 18), new java.awt.Color(153, 0, 0))); // NOI18N
@@ -481,12 +488,14 @@ public class page_BanHang extends javax.swing.JInternalFrame {
         radNam.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(radNam);
         radNam.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        radNam.setForeground(new java.awt.Color(0, 0, 0));
         radNam.setSelected(true);
         radNam.setText("Nam");
 
         radNu.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(radNu);
         radNu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        radNu.setForeground(new java.awt.Color(0, 0, 0));
         radNu.setText("Nữ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -508,7 +517,8 @@ public class page_BanHang extends javax.swing.JInternalFrame {
         );
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)), "Địa chỉ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri Light", 0, 18))); // NOI18N
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)), "Địa chỉ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri Light", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
         txtDC.setColumns(20);
         txtDC.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -518,7 +528,7 @@ public class page_BanHang extends javax.swing.JInternalFrame {
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)), "Thông tin thêm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri Light", 0, 18))); // NOI18N
+        jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)), "Thông tin thêm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri Light", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);

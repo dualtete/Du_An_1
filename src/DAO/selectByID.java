@@ -36,9 +36,8 @@ public class selectByID {
     }
     public static ResultSet emailKhachHang(String mail) {
         return DBConnection.getData("select * from KhachHang where Email = '" + mail + "'");
-
     }
-    
-    
-    
+    public static ResultSet hoaDon(String id){
+        return DBConnection.getData("select * from HOADON where IDHD = '"+id+"'");
+    }
 }

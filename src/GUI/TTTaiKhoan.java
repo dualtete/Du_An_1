@@ -9,7 +9,6 @@ import BLL.ChuyenDoi;
 import DTO.DTO_TaiKhoan;
 import DTO.MyComboBox;
 import static GUI.ViTri.tblNhaCungCap;
-import static GUI.ViTri.txtNguoiLap;
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,6 +31,8 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
         initComponents();
         this.getRootPane().setDefaultButton(btnTimKiem1);
         tblNhanVien.getTableHeader().setDefaultRenderer(new ViTri.HeaderColor());
+        tblTaiKhoan.getTableHeader().setDefaultRenderer(new ViTri.HeaderColor());
+        tblQuyen.getTableHeader().setDefaultRenderer(new ViTri.HeaderColor());
         tblNhanVien.setAutoCreateRowSorter(true);
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
@@ -775,7 +776,7 @@ public class TTTaiKhoan extends javax.swing.JInternalFrame {
                             .addComponent(lblThongTinTaiKhoan)))
                     .addComponent(pnlAUDR2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE))
         );
         pnlTaiKhoanLayout.setVerticalGroup(
             pnlTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

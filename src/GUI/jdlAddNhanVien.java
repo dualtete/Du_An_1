@@ -868,7 +868,7 @@ public class jdlAddNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLamMoiMouseEntered
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
-        if(!BLL.BLL_NhanVien.update()){
+        if(!BLL.BLL_NhanVien.update(txtMaNV.getText())){
             return;
         }
         

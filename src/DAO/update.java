@@ -45,6 +45,13 @@ public class update {
                 + " WHERE IDQuyen = " + q.getMaQuyen() + "";
         return DBConnection.ExecuteData(cauLenh);
     }
+    //Update trước khi in hoá đơn 
+    public static int udinHoaDon(String id) {
+        String cauLenh = "UPDATE [dbo].[HOADON]  "
+                + "   SET [TrangThai] = 'true'  "
+                + " WHERE IDHD = '"+id+"'";
+        return DBConnection.ExecuteData(cauLenh);
+    }
 
     public static int NhanVien(DTO.DTO_NhanVien nv) {
         String cauLenh = "set dateformat dMy UPDATE [dbo].[NHANVIEN] "
@@ -57,12 +64,13 @@ public class update {
                 + "      ,[GioiTinh] = '" + nv.isGioiTinh() + "' "
                 + "      ,[HinhAnh] = N'" + nv.getHinhAnh() + "' "
                 + "      ,[Email] = '" + nv.getEmail() + "' "
-                + "      ,[DC] = N'" + nv.getEmail() + "' "
+                + "      ,[DC] = N'" + nv.getDC()+ "' "
                 + "      ,[Luong] = " + nv.getLuong() + " "
                 + "      ,[TienKiQuy] = " + nv.getKiQuy() + " "
                 + " WHERE IDNV = '" + nv.getIDNV() + "'";
         return DBConnection.ExecuteData(cauLenh);
     }
+
     public static int KhachHang(DTO.DTO_KhachHang kh) {
         String cauLenh = "set dateformat dMy UPDATE [dbo].[KHACHHANG] "
                 + "   SET IDKH = '" + kh.getIDKH() + "' "
@@ -74,7 +82,7 @@ public class update {
                 + "      ,[NgaySinh] ='" + BLL.ChuyenDoi.GetNgay(kh.getNgaySinh()) + "' "
                 + "      ,[GioiTinh] = '" + kh.isGioiTinh() + "' "
                 + "      ,[GhiChu] = N'" + kh.getGhiChu() + "' "
-                + "      ,[NgayThem] = '" + BLL.ChuyenDoi.GetNgay(kh.getNgayThem())+ "' "
+                + "      ,[NgayThem] = '" + BLL.ChuyenDoi.GetNgay(kh.getNgayThem()) + "' "
                 + "      ,[IDTK] = '" + kh.getIDTK() + "' "
                 + " WHERE IDKH = '" + kh.getIDKH() + "'";
         return DBConnection.ExecuteData(cauLenh);

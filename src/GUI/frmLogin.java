@@ -86,6 +86,7 @@ public class frmLogin extends javax.swing.JFrame {
         sptMatKhau.setBackground(new java.awt.Color(255, 255, 255));
         pnlRight.add(sptMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 310, -1));
 
+        txtName.setEditable(false);
         txtName.setBackground(new java.awt.Color(255, 255, 255));
         txtName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         txtName.setForeground(new java.awt.Color(51, 51, 51));
@@ -98,6 +99,11 @@ public class frmLogin extends javax.swing.JFrame {
         txtName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtNameMouseClicked(evt);
+            }
+        });
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
             }
         });
         pnlRight.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 310, 30));
@@ -250,6 +256,10 @@ public class frmLogin extends javax.swing.JFrame {
         show.setVisible(false);
         show.setEnabled(false);
     }//GEN-LAST:event_showMouseClicked
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
     /**
      * @param args the command line arguments

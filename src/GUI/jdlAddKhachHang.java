@@ -835,7 +835,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLamMoiMouseEntered
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
-        if(!BLL.BLL_KhachHang.update()){
+        if(!BLL.BLL_KhachHang.update(txtIDKhachHang.getText())){
             return;
         }
         this.dispose();
@@ -851,6 +851,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         if(!BLL.BLL_KhachHang.insert()){
+            this.dispose();
             return;
         }
         this.dispose();

@@ -26,7 +26,8 @@ import javax.swing.JTable;
  * @author Admin
  */
 public class BLL_KhachHang {
-    public static void setComponent(DTO.DTO_KhachHang kh){
+
+    public static void setComponent(DTO.DTO_KhachHang kh) {
         jdlAddKhachHang.txtDC.setText(kh.getDC());
         txtEmail.setText(kh.getEmail());
         txtGhiChu.setText(kh.getGhiChu());
@@ -38,26 +39,26 @@ public class BLL_KhachHang {
         txtNgayThem.setDate(kh.getNgayThem());
         txtNguoiTao.setText(String.valueOf(kh.getIDTK()));
         txtSDT.setText(kh.getSDT());
-        
-        
+
     }
-    public static void getComponent(DTO.DTO_KhachHang kh){
+
+    public static void getComponent(DTO.DTO_KhachHang kh) {
         kh.setDC(txtDC.getText());
         kh.setEmail(txtEmail.getText());
         kh.setGhiChu(txtGhiChu.getText());
         kh.setGioiTinh(radNam.isSelected());
         kh.setHoTen(txtHoTen1.getText());
         kh.setIDKH(txtIDKhachHang.getText());
-        DTO.MyComboBox mb = (DTO.MyComboBox)jdlAddKhachHang.cbbLoaiKH.getSelectedItem();
+        DTO.MyComboBox mb = (DTO.MyComboBox) jdlAddKhachHang.cbbLoaiKH.getSelectedItem();
         kh.setIDLoaiKH(mb.MaString());
         kh.setIDTK(Integer.parseInt(txtNguoiTao.getText()));
         kh.setNgaySinh(txtNgaySinh.getDate());
         kh.setNgayThem(txtNgayThem.getDate());
         kh.setSDT(txtSDT.getText().replace("-", ""));
-       
+
     }
-    
-    public static void click(){
+
+    public static void click() {
         String id = KhachHang.tblKhachHang.getValueAt(KhachHang.tblKhachHang.getSelectedRow(), 1).toString();
         ResultSet rs = DAO.selectByID.KhachHang(id);
         try {
@@ -80,12 +81,13 @@ public class BLL_KhachHang {
             GUI.ThongBao.ThongBao("Lỗi khi click vào bảng nhân viên!", "Thông báo");
         }
     }
-    public static void loadDSLoaiKH(){
+
+    public static void loadDSLoaiKH() {
         DefaultComboBoxModel cbbModel = (DefaultComboBoxModel) jdlAddKhachHang.cbbLoaiKH.getModel();
         cbbModel.removeAllElements();
         ResultSet rs = DAO.select.LoaiKH();
         try {
-            while(rs.next()){
+            while (rs.next()) {
                 DTO.MyComboBox cbbBox = new MyComboBox(rs.getInt(1), rs.getString(2));
                 cbbModel.addElement(cbbBox);
             }
@@ -93,7 +95,8 @@ public class BLL_KhachHang {
             System.out.println("Lỗi load danh sách loại khách hàng");
         }
     }
-    public static boolean insert(){
+
+    public static boolean insert() {
         // code validate       
         if (!kiemTra("makh")) {
             ThongBao.ThongBao("Mã khách hàng bao gồm 5 kí tự!", "Thông báo!");
@@ -138,7 +141,7 @@ public class BLL_KhachHang {
         } catch (SQLException ex) {
 
         }
-        
+
         DTO.DTO_KhachHang kh = new DTO_KhachHang();
         getComponent(kh);
         kh.setTrangThai(true);
@@ -149,9 +152,9 @@ public class BLL_KhachHang {
         }
         GUI.ThongBao.ThongBao("Thêm khách hàng thất bại!", "Thông báo");
         return false;
-                
+
     }
-    
+
     //Kiem tra trước khi thêm
     public static boolean kiemTra(String component) {
         boolean kt = true;
@@ -191,23 +194,19 @@ public class BLL_KhachHang {
                     break;
                 }
             case "diachi":
-                try {
-                    String diachi = ChuyenDoi.unAccent(txtDC.getText());
-                    if (!diachi.matches("^[a-zA-Z0-9\\s+]{5,100}$")) {
-                        lblTBDC.setText("!");
-                        kt = false;
-                        break;
-                    }
-                } catch (Exception e) {
+                String diachi = txtDC.getText();
+                if (diachi.length() < 5) {
                     kt = false;
+                    lblTBDC.setText("!");
+                    break;
+                } else {
+                    lblTBDC.setText("");
+                    kt = true;
                     break;
                 }
-                kt = true;
-                lblTBDC.setText("");
-                break; 
-            case"email":
+            case "email":
                 String regex = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,6}$";
-                if(!txtEmail.getText().matches(regex)){
+                if (!txtEmail.getText().matches(regex)) {
                     lblTBEmail.setText("!");
                     kt = false;
                     break;
@@ -239,26 +238,11 @@ public class BLL_KhachHang {
                 lblTBNgayThem.setText("");
                 kt = true;
                 break;
-            
-            case "ghichu":
-                try {
-                    String diachi = ChuyenDoi.unAccent(txtGhiChu.getText());
-                    if (!diachi.matches("^[a-zA-Z0-9\\s+]{0,100}$")) {
-                        lblTBGhiChu.setText("!");
-                        kt = false;
-                        break;
-                    }
-                } catch (Exception e) {
-                    kt = false;
-                    break;
-                }
-                kt = true;
-                lblTBGhiChu.setText("");
-                break;    
         }
         return kt;
     }
-    public static boolean update(){
+
+    public static boolean update(String idkh) {
         //code validate
         if (!kiemTra("makh")) {
             ThongBao.ThongBao("Mã khách hàng bao gồm 5 kí tự!", "Thông báo!");
@@ -295,15 +279,17 @@ public class BLL_KhachHang {
         ResultSet rsMail = DAO.selectByID.emailKhachHang(txtEmail.getText());
         try {
             if (rsMail.next()) {
-                lblTBEmail.setText("!");
-                GUI.ThongBao.ThongBao("Email đã được sử dụng!", "Thông báo");
-                return false;
+                if (!rsMail.getString("IDKH").equals(idkh)) {
+                    lblTBEmail.setText("!");
+                    GUI.ThongBao.ThongBao("Email đã được sử dụng!", "Thông báo");
+                    return false;
 
+                }
             }
         } catch (SQLException ex) {
 
         }
-        
+
         DTO_KhachHang kh = new DTO_KhachHang();
         getComponent(kh);
         if (DAO.update.KhachHang(kh) > 0) {
@@ -313,16 +299,16 @@ public class BLL_KhachHang {
         }
         System.out.println("Sửa thất bại");
         return false;
-        
-        
+
     }
-    public static void loadDSKhachHang(String timKiem){
+
+    public static void loadDSKhachHang(String timKiem) {
         DefaultTableModel tblModel = (DefaultTableModel) KhachHang.tblKhachHang.getModel();
         tblModel.setRowCount(0);
         Object obj[] = new Object[12];
         ResultSet rs = DAO.select.KhachHang(timKiem);
         try {
-            while(rs.next()){
+            while (rs.next()) {
                 obj[0] = tblModel.getRowCount() + 1;
                 obj[1] = rs.getString(1);
                 obj[2] = rs.getString(2);
@@ -331,17 +317,18 @@ public class BLL_KhachHang {
                 obj[5] = rs.getString(5);
                 obj[6] = rs.getString(6);
                 obj[7] = ChuyenDoi.GetNgay(rs.getDate("NgaySinh"));
-                obj[8] = rs.getBoolean(8)? "Nam" : "Nữ";
+                obj[8] = rs.getBoolean(8) ? "Nam" : "Nữ";
                 obj[9] = rs.getString(9);
-                obj[10] = ChuyenDoi.GetNgay(rs.getDate(11));
-                obj[11] = rs.getInt(12);
+                obj[10] = rs.getInt(12);
                 tblModel.addRow(obj);
-                
-            }} catch (SQLException ex) {
+
+            }
+        } catch (SQLException ex) {
             Logger.getLogger(BLL_KhachHang.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static void windowOpened(){
+
+    public static void windowOpened() {
         loadDSKhachHang("");
         loadDSLoaiKH();
         txtNguoiTao.setEditable(false);
@@ -349,6 +336,7 @@ public class BLL_KhachHang {
         Date date = new Date();
         txtNgayThem.setEnabled(false);
     }
+
     public static boolean delete(JTable tbl) {
         int dongXoa[] = tbl.getSelectedRows();
         if (ThongBao.ThongBaoLoai2("Bạn có chắc chắn muốn xóa không?", "Thông báo") != JOptionPane.OK_OPTION) {

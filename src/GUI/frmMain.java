@@ -143,15 +143,9 @@ public class frmMain extends javax.swing.JFrame {
         pnlDoanhThu = new javax.swing.JPanel();
         lblIconDoanhThu = new javax.swing.JLabel();
         lblDoanhThu = new javax.swing.JLabel();
-        pnlBaoHanh = new javax.swing.JPanel();
-        lblIconBaoHanh = new javax.swing.JLabel();
-        lblBaoHanh = new javax.swing.JLabel();
         pnlTaiKhoan = new javax.swing.JPanel();
         lblIconTaiKhoan = new javax.swing.JLabel();
         lblTaiKhoan = new javax.swing.JLabel();
-        pnlLuong = new javax.swing.JPanel();
-        lblIconLuong = new javax.swing.JLabel();
-        lblLuong = new javax.swing.JLabel();
         pnlSanPham = new javax.swing.JPanel();
         lblIconDoanhThu1 = new javax.swing.JLabel();
         lblSanPham = new javax.swing.JLabel();
@@ -363,7 +357,7 @@ public class frmMain extends javax.swing.JFrame {
 
         lblDaiLy.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         lblDaiLy.setForeground(new java.awt.Color(255, 255, 255));
-        lblDaiLy.setText("Đại Lý");
+        lblDaiLy.setText("Nhà Cung Cấp");
 
         javax.swing.GroupLayout pnlDaiLyLayout = new javax.swing.GroupLayout(pnlDaiLy);
         pnlDaiLy.setLayout(pnlDaiLyLayout);
@@ -374,7 +368,7 @@ public class frmMain extends javax.swing.JFrame {
                 .addComponent(lblIconDaiLy)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDaiLy)
-                .addGap(0, 201, Short.MAX_VALUE))
+                .addGap(0, 137, Short.MAX_VALUE))
         );
         pnlDaiLyLayout.setVerticalGroup(
             pnlDaiLyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,55 +476,7 @@ public class frmMain extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlMenu.add(pnlDoanhThu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 350, -1));
-
-        pnlBaoHanh.setBackground(new java.awt.Color(6, 114, 168));
-        pnlBaoHanh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnlBaoHanh.setPreferredSize(new java.awt.Dimension(164, 61));
-        pnlBaoHanh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlBaoHanhMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pnlBaoHanhMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlBaoHanhMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlBaoHanhMousePressed(evt);
-            }
-        });
-
-        lblIconBaoHanh.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
-        lblIconBaoHanh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_guarantee_30px.png"))); // NOI18N
-
-        lblBaoHanh.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        lblBaoHanh.setForeground(new java.awt.Color(255, 255, 255));
-        lblBaoHanh.setText("Bảo Hành");
-
-        javax.swing.GroupLayout pnlBaoHanhLayout = new javax.swing.GroupLayout(pnlBaoHanh);
-        pnlBaoHanh.setLayout(pnlBaoHanhLayout);
-        pnlBaoHanhLayout.setHorizontalGroup(
-            pnlBaoHanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBaoHanhLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(lblIconBaoHanh)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblBaoHanh)
-                .addGap(0, 173, Short.MAX_VALUE))
-        );
-        pnlBaoHanhLayout.setVerticalGroup(
-            pnlBaoHanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBaoHanhLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlBaoHanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblBaoHanh)
-                    .addComponent(lblIconBaoHanh))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pnlMenu.add(pnlBaoHanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 350, -1));
+        pnlMenu.add(pnlDoanhThu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 350, -1));
 
         pnlTaiKhoan.setBackground(new java.awt.Color(6, 114, 168));
         pnlTaiKhoan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -578,55 +524,7 @@ public class frmMain extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlMenu.add(pnlTaiKhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 350, -1));
-
-        pnlLuong.setBackground(new java.awt.Color(6, 114, 168));
-        pnlLuong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnlLuong.setPreferredSize(new java.awt.Dimension(164, 61));
-        pnlLuong.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlLuongMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pnlLuongMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlLuongMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlLuongMousePressed(evt);
-            }
-        });
-
-        lblIconLuong.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
-        lblIconLuong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_paycheque_30px.png"))); // NOI18N
-
-        lblLuong.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        lblLuong.setForeground(new java.awt.Color(255, 255, 255));
-        lblLuong.setText("Lương");
-
-        javax.swing.GroupLayout pnlLuongLayout = new javax.swing.GroupLayout(pnlLuong);
-        pnlLuong.setLayout(pnlLuongLayout);
-        pnlLuongLayout.setHorizontalGroup(
-            pnlLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlLuongLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(lblIconLuong)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblLuong)
-                .addGap(0, 196, Short.MAX_VALUE))
-        );
-        pnlLuongLayout.setVerticalGroup(
-            pnlLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlLuongLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLuong)
-                    .addComponent(lblIconLuong))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pnlMenu.add(pnlLuong, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 350, -1));
+        pnlMenu.add(pnlTaiKhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 350, -1));
 
         pnlSanPham.setBackground(new java.awt.Color(6, 114, 168));
         pnlSanPham.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -674,7 +572,7 @@ public class frmMain extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlMenu.add(pnlSanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, 350, -1));
+        pnlMenu.add(pnlSanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 350, -1));
 
         pnlTong.add(pnlMenu, java.awt.BorderLayout.LINE_START);
 
@@ -791,9 +689,7 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneDefault);
         pnlDaiLy.setBackground(paneDefault);
         pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlHomeMousePressed
 
@@ -803,10 +699,8 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneDefault);
         pnlDaiLy.setBackground(paneDefault);
         pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneDefault);
         pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlBanHangMousePressed
 
@@ -842,17 +736,15 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneClick);
         pnlDaiLy.setBackground(paneDefault);
         pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneDefault);
         pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlKhachHangMousePressed
 
     private void pnlDaiLyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlDaiLyMouseClicked
         dkpRight.removeAll();
-        DaiLy daily = new DaiLy();
-        dkpRight.add(daily).setVisible(true);
+        ViTri vitri = new ViTri();
+        dkpRight.add(vitri).setVisible(true);
     }//GEN-LAST:event_pnlDaiLyMouseClicked
 
     private void pnlDaiLyMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlDaiLyMousePressed
@@ -861,10 +753,8 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneDefault);
         pnlDaiLy.setBackground(paneClick);
         pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneDefault);
         pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlDaiLyMousePressed
 
@@ -882,31 +772,10 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneDefault);
         pnlDaiLy.setBackground(paneDefault);
         pnlKho.setBackground(paneClick);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneDefault);
         pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlKhoMousePressed
-
-    private void pnlLuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlLuongMouseClicked
-        dkpRight.removeAll();
-        Luong luong = new Luong();
-        dkpRight.add(luong).setVisible(true);
-    }//GEN-LAST:event_pnlLuongMouseClicked
-
-    private void pnlLuongMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlLuongMousePressed
-        pnlHome.setBackground(paneDefault);
-        pnlBanHang.setBackground(paneDefault);
-        pnlKhachHang.setBackground(paneDefault);
-        pnlDaiLy.setBackground(paneDefault);
-        pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneClick);
-        pnlTaiKhoan.setBackground(paneDefault);
-        pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
-        pnlDoanhThu.setBackground(paneDefault);
-    }//GEN-LAST:event_pnlLuongMousePressed
 
     private void pnlTaiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTaiKhoanMouseClicked
         dkpRight.removeAll();
@@ -920,31 +789,10 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneDefault);
         pnlDaiLy.setBackground(paneDefault);
         pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneClick);
         pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlTaiKhoanMousePressed
-
-    private void pnlBaoHanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBaoHanhMouseClicked
-        dkpRight.removeAll();
-        BaoHanh bh = new BaoHanh();
-        dkpRight.add(bh).setVisible(true);
-    }//GEN-LAST:event_pnlBaoHanhMouseClicked
-
-    private void pnlBaoHanhMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBaoHanhMousePressed
-        pnlHome.setBackground(paneDefault);
-        pnlBanHang.setBackground(paneDefault);
-        pnlKhachHang.setBackground(paneDefault);
-        pnlDaiLy.setBackground(paneDefault);
-        pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
-        pnlTaiKhoan.setBackground(paneDefault);
-        pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneClick);
-        pnlDoanhThu.setBackground(paneDefault);
-    }//GEN-LAST:event_pnlBaoHanhMousePressed
 
     private void pnlDoanhThuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlDoanhThuMouseClicked
         dkpRight.removeAll();
@@ -958,10 +806,8 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneDefault);
         pnlDaiLy.setBackground(paneDefault);
         pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneDefault);
         pnlSanPham.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlDoanhThu.setBackground(paneClick);
     }//GEN-LAST:event_pnlDoanhThuMousePressed
 
@@ -1034,14 +880,6 @@ public class frmMain extends javax.swing.JFrame {
         whenMouseMoved(pnlKho, exitcolor);
     }//GEN-LAST:event_pnlKhoMouseExited
 
-    private void pnlLuongMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlLuongMouseEntered
-        whenMouseMoved(pnlLuong, entercolor);
-    }//GEN-LAST:event_pnlLuongMouseEntered
-
-    private void pnlLuongMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlLuongMouseExited
-        whenMouseMoved(pnlLuong, exitcolor);
-    }//GEN-LAST:event_pnlLuongMouseExited
-
     private void pnlTaiKhoanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTaiKhoanMouseEntered
         whenMouseMoved(pnlTaiKhoan, entercolor);
     }//GEN-LAST:event_pnlTaiKhoanMouseEntered
@@ -1049,14 +887,6 @@ public class frmMain extends javax.swing.JFrame {
     private void pnlTaiKhoanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTaiKhoanMouseExited
         whenMouseMoved(pnlTaiKhoan, exitcolor);
     }//GEN-LAST:event_pnlTaiKhoanMouseExited
-
-    private void pnlBaoHanhMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBaoHanhMouseEntered
-        whenMouseMoved(pnlBaoHanh, entercolor);
-    }//GEN-LAST:event_pnlBaoHanhMouseEntered
-
-    private void pnlBaoHanhMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBaoHanhMouseExited
-        whenMouseMoved(pnlBaoHanh, exitcolor);
-    }//GEN-LAST:event_pnlBaoHanhMouseExited
 
     private void pnlDoanhThuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlDoanhThuMouseEntered
         whenMouseMoved(pnlDoanhThu, entercolor);
@@ -1099,9 +929,7 @@ public class frmMain extends javax.swing.JFrame {
         pnlKhachHang.setBackground(paneDefault);
         pnlDaiLy.setBackground(paneDefault);
         pnlKho.setBackground(paneDefault);
-        pnlLuong.setBackground(paneDefault);
         pnlTaiKhoan.setBackground(paneDefault);
-        pnlBaoHanh.setBackground(paneDefault);
         pnlSanPham.setBackground(paneClick);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlSanPhamMousePressed
@@ -1151,37 +979,31 @@ public class frmMain extends javax.swing.JFrame {
     public static javax.swing.JDesktopPane dkpRight;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblBanHang;
-    private javax.swing.JLabel lblBaoHanh;
     private javax.swing.JLabel lblDaiLy;
     private javax.swing.JLabel lblDoanhThu;
     private javax.swing.JLabel lblDongHo;
     private javax.swing.JLabel lblHome;
     private javax.swing.JLabel lblIconBanHang;
-    private javax.swing.JLabel lblIconBaoHanh;
     private javax.swing.JLabel lblIconDaiLy;
     private javax.swing.JLabel lblIconDoanhThu;
     private javax.swing.JLabel lblIconDoanhThu1;
     private javax.swing.JLabel lblIconKH;
     private javax.swing.JLabel lblIconKho;
-    private javax.swing.JLabel lblIconLuong;
     private javax.swing.JLabel lblIconTaiKhoan;
     private javax.swing.JLabel lblKhachHang;
     private javax.swing.JLabel lblKho;
     private javax.swing.JLabel lblLogoViTuan;
-    private javax.swing.JLabel lblLuong;
     private javax.swing.JLabel lblSanPham;
     private javax.swing.JLabel lblTaiKhoan;
     private javax.swing.JLabel lblTenNguoiDung;
     private javax.swing.JLabel lblTime;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JPanel pnlBanHang;
-    private javax.swing.JPanel pnlBaoHanh;
     private javax.swing.JPanel pnlDaiLy;
     private javax.swing.JPanel pnlDoanhThu;
     private javax.swing.JPanel pnlHome;
     private javax.swing.JPanel pnlKhachHang;
     private javax.swing.JPanel pnlKho;
-    private javax.swing.JPanel pnlLuong;
     private javax.swing.JPanel pnlMenu;
     private javax.swing.JPanel pnlSanPham;
     private javax.swing.JPanel pnlTaiKhoan;
