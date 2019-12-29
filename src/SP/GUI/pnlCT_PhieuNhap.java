@@ -365,6 +365,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
         jLabel9.setText("Giá nhập");
 
         txtGiaNhapCu.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        txtGiaNhapCu.setBorder(null);
         txtGiaNhapCu.setEnabled(false);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -396,6 +397,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
         jLabel10.setText("Giá sỉ ");
 
         txtGiaSiCu.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        txtGiaSiCu.setBorder(null);
         txtGiaSiCu.setEnabled(false);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -427,6 +429,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
         jLabel11.setText("Giá lẽ ");
 
         txtGiaLeCu.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        txtGiaLeCu.setBorder(null);
         txtGiaLeCu.setEnabled(false);
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -470,6 +473,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
 
         txtGiaNhapMoi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtGiaNhapMoi.setForeground(new java.awt.Color(153, 0, 0));
+        txtGiaNhapMoi.setBorder(null);
         txtGiaNhapMoi.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 txtGiaNhapMoiCaretUpdate(evt);
@@ -486,16 +490,16 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtGiaNhapMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtGiaNhapMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(txtGiaNhapMoi)
         );
@@ -510,6 +514,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
 
         txtGiaSiMoi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtGiaSiMoi.setForeground(new java.awt.Color(153, 0, 0));
+        txtGiaSiMoi.setBorder(null);
         txtGiaSiMoi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtGiaSiMoiKeyReleased(evt);
@@ -545,6 +550,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
 
         txtGiaLeMoi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtGiaLeMoi.setForeground(new java.awt.Color(153, 0, 0));
+        txtGiaLeMoi.setBorder(null);
         txtGiaLeMoi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtGiaLeMoiKeyReleased(evt);
@@ -556,9 +562,9 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtGiaLeMoi, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtGiaLeMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel18Layout.setVerticalGroup(
@@ -566,7 +572,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
             .addComponent(txtGiaLeMoi)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -697,7 +703,7 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -715,11 +721,11 @@ public class pnlCT_PhieuNhap extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

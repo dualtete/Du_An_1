@@ -101,4 +101,32 @@ public class select {
     public static ResultSet LayTop1IDHD(){
         return DBConnection.getData("select top 1 IDHD from HOADON order by NgayTaoHD desc");
     }
+    public static ResultSet tongSPTonKho(){
+        String cauLenh = "select COUNT(masp) as tongSP from hangtonkho";
+        return DBConnection.getData(cauLenh);
+    }
+    public static ResultSet tongNCC(){
+        String cauLenh = "select COUNT(IDNCC) as tongNCC from NHACUNGCAP";
+        return DBConnection.getData(cauLenh);
+    }
+    public static ResultSet tongNV(){
+        String cauLenh = "select COUNT(IDNV) as TONGNV from NHANVIEN";
+        return DBConnection.getData(cauLenh);
+    }
+    public static ResultSet tongKH(){
+        String cauLenh = "select COUNT(IDKH) as TONGKH from KHACHHANG";
+        return DBConnection.getData(cauLenh);
+    }
+     public static ResultSet tongKho(){
+        String cauLenh = "select COUNT(IDViTri) as tongkho from VITRI";
+        return DBConnection.getData(cauLenh);
+    }
+     public static ResultSet tongHD(){
+        String cauLenh = "select COUNT(IDHD) as tonghoadon from HOADON";
+        return DBConnection.getData(cauLenh);
+    }
+     public static ResultSet layNgayNhapSP(){
+         String cauLenh ="select * from sanphamtrongkho";
+         return DBConnection.getData(cauLenh);
+     }
 }

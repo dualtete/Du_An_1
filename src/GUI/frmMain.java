@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import BLL.ChuyenDoi;
 import DAO.DBConnection;
 import SP.GUI.page_Main_NhapHang;
 import SP.GUI.page_ViTri;
@@ -13,13 +14,18 @@ import java.awt.GraphicsEnvironment;
 import static java.lang.Thread.sleep;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import org.apache.poi.ss.formula.functions.Days360;
 //import sun.util.locale.provider.SPILocaleProviderAdapter;
 
 /**
@@ -38,7 +44,7 @@ public class frmMain extends javax.swing.JFrame {
     public static Color entercolor = new Color(4, 134, 198);
     //khi thoát ra không rê nữa
     public static Color exitcolor = new Color(6, 114, 168);
-
+    
 // Các page trong phần sản phẩm:
     
     public static SP.GUI.page_Main_NhapHang pageMain;
@@ -149,6 +155,7 @@ public class frmMain extends javax.swing.JFrame {
         pnlSanPham = new javax.swing.JPanel();
         lblIconDoanhThu1 = new javax.swing.JLabel();
         lblSanPham = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         dkpRight = new javax.swing.JDesktopPane();
         pnlTop = new javax.swing.JPanel();
         lblDongHo = new javax.swing.JLabel();
@@ -574,6 +581,11 @@ public class frmMain extends javax.swing.JFrame {
 
         pnlMenu.add(pnlSanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 350, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconHuy/icons8_settings_30px.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 810, 40, 40));
+
         pnlTong.add(pnlMenu, java.awt.BorderLayout.LINE_START);
 
         dkpRight.setBackground(new java.awt.Color(255, 255, 255));
@@ -652,18 +664,21 @@ public class frmMain extends javax.swing.JFrame {
                 .addComponent(lblUsername)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTenNguoiDung)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 728, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 726, Short.MAX_VALUE)
                 .addComponent(pnlThaoTac, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlTopLayout.setVerticalGroup(
             pnlTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTopLayout.createSequentialGroup()
-                .addComponent(pnlThaoTac, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
-            .addComponent(lblDongHo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblDongHo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
             .addComponent(lblTime, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblUsername, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblTenNguoiDung, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlTopLayout.createSequentialGroup()
+                .addComponent(pnlThaoTac, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnlTopLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTenNguoiDung)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlTong.add(pnlTop, java.awt.BorderLayout.PAGE_START);
@@ -676,7 +691,7 @@ public class frmMain extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlTong, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(pnlTong, javax.swing.GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE)
         );
 
         pack();
@@ -933,7 +948,41 @@ public class frmMain extends javax.swing.JFrame {
         pnlSanPham.setBackground(paneClick);
         pnlDoanhThu.setBackground(paneDefault);
     }//GEN-LAST:event_pnlSanPhamMousePressed
-
+    public static void thongBao(JTable tbl){
+        DefaultTableModel tblModel = ( DefaultTableModel) tbl.getModel();
+        tblModel.setRowCount(0);
+        Object rows[] = new Object[4];
+        
+        Date homNay = new Date();
+        ResultSet rs = DAO.select.layNgayNhapSP();
+        ResultSet ht = DBConnection.getData("select * from hethong ");
+        int hanTonKho = 0;
+        
+        try {
+            if (ht.next()) {
+                hanTonKho = ht.getInt("HanTonKho");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            while(rs.next()){
+              int ngay = ChuyenDoi.soSanhDate(ChuyenDoi.GetNgay(homNay),ChuyenDoi.GetNgay(rs.getDate("NgayVaoKho"))).getDays();
+                if (ngay >= hanTonKho) {
+                   int ngayHetHan = ngay - hanTonKho;
+                   rows[0] = rs.getString("MaVach");
+                   rows[1] ="Còn " +  ngayHetHan + " ngày";
+                   tblModel.addRow(rows);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+      
+                
+    }
     /**
      * @param args the command line arguments
      */
@@ -977,6 +1026,7 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXuong;
     public static javax.swing.JDesktopPane dkpRight;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblBanHang;
     private javax.swing.JLabel lblDaiLy;

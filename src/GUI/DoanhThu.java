@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import GUI.ViTri.HeaderColor;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -18,6 +19,9 @@ public class DoanhThu extends javax.swing.JInternalFrame {
      */
     public DoanhThu() {
         initComponents();
+        tblSPtrongkho.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblHoaDon.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblPhieuNhap.getTableHeader().setDefaultRenderer(new HeaderColor());
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
         bi.setNorthPane(null);
@@ -35,8 +39,35 @@ public class DoanhThu extends javax.swing.JInternalFrame {
         pnlDaiLy = new javax.swing.JPanel();
         pnlTieuDe = new javax.swing.JPanel();
         lblThongKe = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblSPtrongkho = new javax.swing.JTable();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblHoaDon = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblPhieuNhap = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(1430, 910));
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         pnlDaiLy.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -47,7 +78,7 @@ public class DoanhThu extends javax.swing.JInternalFrame {
 
         lblThongKe.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblThongKe.setForeground(new java.awt.Color(0, 102, 153));
-        lblThongKe.setText("THỐNG KÊ DOANH THU");
+        lblThongKe.setText("BÁO CÁO THỐNG KÊ");
 
         javax.swing.GroupLayout pnlTieuDeLayout = new javax.swing.GroupLayout(pnlTieuDe);
         pnlTieuDe.setLayout(pnlTieuDeLayout);
@@ -56,22 +87,128 @@ public class DoanhThu extends javax.swing.JInternalFrame {
             .addGroup(pnlTieuDeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1066, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlTieuDeLayout.setVerticalGroup(
             pnlTieuDeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
+        jTabbedPane1.setBackground(new java.awt.Color(0, 102, 153));
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        tblSPtrongkho.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "STT", "Tổng Sản Phẩm Trong Kho", "Tổng Gía Trị"
+            }
+        ));
+        tblSPtrongkho.setRowHeight(35);
+        jScrollPane1.setViewportView(tblSPtrongkho);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1391, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("SẢN PHẨM TRONG KHO", jPanel1);
+
+        tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "STT", "Tổng Sản Phẩm Trong Kho", "Tổng Gía Trị"
+            }
+        ));
+        tblHoaDon.setRowHeight(35);
+        jScrollPane2.setViewportView(tblHoaDon);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1391, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("HOÁ ĐƠN BÁN HÀNG", jPanel6);
+
+        tblPhieuNhap.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "STT", "Tổng Số Phiếu Nhập"
+            }
+        ));
+        tblPhieuNhap.setRowHeight(35);
+        jScrollPane3.setViewportView(tblPhieuNhap);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1391, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("PHIẾU NHẬP HÀNG", jPanel7);
+
         javax.swing.GroupLayout pnlDaiLyLayout = new javax.swing.GroupLayout(pnlDaiLy);
         pnlDaiLy.setLayout(pnlDaiLyLayout);
         pnlDaiLyLayout.setHorizontalGroup(
             pnlDaiLyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTieuDe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         pnlDaiLyLayout.setVerticalGroup(
             pnlDaiLyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlTieuDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(pnlDaiLyLayout.createSequentialGroup()
+                .addComponent(pnlTieuDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTabbedPane1))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -88,10 +225,24 @@ public class DoanhThu extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        
+    }//GEN-LAST:event_formInternalFrameOpened
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblThongKe;
     private javax.swing.JPanel pnlDaiLy;
     private javax.swing.JPanel pnlTieuDe;
+    public static javax.swing.JTable tblHoaDon;
+    public static javax.swing.JTable tblPhieuNhap;
+    public static javax.swing.JTable tblSPtrongkho;
     // End of variables declaration//GEN-END:variables
 }

@@ -93,8 +93,8 @@ public class insert {
                 + "           ,[TienKiQuy] "
                 + "           ,[NguoiTao]) "
                 + "     VALUES "
-                + "           (N'" + nv.getIDNV()+"'"
-                + "           ,N'" + nv.getHoTen()+"'"
+                + "           (N'" + nv.getIDNV() + "'"
+                + "           ,N'" + nv.getHoTen() + "'"
                 + "           ,'" + nv.getSDT() + "' "
                 + "           ,'" + nv.getCMND() + "' "
                 + "           ,'" + BLL.ChuyenDoi.GetNgay(nv.getNgayCap()) + "' "
@@ -187,6 +187,7 @@ public class insert {
                 + "           ,'" + hd.isTrangThai() + "' "
                 + "           ," + hd.getIdTK() + " "
                 + "           ," + hd.getTongTien() + ")";
+        System.out.println(cauLenh);
         return DBConnection.ExecuteData(cauLenh);
     }
 
@@ -209,7 +210,7 @@ public class insert {
                 + "           ," + cthd.getSl() + " "
                 + "           ," + cthd.getDonGia() + " "
                 + "           ," + cthd.getThanhTien() + " "
-                + "           ,'" + cthd.getIdBH() + "' "
+                + "           ,'" + cthd.getIdBH() + "' "               
                 + "           ,N'" + cthd.getGhiChu() + "')";
         return DBConnection.ExecuteData(cauLenh);
     }

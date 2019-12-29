@@ -3,18 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/delete.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/DAO/selectBy.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/BLL/BLL_KhachHang.java</file>
             <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlHangTonKho.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_CTPhieuNhap.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/DAO/insert.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/BLL/BLL_VitriHangHoa.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/ViTri.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/page_Main_NhapHang.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlDanhSachSPExecel.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/XoaHoaDon.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/DAO/select.java</file>
             <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/frmMain.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_TaoPhieuNhap.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/Home.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_SanPham.java</file>
             <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/BLL/BLL_NhapHangNhanh.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/page_ViTri.java</file>
-            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/page_BanHang.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/CaiDatHeThong.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/SP/GUI/pnlCT_PhieuNhap.java</file>
+            <file>file:/C:/Users/bumte/Documents/NetBeansProjects/Du_An_1/src/GUI/ThongBaoSPTonKho.java</file>
         </group>
     </open-files>
 </project-private>

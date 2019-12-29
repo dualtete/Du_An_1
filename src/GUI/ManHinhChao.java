@@ -29,7 +29,7 @@ public class ManHinhChao extends javax.swing.JDialog {
     }
     int index = 0;
     int i = 0;
-    int time = 30;
+    int time = 20;
 
     private void Start() {
         Timer t = new Timer(time, new ActionListener() {

@@ -10,6 +10,7 @@ import DTO.DTO_HoaDon;
 import DTO.DTO_KhachHang;
 import DTO.MyComboBox;
 import GUI.ThongBao;
+import GUI.jdlAddKhachHang;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,6 +30,9 @@ import javax.swing.table.TableColumn;
  * @author Admin
  */
 public class BLL_BanHang {
+
+    public static DTO.DTO_HoaDon hd;
+    public static DTO.DTO_CTHoaDon ct;
 
 //    public static void loadDSSanPham(JTable tbl) {
 //        DefaultTableModel tblModel = (DefaultTableModel) tbl.getModel();
@@ -100,7 +104,7 @@ public class BLL_BanHang {
                 kh.setTrangThai(rs.getBoolean("TrangThai"));
                 setComponentTTKH(kh);
                 return true;
-            }else{
+            } else {
                 ThongBao.ThongBao("Chưa có thông tin khách hàng", "Thông báo");
                 return false;
             }
@@ -115,7 +119,7 @@ public class BLL_BanHang {
         txtDC.setText(kh.getDC());
         txtEmail.setText(kh.getEmail());
         txtIDKH.setText(kh.getIDKH());
-        txtNgaySinh.setText(ChuyenDoi.GetNgay(kh.getNgaySinh()));
+        txtNgaySinh.setDate(kh.getNgaySinh());
         txtSDT.setText(kh.getSDT());
         txtTenKH.setText(kh.getHoTen());
         radNam.setSelected(kh.isGioiTinh());
@@ -139,7 +143,8 @@ public class BLL_BanHang {
         txtCacGoiBaoHanh.setText(thongTin);
 
     }
-    public static void layThongTinSP(String maVach){
+
+    public static boolean layThongTinSP(String maVach) {
         ResultSet rs = SP.DAO.selectBy.LayHangTonKho(maVach);
         try {
             if (rs.next()) {
@@ -148,12 +153,14 @@ public class BLL_BanHang {
                 txtGiamGia.setText("0");
                 txtTenSP.setText(rs.getString("TenSP"));
                 txtThongTinSanPham.setText(rs.getString("ThongTinSP"));
-                
+                return true;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(BLL_BanHang.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
+        return false;
     }
+
     public static void loadThongTinHangTonKho(String id) {
         int sl = 1;
         String barcode = "";
@@ -162,7 +169,7 @@ public class BLL_BanHang {
         DefaultTableModel tblCTModel = (DefaultTableModel) tblCTHoaDon.getModel();
         Object ctHoaDon[] = new Object[4];
         //Bảng hiển thị ra màn hình tblmodel
-      
+
         //Bảng không hiển thị tblmodel1
         ResultSet rs = SP.DAO.selectBy.LayHangTonKho(id);
         Object rows[] = new Object[10];
@@ -187,15 +194,14 @@ public class BLL_BanHang {
                 if (tblModel.getRowCount() > 0) {
                     for (int i = 0; i < tblModel.getRowCount(); i++) {
                         double giaCu = ChuyenDoi.stringToDouble(tblHoaDon.getValueAt(i, 2).toString());
-                        if (rs.getString("masp").equals(tblHoaDon.getValueAt(i, 6).toString()) && ChuyenDoi.stringToDouble(txtGiaBan.getText()) == giaCu && 
-                                rs.getInt("IDCTPN") == Integer.parseInt(tblHoaDon.getValueAt(i, 9).toString().trim())) {
+                        if (rs.getString("masp").equals(tblHoaDon.getValueAt(i, 6).toString()) && ChuyenDoi.stringToDouble(txtGiaBan.getText()) == giaCu
+                                && rs.getInt("IDCTPN") == Integer.parseInt(tblHoaDon.getValueAt(i, 9).toString().trim())) {
                             sl = Integer.parseInt(tblHoaDon.getValueAt(i, 3).toString());
                             sl++;
                             double tongTien = ChuyenDoi.stringToDouble(tblHoaDon.getValueAt(i, 4).toString());
                             tongTien += ChuyenDoi.stringToDouble(txtGiaBan.getText());
                             tblHoaDon.setValueAt(sl, i, 3);
                             tblHoaDon.setValueAt(ChuyenDoi.doubleToString(tongTien), i, 4);
-                            ThongBao.ThongBao("Cùng loại sản phẩm - đã tăng số lượng", "Thông báo!");
                             return;
                         }
                     }
@@ -216,41 +222,73 @@ public class BLL_BanHang {
         } catch (SQLException ex) {
             Logger.getLogger(BLL_BanHang.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
     }
-    public static void setTongTien(){
-         double tongTien = 0;
+
+    public static void setTongTien() {
+        double tongTien = 0;
         for (int i = 0; i < tblHoaDon.getRowCount(); i++) {
             double tien = ChuyenDoi.stringToDouble(tblHoaDon.getValueAt(i, 4).toString());
             tongTien += tien;
         }
         lblTongTien.setText(ChuyenDoi.doubleToString(tongTien) + "đ");
     }
-    
-    public static boolean luuHoaDon() {
-        DTO.DTO_HoaDon hd = new DTO_HoaDon();
-        DTO.DTO_CTHoaDon ct = new DTO_CTHoaDon();
+
+    public static boolean thanhToan() {
+
+        if (!luuHoaDon(true)) {
+            return false;
+        }
+
+        if (SP.DAO.update.updateHoaDon(hd.getIdHoaDon()) <= 0) {
+            return false;
+        }
+        
+        
+        
+        for (int i = 0; i < tblCTHoaDon.getRowCount(); i++) {
+            String maVach = tblCTHoaDon.getValueAt(i, 2).toString();
+            DAO.delete.xoaHangTonKho(maVach);
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        DefaultTableModel hdmode = (DefaultTableModel) tblHoaDon.getModel();
+        DefaultTableModel ctMode = (DefaultTableModel) tblCTHoaDon.getModel();
+        hdmode.setRowCount(0);
+        ctMode.setRowCount(0);
+
+        return true;
+
+    }
+
+    public static boolean luuHoaDon(boolean trangThai) {
+        hd = new DTO_HoaDon();
+        ct = new DTO_CTHoaDon();
         String idhd = taoIDHD();
         hd.setIdHoaDon(idhd);
         hd.setIdKH(txtIDKH.getText().trim());
         hd.setIdTK(DTO.DTO_UserLogin.IDTK);
         hd.setNgayTaoHD(new Date());
         hd.setTongTien(ChuyenDoi.stringToDouble(lblTongTien.getText()));
-        hd.setTrangThai(false);
-        
-        System.out.println(hd.getIdHoaDon() +"-"+ hd.getIdKH() +"-"+ hd.getIdTK()+"-"+ hd.getNgayTaoHD()+"-"+ hd.getTongTien() );
-        if ( DAO.insert.ThemHoaDon(hd) <= 0) {
-            if(txtSDT.getText().length()==0){
+        hd.setTrangThai(trangThai);
+
+        System.out.println(hd.getIdHoaDon() + "-" + hd.getIdKH() + "-" + hd.getIdTK() + "-" + hd.getNgayTaoHD() + "-" + hd.getTongTien());
+        if (DAO.insert.ThemHoaDon(hd) <= 0) {
+            if (txtSDT.getText().length() == 0) {
                 GUI.ThongBao.ThongBao("Bạn chưa thêm thông tin khách hàng!", "Thông báo!");
                 return false;
             }
-           GUI.ThongBao.ThongBao("Hoá đơn chưa đầy đủ thông tin!", "Thông báo!");
-           System.out.println("Chưa tạo được hóa đơn");
+            GUI.ThongBao.ThongBao("Hoá đơn chưa đầy đủ thông tin!", "Thông báo!");
+            System.out.println("Chưa tạo được hóa đơn");
             return false;
         }
-       
-        
-        
+
         int rows = tblHoaDon.getRowCount();
         System.out.println(rows);
         for (int i = 0; i < rows; i++) {
@@ -258,23 +296,24 @@ public class BLL_BanHang {
             ct.setDonGia(ChuyenDoi.stringToDouble(tblHoaDon.getValueAt(i, 2).toString()));
             ct.setGhiChu("");
             ct.setIdBH(tblHoaDon.getValueAt(i, 5).toString());
-            String idCT = hd.getIdHoaDon() +"-" + (i+1);
+            String idCT = hd.getIdHoaDon() + "-" + (i + 1);
             ct.setIdCTHD(idCT);
             ct.setIdCTPhieuNhap(tblHoaDon.getValueAt(i, 9).toString());
             ct.setIdHD(hd.getIdHoaDon());
             ct.setSl(Integer.parseInt(tblHoaDon.getValueAt(i, 3).toString()));
+           
             double tongTien = ct.getDonGia() * ct.getSl();
             ct.setThanhTien(tongTien);
-            System.out.println(ct.getBarcode()+"-"+ct.getGhiChu() +"-"+ ct.getIdBH()+"-" + ct.getIdCTHD()+"-"
-                    +ct.getIdCTPhieuNhap()+"-"+ct.getIdHD()+"-"+ct.getDonGia()+"-"+ct.getSl()+"-"+ct.getThanhTien());
-            if (DAO.insert.ThemCTHoaDon(ct) <= 0 ) {
+            System.out.println(ct.getBarcode() + "-" + ct.getGhiChu() + "-" + ct.getIdBH() + "-" + ct.getIdCTHD() + "-"
+                    + ct.getIdCTPhieuNhap() + "-" + ct.getIdHD() + "-" + ct.getDonGia() + "-" + ct.getSl() + "-" + ct.getThanhTien());
+            if (DAO.insert.ThemCTHoaDon(ct) <= 0) {
                 System.out.println("Lỗi thêm chi tiết hóa đơn");
                 return false;
             }
         }
-        
+
         return true;
-        
+
     }
 
     public static String taoIDHD() {
@@ -288,7 +327,7 @@ public class BLL_BanHang {
                 String ngay = str.split("-")[1].trim();
                 if (ngay.equals(ngayHienTai)) {
                     id = Integer.parseInt(str.split("-")[2].trim());
-                    id++;
+                    id+= 2;
                 }
 
                 idMoiTao = "HD-" + ngayHienTai + "-" + ChuyenDoi.taoChuoiCacSo0(id, 4);
@@ -299,6 +338,36 @@ public class BLL_BanHang {
 
         }
         return idMoiTao;
+    }
+
+    public static boolean xoaSanPham(String id) {
+        DefaultTableModel tblCT = (DefaultTableModel) tblCTHoaDon.getModel();
+        DefaultTableModel tblHD = (DefaultTableModel) tblHoaDon.getModel();
+        for (int i = 0; i < tblCTHoaDon.getRowCount(); i++) {
+            if (tblCTHoaDon.getValueAt(i, 2).toString().equals(id)) {
+                String barcode = tblCT.getValueAt(i, 0).toString();
+                tblCT.removeRow(i);
+
+                for (int j = 0; j < tblHD.getRowCount(); j++) {
+                    int sl = (int) tblHD.getValueAt(j, 3);
+                    
+                    
+                    
+                    if (sl == 1 && tblHD.getValueAt(j, 6).toString().equals(barcode) ) {
+                        tblHD.removeRow(j);
+                        return true;
+                    }
+                    if (tblHD.getValueAt(j, 6).toString().equals(barcode)) {
+                        sl--;
+                        tblHD.setValueAt(sl, j, 6);
+                        return true;
+                    }
+                }
+
+            }
+
+        }
+        return false;
     }
 
     public static void open() {

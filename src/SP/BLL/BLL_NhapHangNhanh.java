@@ -35,7 +35,7 @@ public class BLL_NhapHangNhanh {
     public static SP.DTO.DTO_PhieuNhap pn = new DTO_PhieuNhap();
     public static SP.DTO.DTO_ChiTietPhieuNhap ct = new DTO_ChiTietPhieuNhap();
     public static SP.DTO.DTO_SanPham sp = new DTO_SanPham();
-    
+
     public static DefaultTableModel tblDanhMucSPModel = (DefaultTableModel) tblDanhMucSanPham.getModel();
     public static DefaultTableModel tblCTSPModel = (DefaultTableModel) tblCTSanPham.getModel();
     public static DefaultTableModel tblHeThong = (DefaultTableModel) tblHangTonKhoHide.getModel();
@@ -70,6 +70,7 @@ public class BLL_NhapHangNhanh {
     }
 
     public static boolean layTTSP(String barcode) {
+
         ResultSet rs = SP.DAO.selectBy.checkBarcodeSanPham(barcode);
         try {
             if (rs.next()) {
@@ -96,6 +97,14 @@ public class BLL_NhapHangNhanh {
 
     public static boolean LayGiaSP(String barcode) {
         ResultSet rs = SP.DAO.selectBy.Select_SanPham_CTPhieuNhap_ByBarcode(barcode);
+        for (int i = 0; i < tblCTSPModel.getRowCount(); i++) {
+            if (tblCTSPModel.getValueAt(i, 6).toString().equals(barcode)) {
+                txtGiaNhap.setText(ChuyenDoi.doubleToString(Double.parseDouble(tblCTSPModel.getValueAt(i, 3).toString())));
+                txtGiaSi.setText(ChuyenDoi.doubleToString(Double.parseDouble(tblCTSPModel.getValueAt(i, 4).toString())));
+                txtGiaLe.setText(ChuyenDoi.doubleToString(Double.parseDouble(tblCTSPModel.getValueAt(i, 5).toString())));
+                return true;
+            }
+        }
         try {
             if (rs.next()) {
                 txtGiaNhap.setText(ChuyenDoi.doubleToString(rs.getDouble("GiaNhap")));
@@ -117,10 +126,10 @@ public class BLL_NhapHangNhanh {
         if (tblHangTonKhoHide.getRowCount() > 0) {
             maxID = ((int) tblHangTonKhoHide.getValueAt(tblHangTonKhoHide.getRowCount() - 1, 1)) + 1;
         }
-        
+
         Object rows[] = new Object[10];
         int sl = 1;
-        if (!luuVaoBangChiTietSP(maVach, tenSP, giaNhap, giaSi, giaLe,barcode)) {
+        if (!luuVaoBangChiTietSP(maVach, tenSP, giaNhap, giaSi, giaLe, barcode)) {
             return false;
         }
         if (tblDanhMucSPModel.getRowCount() > 0) {
@@ -237,7 +246,7 @@ public class BLL_NhapHangNhanh {
         DTO_PhieuNhap pn = new DTO_PhieuNhap();
         DTO_ChiTietPhieuNhap ct = new DTO_ChiTietPhieuNhap();
         pn.setIDNCC(ncc.getID());
-        pn.setIDPN("PN-" + ncc.getID() + ChuyenDoi.dateTimeString(new Date()).replace("/", "").replace(":", ""));
+        pn.setIDPN("PN-" + ncc.getID() + ChuyenDoi.dateTimeString(new Date()).replace("/", "").replace(":", "").replace(" ", ""));
         pn.setNgayTao(ChuyenDoi.dateTimeString(new Date()));
         pn.setNguoiTao(DTO.DTO_UserLogin.IDTK);
         pn.setTongTien(ChuyenDoi.stringToDouble(lblTongTien.getText().replace("đ", "")));
@@ -268,14 +277,14 @@ public class BLL_NhapHangNhanh {
                     System.out.println("Đã xóa ct phiếu nhập và phiếu nhập ");
                 }
                 return false;
-            }           
-            
+            }
+
         }
-        
+
         for (int i = 0; i < tblCTSPModel.getRowCount(); i++) {
             String barcode = tblCTSPModel.getValueAt(i, 6).toString();
             System.out.println(barcode);
-            ResultSet rs = SP.DAO.selectBy.check_Barcode_CTPhieuNhap(pn.getIDPN(), barcode );
+            ResultSet rs = SP.DAO.selectBy.check_Barcode_CTPhieuNhap(pn.getIDPN(), barcode);
             int IDCTPN = 0;
             String maVach = tblCTSPModel.getValueAt(i, 1).toString();
             String seriSP = tblCTSPModel.getValueAt(i, 1).toString();
@@ -288,29 +297,29 @@ public class BLL_NhapHangNhanh {
             } catch (SQLException ex) {
                 Logger.getLogger(BLL_NhapHangNhanh.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
-            SP.DTO.DTO_HangTonKho htk = new DTO_HangTonKho(maVach, seriSP,String.valueOf(IDCTPN),"",barcode,ct.getIDViTri() ,true, giaLe, giaSi);
+
+            SP.DTO.DTO_HangTonKho htk = new DTO_HangTonKho(maVach, seriSP, String.valueOf(IDCTPN), "", barcode, ct.getIDViTri(), true, giaLe, giaSi);
             if (SP.DAO.insert.sanPhamTrongKho(htk) <= 0) {
                 System.out.println("Lỗi thêm vào bảng tồn kho");
                 if (SP.DAO.delete.xoaSPTonKho_ByIDPN(pn.getIDPN()) > 0) {
                     System.out.println("Đã xóa các sản phẩm vừa thêm vào bảng hàng tồn kho");
-                }else{
+                } else {
                     System.out.println("Lỗi! xóa các sản phẩm vừa thêm vào bảng hàng tồn kho");
                 }
-                
+
                 if (SP.DAO.delete.delPhieuNhap_CTPhieuNhap(pn.getIDPN()) > 0) {
-                     System.out.println("Đã xóa các phiếu nhập và chi tiết phiếu nhập vừa thêm");
-                }else{
+                    System.out.println("Đã xóa các phiếu nhập và chi tiết phiếu nhập vừa thêm");
+                } else {
                     System.out.println("Lỗi! xóa các phiếu nhập và chi tiết phiếu nhập vừa thêm");
                 }
-                
-                
+
                 return false;
             }
-            
+
         }
-        
+        tblCTSPModel.setRowCount(0);
+        tblDanhMucSPModel.setRowCount(0);
+
         return true;
 
     }

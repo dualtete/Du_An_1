@@ -25,4 +25,7 @@ public class delete {
     public static int xoaNCC(String id) {
         return DBConnection.ExecuteData("set dateformat dMy update NHACUNGCAP set TrangThai = 'false' where IDNCC = '" + id + "'");
     }
+    public static int xoaHangTonKho(String mavach){
+        return DBConnection.ExecuteData("delete sanphamtrongkho where mavach = '"+mavach+"'");
+    }
 }

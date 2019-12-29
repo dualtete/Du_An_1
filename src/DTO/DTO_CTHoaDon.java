@@ -19,6 +19,16 @@ public class DTO_CTHoaDon {
     double thanhTien;
     String idBH;
     String ghiChu;
+    String maVach;
+
+    public String getMaVach() {
+        return maVach;
+    }
+
+    public void setMaVach(String maVach) {
+        this.maVach = maVach;
+    }
+    
 
     public String getIdCTHD() {
         return idCTHD;

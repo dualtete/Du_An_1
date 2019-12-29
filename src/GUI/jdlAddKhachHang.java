@@ -76,10 +76,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         radNu = new javax.swing.JRadioButton();
         lblNgay1 = new javax.swing.JLabel();
         txtNgaySinh = new com.toedter.calendar.JDateChooser();
-        jPanel30 = new javax.swing.JPanel();
-        lblNoiCap = new javax.swing.JLabel();
-        lblTBNguoiTao = new javax.swing.JLabel();
-        txtNguoiTao = new javax.swing.JTextField();
         pnlGhiChu = new javax.swing.JPanel();
         lblTrangThai = new javax.swing.JLabel();
         lblTBGhiChu = new javax.swing.JLabel();
@@ -638,53 +634,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
 
         pnlChinh.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 162, -1, 40));
 
-        jPanel30.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel30.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
-
-        lblNoiCap.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblNoiCap.setText("NGƯỜI TẠO");
-
-        lblTBNguoiTao.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblTBNguoiTao.setForeground(new java.awt.Color(153, 0, 0));
-        lblTBNguoiTao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-
-        txtNguoiTao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtNguoiTao.setToolTipText("");
-        txtNguoiTao.setBorder(null);
-        txtNguoiTao.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtNguoiTaoFocusLost(evt);
-            }
-        });
-        txtNguoiTao.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNguoiTaoKeyReleased(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addComponent(lblNoiCap, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTBNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblTBNguoiTao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNoiCap, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNguoiTao, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
-
-        pnlChinh.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 500, -1));
-
         pnlGhiChu.setBackground(new java.awt.Color(255, 255, 255));
         pnlGhiChu.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
@@ -733,7 +682,7 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
             .addComponent(lblTrangThai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pnlChinh.add(pnlGhiChu, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 340, -1, 40));
+        pnlChinh.add(pnlGhiChu, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, -1, 40));
 
         jPanel32.setBackground(new java.awt.Color(255, 255, 255));
         jPanel32.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
@@ -988,15 +937,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtNgayThemFocusLost
 
-    private void txtNguoiTaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNguoiTaoFocusLost
-//        if (evt.isTemporary()) {
-//            return;
-//        }
-//        if (!BLL.BLL_NhanVien.kiemTra("hoVaTen")) {
-//            return;
-//        }
-    }//GEN-LAST:event_txtNguoiTaoFocusLost
-
     private void txtGhiChuFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGhiChuFocusLost
         if (evt.isTemporary()) {
             return;
@@ -1033,10 +973,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     private void txtNgayThemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNgayThemKeyReleased
         //BLL.BLL_KhachHang.kiemTra("ngaythem");
     }//GEN-LAST:event_txtNgayThemKeyReleased
-
-    private void txtNguoiTaoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNguoiTaoKeyReleased
-        BLL.BLL_KhachHang.kiemTra("nguoitao");
-    }//GEN-LAST:event_txtNguoiTaoKeyReleased
 
     private void txtGhiChuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGhiChuKeyReleased
         BLL.BLL_KhachHang.kiemTra("ghichu");
@@ -1114,14 +1050,12 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JLabel lblGioiTinh;
     private javax.swing.JLabel lblNgay1;
     private javax.swing.JLabel lblNgaySinh;
-    private javax.swing.JLabel lblNoiCap;
     private javax.swing.JLabel lblNoiCap1;
     public static javax.swing.JLabel lblTBDC;
     public static javax.swing.JLabel lblTBEmail;
@@ -1129,7 +1063,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     public static javax.swing.JLabel lblTBHoTen;
     public static javax.swing.JLabel lblTBHoTen1;
     public static javax.swing.JLabel lblTBNgayThem;
-    public static javax.swing.JLabel lblTBNguoiTao;
     public static javax.swing.JLabel lblTBSDT;
     public static javax.swing.JLabel lblTDMaKH;
     private javax.swing.JLabel lblTaiKhoan;
@@ -1149,7 +1082,6 @@ public class jdlAddKhachHang extends javax.swing.JDialog {
     public static javax.swing.JTextField txtIDKhachHang;
     public static com.toedter.calendar.JDateChooser txtNgaySinh;
     public static com.toedter.calendar.JDateChooser txtNgayThem;
-    public static javax.swing.JTextField txtNguoiTao;
     public static javax.swing.JFormattedTextField txtSDT;
     // End of variables declaration//GEN-END:variables
 }

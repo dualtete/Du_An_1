@@ -37,7 +37,7 @@ public class BLL_KhachHang {
         txtIDKhachHang.setText(kh.getIDKH());
         txtNgaySinh.setDate(kh.getNgaySinh());
         txtNgayThem.setDate(kh.getNgayThem());
-        txtNguoiTao.setText(String.valueOf(kh.getIDTK()));
+        
         txtSDT.setText(kh.getSDT());
 
     }
@@ -51,7 +51,7 @@ public class BLL_KhachHang {
         kh.setIDKH(txtIDKhachHang.getText());
         DTO.MyComboBox mb = (DTO.MyComboBox) jdlAddKhachHang.cbbLoaiKH.getSelectedItem();
         kh.setIDLoaiKH(mb.MaString());
-        kh.setIDTK(Integer.parseInt(txtNguoiTao.getText()));
+        kh.setIDTK(DTO.DTO_UserLogin.IDTK );
         kh.setNgaySinh(txtNgaySinh.getDate());
         kh.setNgayThem(txtNgayThem.getDate());
         kh.setSDT(txtSDT.getText().replace("-", ""));
@@ -331,8 +331,8 @@ public class BLL_KhachHang {
     public static void windowOpened() {
         loadDSKhachHang("");
         loadDSLoaiKH();
-        txtNguoiTao.setEditable(false);
-        txtNguoiTao.setText(String.valueOf(DTO.DTO_UserLogin.IDTK));
+        
+       
         Date date = new Date();
         txtNgayThem.setEnabled(false);
     }

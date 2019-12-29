@@ -90,11 +90,11 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel2" pref="307" max="32767" attributes="0"/>
+                      <Component id="jPanel2" pref="305" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel19" pref="384" max="32767" attributes="0"/>
+                      <Component id="jPanel19" pref="383" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel25" pref="226" max="32767" attributes="0"/>
+                      <Component id="jPanel25" pref="224" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -673,6 +673,9 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="3"/>
                                 </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                               <AuxValues>
@@ -729,6 +732,9 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="3"/>
                                 </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                               <AuxValues>
@@ -784,6 +790,9 @@
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="3"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -848,10 +857,10 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel13" min="-2" pref="85" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="txtGiaNhapMoi" min="-2" pref="290" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="jLabel13" min="-2" pref="78" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="txtGiaNhapMoi" min="-2" pref="267" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -859,7 +868,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel13" pref="26" max="32767" attributes="0"/>
+                                      <Component id="jLabel13" pref="24" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtGiaNhapMoi" alignment="0" max="32767" attributes="0"/>
@@ -882,6 +891,9 @@
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="0" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -943,6 +955,9 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="0" red="99" type="rgb"/>
                                 </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                               </Properties>
                               <Events>
                                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtGiaSiMoiKeyReleased"/>
@@ -967,9 +982,9 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel15" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtGiaLeMoi" pref="290" max="32767" attributes="0"/>
+                                      <Component id="jLabel15" min="-2" pref="74" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txtGiaLeMoi" min="-2" pref="296" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -979,7 +994,7 @@
                                   <Component id="txtGiaLeMoi" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel15" pref="26" max="32767" attributes="0"/>
+                                      <Component id="jLabel15" pref="24" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1001,6 +1016,9 @@
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="0" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1162,7 +1180,7 @@
                               <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
                               <Component id="btnThem" min="-2" pref="58" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="154" max="32767" attributes="0"/>
+                          <EmptySpace pref="151" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

@@ -17,6 +17,10 @@ import javax.swing.JPopupMenu;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import static GUI.frmMain.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -76,35 +80,52 @@ public class Home extends javax.swing.JInternalFrame {
         lblNCC = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         lbl = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lbltongncc = new javax.swing.JLabel();
         pnlThu2 = new javax.swing.JPanel();
         lblSanPham = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
+        lblSoSP = new javax.swing.JLabel();
         pnlThu3 = new javax.swing.JPanel();
         lblNhanVien = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lbltongnv = new javax.swing.JLabel();
         pnlThu4 = new javax.swing.JPanel();
         lblKhachHang = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lbltongkh = new javax.swing.JLabel();
         pnlThu5 = new javax.swing.JPanel();
         lblKho = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
+        lblTongKho = new javax.swing.JLabel();
         pnlThu6 = new javax.swing.JPanel();
         lblNhan = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        lblHD = new javax.swing.JLabel();
 
         setResizable(true);
         setPreferredSize(new java.awt.Dimension(1430, 910));
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         pnlHome.setBackground(new java.awt.Color(255, 255, 255));
         pnlHome.setPreferredSize(new java.awt.Dimension(960, 780));
@@ -141,7 +162,6 @@ public class Home extends javax.swing.JInternalFrame {
 
         btnRefresh.setBackground(new java.awt.Color(255, 255, 255));
         btnRefresh.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnRefresh.setForeground(new java.awt.Color(0, 0, 0));
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_recurring_appointment_100px.png"))); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.setBorder(null);
@@ -150,10 +170,14 @@ public class Home extends javax.swing.JInternalFrame {
         btnRefresh.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         btnRefresh.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRefresh.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
 
         btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnLogout.setForeground(new java.awt.Color(0, 0, 0));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_logout_rounded_left_100px.png"))); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.setBorder(null);
@@ -170,7 +194,6 @@ public class Home extends javax.swing.JInternalFrame {
 
         btnFB.setBackground(new java.awt.Color(255, 255, 255));
         btnFB.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnFB.setForeground(new java.awt.Color(0, 0, 0));
         btnFB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_facebook_new_100px.png"))); // NOI18N
         btnFB.setText("Facebook");
         btnFB.setBorder(null);
@@ -202,7 +225,6 @@ public class Home extends javax.swing.JInternalFrame {
 
         btnCalenter.setBackground(new java.awt.Color(255, 255, 255));
         btnCalenter.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnCalenter.setForeground(new java.awt.Color(0, 0, 0));
         btnCalenter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_calendar_plus_100px.png"))); // NOI18N
         btnCalenter.setText("Calenter");
         btnCalenter.setBorder(null);
@@ -214,7 +236,6 @@ public class Home extends javax.swing.JInternalFrame {
 
         btnWeb.setBackground(new java.awt.Color(255, 255, 255));
         btnWeb.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnWeb.setForeground(new java.awt.Color(0, 0, 0));
         btnWeb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ads.png"))); // NOI18N
         btnWeb.setText("Website");
         btnWeb.setBorder(null);
@@ -226,7 +247,6 @@ public class Home extends javax.swing.JInternalFrame {
 
         btnView.setBackground(new java.awt.Color(255, 255, 255));
         btnView.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnView.setForeground(new java.awt.Color(0, 0, 0));
         btnView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_visible_100px.png"))); // NOI18N
         btnView.setText("Xem Tất Cả");
         btnView.setBorder(null);
@@ -403,9 +423,9 @@ public class Home extends javax.swing.JInternalFrame {
         lbl.setForeground(new java.awt.Color(255, 255, 255));
         lbl.setText("Tổng Số");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("50");
+        lbltongncc.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lbltongncc.setForeground(new java.awt.Color(255, 255, 255));
+        lbltongncc.setText("50");
 
         javax.swing.GroupLayout pnlThu1Layout = new javax.swing.GroupLayout(pnlThu1);
         pnlThu1.setLayout(pnlThu1Layout);
@@ -419,7 +439,7 @@ public class Home extends javax.swing.JInternalFrame {
                     .addGroup(pnlThu1Layout.createSequentialGroup()
                         .addComponent(lbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel12))
+                        .addComponent(lbltongncc))
                     .addGroup(pnlThu1Layout.createSequentialGroup()
                         .addComponent(lblNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -433,7 +453,7 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlThu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl)
-                    .addComponent(jLabel12))
+                    .addComponent(lbltongncc))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -466,9 +486,9 @@ public class Home extends javax.swing.JInternalFrame {
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Tổng Số");
 
-        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setText("50");
+        lblSoSP.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblSoSP.setForeground(new java.awt.Color(255, 255, 255));
+        lblSoSP.setText("50");
 
         javax.swing.GroupLayout pnlThu2Layout = new javax.swing.GroupLayout(pnlThu2);
         pnlThu2.setLayout(pnlThu2Layout);
@@ -482,7 +502,7 @@ public class Home extends javax.swing.JInternalFrame {
                     .addGroup(pnlThu2Layout.createSequentialGroup()
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel40))
+                        .addComponent(lblSoSP))
                     .addGroup(pnlThu2Layout.createSequentialGroup()
                         .addComponent(lblSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -496,7 +516,7 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlThu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(jLabel40))
+                    .addComponent(lblSoSP))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -529,9 +549,9 @@ public class Home extends javax.swing.JInternalFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tổng Số");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("50");
+        lbltongnv.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lbltongnv.setForeground(new java.awt.Color(255, 255, 255));
+        lbltongnv.setText("50");
 
         javax.swing.GroupLayout pnlThu3Layout = new javax.swing.GroupLayout(pnlThu3);
         pnlThu3.setLayout(pnlThu3Layout);
@@ -548,7 +568,7 @@ public class Home extends javax.swing.JInternalFrame {
                     .addGroup(pnlThu3Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)))
+                        .addComponent(lbltongnv)))
                 .addContainerGap())
         );
         pnlThu3Layout.setVerticalGroup(
@@ -559,7 +579,7 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlThu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(lbltongnv))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -592,9 +612,9 @@ public class Home extends javax.swing.JInternalFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Tổng Số");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("50");
+        lbltongkh.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lbltongkh.setForeground(new java.awt.Color(255, 255, 255));
+        lbltongkh.setText("50");
 
         javax.swing.GroupLayout pnlThu4Layout = new javax.swing.GroupLayout(pnlThu4);
         pnlThu4.setLayout(pnlThu4Layout);
@@ -611,7 +631,7 @@ public class Home extends javax.swing.JInternalFrame {
                     .addGroup(pnlThu4Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8)))
+                        .addComponent(lbltongkh)))
                 .addContainerGap())
         );
         pnlThu4Layout.setVerticalGroup(
@@ -622,7 +642,7 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlThu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(lbltongkh))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -655,9 +675,9 @@ public class Home extends javax.swing.JInternalFrame {
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Tổng Số");
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("50");
+        lblTongKho.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblTongKho.setForeground(new java.awt.Color(255, 255, 255));
+        lblTongKho.setText("50");
 
         javax.swing.GroupLayout pnlThu5Layout = new javax.swing.GroupLayout(pnlThu5);
         pnlThu5.setLayout(pnlThu5Layout);
@@ -671,7 +691,7 @@ public class Home extends javax.swing.JInternalFrame {
                     .addGroup(pnlThu5Layout.createSequentialGroup()
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel36))
+                        .addComponent(lblTongKho))
                     .addGroup(pnlThu5Layout.createSequentialGroup()
                         .addComponent(lblKho, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -685,7 +705,7 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlThu5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(jLabel36))
+                    .addComponent(lblTongKho))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -710,7 +730,7 @@ public class Home extends javax.swing.JInternalFrame {
 
         lblNhan.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblNhan.setForeground(new java.awt.Color(255, 255, 255));
-        lblNhan.setText("NHÂN VIÊN");
+        lblNhan.setText("HÓA ĐƠN");
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_checked_truck_50px.png"))); // NOI18N
 
@@ -718,9 +738,9 @@ public class Home extends javax.swing.JInternalFrame {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Tổng Số");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("50");
+        lblHD.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblHD.setForeground(new java.awt.Color(255, 255, 255));
+        lblHD.setText("50");
 
         javax.swing.GroupLayout pnlThu6Layout = new javax.swing.GroupLayout(pnlThu6);
         pnlThu6.setLayout(pnlThu6Layout);
@@ -734,7 +754,7 @@ public class Home extends javax.swing.JInternalFrame {
                     .addGroup(pnlThu6Layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel16))
+                        .addComponent(lblHD))
                     .addGroup(pnlThu6Layout.createSequentialGroup()
                         .addComponent(lblNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -748,7 +768,7 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlThu6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jLabel16))
+                    .addComponent(lblHD))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -761,17 +781,17 @@ public class Home extends javax.swing.JInternalFrame {
                 .addGap(44, 44, 44)
                 .addGroup(pnlCacTTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCacTTLayout.createSequentialGroup()
-                        .addComponent(pnlThu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlThu1, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
                         .addGap(5, 5, 5)
-                        .addComponent(pnlThu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(pnlThu2, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
                     .addGroup(pnlCacTTLayout.createSequentialGroup()
-                        .addComponent(pnlThu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlThu3, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
                         .addGap(5, 5, 5)
-                        .addComponent(pnlThu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(pnlThu4, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
                     .addGroup(pnlCacTTLayout.createSequentialGroup()
-                        .addComponent(pnlThu5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlThu5, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
                         .addGap(5, 5, 5)
-                        .addComponent(pnlThu6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(pnlThu6, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)))
                 .addGap(71, 71, 71))
         );
         pnlCacTTLayout.setVerticalGroup(
@@ -832,7 +852,7 @@ public class Home extends javax.swing.JInternalFrame {
         pnlChinh.setLayout(pnlChinhLayout);
         pnlChinhLayout.setHorizontalGroup(
             pnlChinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlTieuDe, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)
+            .addComponent(pnlTieuDe, javax.swing.GroupLayout.DEFAULT_SIZE, 1414, Short.MAX_VALUE)
             .addComponent(pnlBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlChinhLayout.setVerticalGroup(
@@ -858,11 +878,11 @@ public class Home extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHome, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)
+            .addComponent(pnlHome, javax.swing.GroupLayout.DEFAULT_SIZE, 1414, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHome, javax.swing.GroupLayout.DEFAULT_SIZE, 878, Short.MAX_VALUE)
+            .addComponent(pnlHome, javax.swing.GroupLayout.PREFERRED_SIZE, 878, Short.MAX_VALUE)
         );
 
         pack();
@@ -974,7 +994,59 @@ public class Home extends javax.swing.JInternalFrame {
         pnlThu6.setBackground(paneDefault);
     }//GEN-LAST:event_pnlThu6MouseExited
 
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        load();
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        load();
+    }//GEN-LAST:event_formInternalFrameOpened
+
+    public void load(){
+    ResultSet tongSP = DAO.select.tongSPTonKho();
+        try {
+            if (tongSP.next()) {
+                lblSoSP.setText(String.valueOf(tongSP.getInt("tongSP")));
+            }   } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    ResultSet tongNCC = DAO.select.tongNCC();
+        try {
+            if (tongNCC.next()) {
+                lbltongncc.setText(String.valueOf(tongNCC.getInt("tongNCC")));
+            }   } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    ResultSet tongNV = DAO.select.tongNV();
+        try {
+            if (tongNV.next()) {
+                lbltongnv.setText(String.valueOf(tongNV.getInt("TONGNV")));
+            }   } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    ResultSet tongKH = DAO.select.tongKH();
+        try {
+            if (tongKH.next()) {
+                lbltongkh.setText(String.valueOf(tongKH.getInt("TONGKH")));
+            }   } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    ResultSet tongKho = DAO.select.tongKho();
+        try {
+            if (tongKho.next()) {
+                lblTongKho.setText(String.valueOf(tongKho.getInt("TONGKHO")));
+            }   } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+    ResultSet tonghd = DAO.select.tongHD();
+        try {
+            if (tonghd.next()) {
+                lblHD.setText(String.valueOf(tonghd.getInt("tonghoadon")));
+            }   } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalenter;
     private javax.swing.JButton btnFB;
@@ -983,38 +1055,38 @@ public class Home extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnView;
     private javax.swing.JButton btnWeb;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel lbl;
     private javax.swing.JLabel lblCalenter;
     public static javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblFB;
+    private javax.swing.JLabel lblHD;
     private javax.swing.JLabel lblKhachHang;
     private javax.swing.JLabel lblKho;
     private javax.swing.JLabel lblNCC;
     private javax.swing.JLabel lblNhan;
     private javax.swing.JLabel lblNhanVien;
     private javax.swing.JLabel lblSanPham;
+    private javax.swing.JLabel lblSoSP;
+    private javax.swing.JLabel lblTongKho;
     private javax.swing.JLabel lblView;
     private javax.swing.JLabel lblWeb;
     private javax.swing.JLabel lblXemAll;
     private javax.swing.JLabel lblXemFB;
     private javax.swing.JLabel lblXemNgay;
     private javax.swing.JLabel lblXemWeb;
+    private javax.swing.JLabel lbltongkh;
+    private javax.swing.JLabel lbltongncc;
+    private javax.swing.JLabel lbltongnv;
     private javax.swing.JPanel pnlBody;
     private javax.swing.JPanel pnlBotLeft;
     private javax.swing.JPanel pnlBotRight;

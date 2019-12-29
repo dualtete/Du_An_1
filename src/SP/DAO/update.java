@@ -55,4 +55,8 @@ public class update {
                 + " WHERE MaVach = '" + mavach + "' or SeriSP = '" + mavach + "'";
         return DBConnection.ExecuteData(cauLenh);
     }
+    public static int updateHoaDon(String id){
+        String cauLenh = "update hoadon set trangThai = 'true' where idhd = '"+id+"'";
+        return DBConnection.ExecuteData(cauLenh);
+    }
 }

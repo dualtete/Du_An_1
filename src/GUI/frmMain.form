@@ -38,7 +38,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlTong" alignment="0" pref="900" max="32767" attributes="0"/>
+          <Component id="pnlTong" alignment="0" pref="950" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -667,6 +667,22 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/iconHuy/icons8_settings_30px.png"/>
+                </Property>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="810" width="40" height="40"/>
+                </Constraint>
+              </Constraints>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JDesktopPane" name="dkpRight">
@@ -713,21 +729,25 @@
                       <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblTenNguoiDung" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="728" max="32767" attributes="0"/>
+                      <EmptySpace pref="726" max="32767" attributes="0"/>
                       <Component id="pnlThaoTac" min="-2" pref="104" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="pnlThaoTac" min="-2" pref="57" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="lblDongHo" alignment="1" max="32767" attributes="0"/>
+                  <Component id="lblDongHo" alignment="1" pref="60" max="32767" attributes="0"/>
                   <Component id="lblTime" alignment="1" max="32767" attributes="0"/>
                   <Component id="lblUsername" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lblTenNguoiDung" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="pnlThaoTac" min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblTenNguoiDung" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>

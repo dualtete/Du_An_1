@@ -82,14 +82,11 @@ public class frmLogin extends javax.swing.JFrame {
         lblPass.setForeground(new java.awt.Color(51, 51, 51));
         lblPass.setText("MẬT KHẨU");
         pnlRight.add(lblPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 90, -1));
-
-        sptMatKhau.setBackground(new java.awt.Color(255, 255, 255));
         pnlRight.add(sptMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 310, -1));
 
-        txtName.setEditable(false);
-        txtName.setBackground(new java.awt.Color(255, 255, 255));
         txtName.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         txtName.setForeground(new java.awt.Color(51, 51, 51));
+        txtName.setText("ADMIN");
         txtName.setBorder(null);
         txtName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -117,14 +114,12 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
         pnlRight.add(lblThoat, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 30, 30));
-
-        sptTenDN.setBackground(new java.awt.Color(255, 255, 255));
         pnlRight.add(sptTenDN, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 310, -1));
 
-        txtPass.setBackground(new java.awt.Color(255, 255, 255));
         txtPass.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         txtPass.setForeground(new java.awt.Color(51, 51, 51));
         txtPass.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtPass.setText("admin");
         txtPass.setBorder(null);
         txtPass.setEchoChar((char)8226);
         txtPass.addFocusListener(new java.awt.event.FocusAdapter() {
